@@ -1,0 +1,88 @@
+name: Monthly Radiology Update
+
+on:
+  # Runs automatically on the 1st of every month at 07:00 UTC
+  schedule:
+    - cron: '0 7 1 * *'
+
+  # Allows manual trigger from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      no_audio:
+        description: 'Skip podcast audio generation'
+        type: boolean
+        default: false
+      topics_only:
+        description: 'Only generate topic summaries (no podcast)'
+        type: boolean
+        default: false
+      dry_run:
+        description: 'Dry run: only fetch articles, no AI calls'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  monthly-update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Python setup ──────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # ── 3. System dependencies (ffmpeg for pydub) ────────────
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y ffmpeg
+
+      # ── 4. Python dependencies ───────────────────────────────
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      # ── 5. Run pipeline ──────────────────────────────────────
+      - name: Run monthly update pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          TTS_PROVIDER: ${{ secrets.TTS_PROVIDER || 'elevenlabs' }}
+        run: |
+          FLAGS=""
+          if [ "${{ github.event.inputs.no_audio }}" = "true" ]; then FLAGS="$FLAGS --no-audio"; fi
+          if [ "${{ github.event.inputs.topics_only }}" = "true" ]; then FLAGS="$FLAGS --topics-only"; fi
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then FLAGS="$FLAGS --dry-run"; fi
+          python scripts/main.py $FLAGS
+
+      # ── 6. Commit output to docs/ ────────────────────────────
+      - name: Commit and push results
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add docs/ pipeline.log
+          MONTH=$(date '+%B %Y')
+          git commit -m "📡 Actualización mensual: $MONTH" || echo "Nothing to commit"
+          git push
+
+      # ── 7. Deploy to GitHub Pages ────────────────────────────
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          commit_message: "Deploy: ${{ github.run_id }}"

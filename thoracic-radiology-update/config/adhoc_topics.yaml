@@ -1,0 +1,31 @@
+# ============================================================
+# TEMAS AD-HOC PARA EL PRÓXIMO CICLO MENSUAL
+# ============================================================
+# Edita este archivo antes del día 1 del mes para incluir
+# búsquedas personalizadas en el próximo informe.
+#
+# Cada tema puede incluir:
+#   - name: nombre descriptivo (obligatorio)
+#   - query: texto libre de búsqueda en PubMed (obligatorio)
+#   - date_range: "1month" | "3months" | "6months" (opcional, defecto: 1month)
+#   - max_results: número máximo de artículos (opcional, defecto: 20)
+#
+# EJEMPLO:
+# adhoc_topics:
+#   - name: "Inteligencia artificial en estadificación TNM"
+#     query: "artificial intelligence TNM staging lung cancer CT"
+#     date_range: "3months"
+#     max_results: 15
+#
+#   - name: "Photon counting CT en patología torácica"
+#     query: "photon counting detector CT thorax lung"
+#     date_range: "6months"
+# ============================================================
+
+adhoc_topics: []
+
+# ---- DESCOMENTA Y EDITA PARA ACTIVAR ----
+# adhoc_topics:
+#   - name: "Tu tema aquí"
+#     query: "keywords for pubmed search"
+#     date_range: "1month"

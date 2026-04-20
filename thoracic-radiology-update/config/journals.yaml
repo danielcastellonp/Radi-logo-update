@@ -1,0 +1,64 @@
+journals:
+  - name: "Radiology"
+    issn: "0033-8419"
+    eissn: "1527-1315"
+    pubmed_ta: "Radiology"
+
+  - name: "RadioGraphics"
+    issn: "0271-5333"
+    eissn: "1527-1323"
+    pubmed_ta: "Radiographics"
+
+  - name: "European Radiology"
+    issn: "0938-7994"
+    eissn: "1432-1084"
+    pubmed_ta: "Eur Radiol"
+
+  - name: "AJR (American Journal of Roentgenology)"
+    issn: "0361-803X"
+    eissn: "1546-3141"
+    pubmed_ta: "AJR Am J Roentgenol"
+
+  - name: "Journal of Thoracic Imaging"
+    issn: "0883-5993"
+    eissn: "1536-0237"
+    pubmed_ta: "J Thorac Imaging"
+
+  - name: "European Journal of Radiology"
+    issn: "0720-048X"
+    eissn: "1872-7727"
+    pubmed_ta: "Eur J Radiol"
+
+  - name: "JTCVS Imaging"
+    issn: "2666-2507"
+    pubmed_ta: "JTCVS Open"
+
+  - name: "JACC: Cardiovascular Imaging"
+    issn: "1936-878X"
+    eissn: "1876-7591"
+    pubmed_ta: "JACC Cardiovasc Imaging"
+
+  - name: "Circulation: Cardiovascular Imaging"
+    issn: "1941-9651"
+    eissn: "1942-0080"
+    pubmed_ta: "Circ Cardiovasc Imaging"
+
+  - name: "European Respiratory Journal"
+    issn: "0903-1936"
+    eissn: "1399-3003"
+    pubmed_ta: "Eur Respir J"
+
+  - name: "Chest"
+    issn: "0012-3692"
+    eissn: "1931-3543"
+    pubmed_ta: "Chest"
+
+  - name: "Insights into Imaging"
+    issn: "1869-4101"
+    eissn: "1869-4101"
+    pubmed_ta: "Insights Imaging"
+
+  - name: "Radiología"
+    issn: "0033-8338"
+    eissn: "1578-178X"
+    pubmed_ta: "Radiologia (Engl Ed)"

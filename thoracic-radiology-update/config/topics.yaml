@@ -1,0 +1,189 @@
+topics:
+  - id: infecciones
+    name: "Infecciones y procesos inflamatorios torácicos"
+    name_en: "Thoracic Infections and Inflammatory Processes"
+    mesh_terms:
+      - "Pneumonia"
+      - "Lung Diseases, Infectious"
+      - "Pleurisy"
+      - "Empyema, Pleural"
+      - "Tuberculosis, Pulmonary"
+      - "COVID-19"
+      - "Fungal Pneumonia"
+    keywords:
+      - "pneumonia imaging"
+      - "thoracic infection CT"
+      - "pulmonary inflammation"
+      - "pleural infection"
+      - "COVID pneumonia radiology"
+      - "fungal infection chest"
+
+  - id: epid
+    name: "EPID (Enfermedad Pulmonar Intersticial Difusa)"
+    name_en: "Diffuse Interstitial Lung Disease"
+    mesh_terms:
+      - "Lung Diseases, Interstitial"
+      - "Idiopathic Pulmonary Fibrosis"
+      - "Alveolitis, Extrinsic Allergic"
+      - "Sarcoidosis, Pulmonary"
+      - "Connective Tissue Diseases"
+    keywords:
+      - "interstitial lung disease CT"
+      - "UIP pattern HRCT"
+      - "pulmonary fibrosis imaging"
+      - "ILD classification radiology"
+      - "honeycombing CT"
+      - "ground glass opacity ILD"
+
+  - id: neoplasia
+    name: "Neoplasia Pulmonar"
+    name_en: "Pulmonary Neoplasia"
+    mesh_terms:
+      - "Lung Neoplasms"
+      - "Carcinoma, Non-Small-Cell Lung"
+      - "Mesothelioma"
+      - "Pleural Neoplasms"
+      - "Carcinoid Tumor"
+    keywords:
+      - "lung cancer CT staging"
+      - "pulmonary malignancy imaging"
+      - "lung tumor radiomics"
+      - "NSCLC radiology"
+      - "lung cancer screening"
+      - "pleural malignancy"
+      - "immunotherapy response lung"
+
+  - id: nodulo
+    name: "Nódulo Pulmonar"
+    name_en: "Pulmonary Nodule"
+    mesh_terms:
+      - "Solitary Pulmonary Nodule"
+      - "Multiple Pulmonary Nodules"
+    keywords:
+      - "pulmonary nodule management"
+      - "lung nodule CT"
+      - "Lung-RADS"
+      - "subsolid nodule"
+      - "ground glass nodule"
+      - "nodule volumetry"
+      - "pulmonary nodule AI"
+
+  - id: epoc_via_aerea
+    name: "EPOC y Patología de la Vía Aérea"
+    name_en: "COPD and Airway Disease"
+    mesh_terms:
+      - "Pulmonary Disease, Chronic Obstructive"
+      - "Bronchiectasis"
+      - "Asthma"
+      - "Bronchiolitis"
+      - "Tracheal Diseases"
+    keywords:
+      - "COPD CT phenotypes"
+      - "emphysema quantification CT"
+      - "airway remodeling imaging"
+      - "bronchiectasis CT"
+      - "small airways disease"
+      - "air trapping CT"
+
+  - id: tep_htp
+    name: "TEP e Hipertensión Pulmonar"
+    name_en: "Pulmonary Embolism and Pulmonary Hypertension"
+    mesh_terms:
+      - "Pulmonary Embolism"
+      - "Hypertension, Pulmonary"
+      - "Venous Thromboembolism"
+      - "Pulmonary Vascular Diseases"
+    keywords:
+      - "pulmonary embolism CTPA"
+      - "pulmonary hypertension imaging"
+      - "chronic thromboembolic disease"
+      - "right heart CT"
+      - "CTEPH radiology"
+      - "pulmonary vasculature MRI"
+
+  - id: cardiopatia_isquemica
+    name: "Cardiopatía Isquémica"
+    name_en: "Ischemic Heart Disease"
+    mesh_terms:
+      - "Coronary Artery Disease"
+      - "Myocardial Ischemia"
+      - "Coronary Stenosis"
+      - "Myocardial Infarction"
+      - "Coronary Angiography"
+    keywords:
+      - "coronary CTA"
+      - "cardiac CT ischemia"
+      - "CCTA stenosis"
+      - "myocardial perfusion CT"
+      - "FFR-CT"
+      - "coronary plaque imaging"
+      - "cardiac MRI ischemia"
+
+  - id: miocardiopatias
+    name: "Miocardiopatías"
+    name_en: "Cardiomyopathies"
+    mesh_terms:
+      - "Cardiomyopathies"
+      - "Cardiomyopathy, Hypertrophic"
+      - "Cardiomyopathy, Dilated"
+      - "Myocarditis"
+      - "Arrhythmogenic Right Ventricular Cardiomyopathy"
+    keywords:
+      - "cardiomyopathy cardiac MRI"
+      - "myocarditis CMR"
+      - "hypertrophic cardiomyopathy imaging"
+      - "LGE cardiac MRI"
+      - "T1 T2 mapping cardiomyopathy"
+      - "ARVC imaging"
+
+  - id: rm_toracica
+    name: "RM Torácica (no cardiaca)"
+    name_en: "Thoracic MRI (non-cardiac)"
+    mesh_terms:
+      - "Magnetic Resonance Imaging"
+      - "Lung"
+      - "Mediastinum"
+      - "Pleura"
+    keywords:
+      - "lung MRI"
+      - "thoracic MRI non-cardiac"
+      - "mediastinum MRI"
+      - "pleural MRI"
+      - "free-breathing lung MRI"
+      - "UTE MRI lung"
+      - "MRI pulmonary fibrosis"
+
+  - id: imagen_cardiaca
+    name: "Avances en Imagen Cardiaca"
+    name_en: "Advances in Cardiac Imaging"
+    mesh_terms:
+      - "Heart"
+      - "Diagnostic Imaging"
+      - "Echocardiography"
+      - "Computed Tomography Angiography"
+    keywords:
+      - "cardiac imaging advances"
+      - "photon counting CT cardiac"
+      - "4D flow MRI"
+      - "cardiac CT new techniques"
+      - "spectral CT cardiac"
+      - "strain imaging cardiac"
+      - "cardiac CT structural intervention"
+
+  - id: ia_radiologia
+    name: "IA en Radiología Torácica"
+    name_en: "AI in Thoracic Radiology"
+    mesh_terms:
+      - "Artificial Intelligence"
+      - "Deep Learning"
+      - "Neural Networks, Computer"
+      - "Radiomics"
+      - "Image Interpretation, Computer-Assisted"
+    keywords:
+      - "deep learning chest radiology"
+      - "AI lung nodule detection"
+      - "radiomics thoracic"
+      - "machine learning chest CT"
+      - "AI cardiac imaging"
+      - "foundation model radiology"
+      - "LLM radiology report"
