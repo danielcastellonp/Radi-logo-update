@@ -1,6 +1,6 @@
 """
 fetcher.py — Fetches articles from PubMed (curated journals) and
-Semantic Scholar (top cited, any journal) for each topic.
+Semantic Scholar (top cited + most recent, any journal) for each topic.
 """
 
 import os
@@ -16,22 +16,20 @@ logger = logging.getLogger(__name__)
 
 PUBMED_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 SEMANTIC_BASE = "https://api.semanticscholar.org/graph/v1"
-NCBI_API_KEY = os.getenv("NCBI_API_KEY", "")  # optional but recommended
+NCBI_API_KEY = os.getenv("NCBI_API_KEY", "")
 
-# ─────────────────────────────────────────────
-# Helpers
-# ─────────────────────────────────────────────
+# Delay between Semantic Scholar calls to avoid 429
+SS_DELAY = 3.0  # seconds
+
 
 def _date_range_str(months_back: int = 1) -> tuple[str, str]:
-    """Returns (date_from, date_to) as YYYY/MM/DD strings for PubMed."""
     today = datetime.today()
-    date_to = today.replace(day=1) - timedelta(days=1)   # last day of prev month
+    date_to = today.replace(day=1) - timedelta(days=1)
     date_from = (date_to.replace(day=1) - relativedelta(months=months_back - 1))
     return date_from.strftime("%Y/%m/%d"), date_to.strftime("%Y/%m/%d")
 
 
 def _pubmed_search(query: str, max_results: int = 100) -> list[str]:
-    """Returns list of PMIDs matching query."""
     params = {
         "db": "pubmed",
         "term": query,
@@ -44,19 +42,16 @@ def _pubmed_search(query: str, max_results: int = 100) -> list[str]:
     try:
         r = requests.get(f"{PUBMED_BASE}/esearch.fcgi", params=params, timeout=30)
         r.raise_for_status()
-        data = r.json()
-        return data.get("esearchresult", {}).get("idlist", [])
+        return r.json().get("esearchresult", {}).get("idlist", [])
     except Exception as e:
         logger.error(f"PubMed search error: {e}")
         return []
 
 
 def _pubmed_fetch(pmids: list[str]) -> list[dict]:
-    """Fetches article metadata for a list of PMIDs."""
     if not pmids:
         return []
     articles = []
-    # Fetch in batches of 200
     for i in range(0, len(pmids), 200):
         batch = pmids[i:i+200]
         params = {
@@ -71,14 +66,13 @@ def _pubmed_fetch(pmids: list[str]) -> list[dict]:
             r = requests.get(f"{PUBMED_BASE}/efetch.fcgi", params=params, timeout=60)
             r.raise_for_status()
             articles.extend(_parse_pubmed_xml(r.text))
-            time.sleep(0.35)  # NCBI rate limit
+            time.sleep(0.35)
         except Exception as e:
             logger.error(f"PubMed fetch error: {e}")
     return articles
 
 
 def _parse_pubmed_xml(xml_text: str) -> list[dict]:
-    """Parses PubMed XML response into list of article dicts."""
     articles = []
     try:
         root = ET.fromstring(xml_text)
@@ -91,15 +85,12 @@ def _parse_pubmed_xml(xml_text: str) -> list[dict]:
             medline = article.find("MedlineCitation")
             art = medline.find("Article")
 
-            # PMID
             pmid_el = medline.find("PMID")
             pmid = pmid_el.text if pmid_el is not None else ""
 
-            # Title
             title_el = art.find("ArticleTitle")
             title = "".join(title_el.itertext()) if title_el is not None else ""
 
-            # Abstract
             abstract_parts = []
             abstract_el = art.find("Abstract")
             if abstract_el is not None:
@@ -109,7 +100,6 @@ def _parse_pubmed_xml(xml_text: str) -> list[dict]:
                     abstract_parts.append(f"{label}: {text}" if label else text)
             abstract = " ".join(abstract_parts)
 
-            # Authors
             authors = []
             author_list = art.find("AuthorList")
             if author_list is not None:
@@ -122,7 +112,6 @@ def _parse_pubmed_xml(xml_text: str) -> list[dict]:
             if len(authors) > 6:
                 authors_str += " et al."
 
-            # Journal
             journal_el = art.find("Journal")
             journal_name = ""
             pub_date = ""
@@ -137,14 +126,12 @@ def _parse_pubmed_xml(xml_text: str) -> list[dict]:
                         month = pd.findtext("Month", "")
                         pub_date = f"{year} {month}".strip()
 
-            # DOI
             doi = ""
             for loc in article.findall(".//ArticleId"):
                 if loc.get("IdType") == "doi":
                     doi = loc.text or ""
                     break
 
-            # MeSH
             mesh_terms = [
                 mh.findtext("DescriptorName", "")
                 for mh in medline.findall(".//MeshHeading/DescriptorName")
@@ -170,28 +157,21 @@ def _parse_pubmed_xml(xml_text: str) -> list[dict]:
     return articles
 
 
-# ─────────────────────────────────────────────
-# Semantic Scholar
-# ─────────────────────────────────────────────
+def _semantic_scholar_search(query: str, months: int) -> list[dict]:
+    """
+    Single Semantic Scholar search with proper delay.
+    Returns parsed list of articles.
+    """
+    time.sleep(SS_DELAY)  # Always wait before calling SS
 
-def _semantic_scholar_top_cited(
-    query: str,
-    journal_issns: set[str],
-    top_n: int = 10,
-    months_back: int = 1,
-) -> list[dict]:
-    """
-    Returns top N most cited articles in the last `months_back` months
-    that are NOT in the curated journal list.
-    """
-    date_from = datetime.today() - relativedelta(months=months_back)
-    year_from = date_from.year
+    date_from = (datetime.today() - relativedelta(months=months)).strftime("%Y-%m-%d")
+    date_to = datetime.today().strftime("%Y-%m-%d")
 
     params = {
         "query": query,
         "fields": "title,abstract,authors,year,citationCount,externalIds,venue,publicationDate",
-        "limit": 100,
-        "publicationDateOrYear": f"{year_from}-{datetime.today().year}",
+        "limit": 50,
+        "publicationDateOrYear": f"{date_from}:{date_to}",
     }
 
     headers = {}
@@ -206,39 +186,40 @@ def _semantic_scholar_top_cited(
             headers=headers,
             timeout=30,
         )
+        if r.status_code == 429:
+            logger.warning("Semantic Scholar rate limit. Waiting 10s...")
+            time.sleep(10)
+            r = requests.get(
+                f"{SEMANTIC_BASE}/paper/search",
+                params=params,
+                headers=headers,
+                timeout=30,
+            )
         r.raise_for_status()
-        data = r.json()
-        papers = data.get("data", [])
+        papers = r.json().get("data", [])
     except Exception as e:
         logger.error(f"Semantic Scholar error: {e}")
         return []
 
-    # Filter out papers from curated journals (by ISSN if available)
-    # and sort by citation count
-    filtered = []
+    results = []
     for p in papers:
-        # Try to detect if it's from a curated journal by name heuristic
-        venue = p.get("venue", "") or ""
-        # Basic exclusion: if venue matches known journal names, skip
         if not p.get("abstract"):
             continue
         external_ids = p.get("externalIds", {}) or {}
-        pmid = external_ids.get("PubMed", "")
-
         authors_list = p.get("authors", [])
         authors_str = ", ".join([a.get("name", "") for a in authors_list[:6]])
         if len(authors_list) > 6:
             authors_str += " et al."
-
         doi = external_ids.get("DOI", "")
+        pub_date = p.get("publicationDate", "") or str(p.get("year", ""))
 
-        filtered.append({
-            "pmid": pmid or "",
+        results.append({
+            "pmid": external_ids.get("PubMed", ""),
             "title": p.get("title", ""),
             "abstract": p.get("abstract", ""),
             "authors": authors_str,
-            "journal": venue,
-            "pub_date": p.get("publicationDate", "") or str(p.get("year", "")),
+            "journal": p.get("venue", ""),
+            "pub_date": pub_date,
             "doi": doi,
             "url": f"https://doi.org/{doi}" if doi else "",
             "mesh_terms": [],
@@ -246,14 +227,53 @@ def _semantic_scholar_top_cited(
             "citation_count": p.get("citationCount", 0),
         })
 
-    # Sort by citations descending, take top N
-    filtered.sort(key=lambda x: x.get("citation_count") or 0, reverse=True)
-    return filtered[:top_n]
+    return results
 
 
-# ─────────────────────────────────────────────
-# Main fetch functions
-# ─────────────────────────────────────────────
+def _semantic_scholar_top_cited(
+    query: str,
+    journal_issns: set[str],
+    top_n: int = 10,
+    months_back: int = 3,
+) -> list[dict]:
+    """
+    Returns top N most relevant articles combining:
+    - Most cited in last 3 months (expands to 6 if insufficient)
+    - Most recent (last 4 weeks) regardless of citations
+    """
+    # 1. Fetch last 3 months
+    parsed = _semantic_scholar_search(query, 3)
+
+    # 2. If insufficient, expand to 6 months
+    if len(parsed) < top_n:
+        logger.info(f"  Only {len(parsed)} articles in 3 months, expanding to 6 months")
+        parsed = _semantic_scholar_search(query, 6)
+
+    if not parsed:
+        return []
+
+    # 3. Split into: high citations + very recent (last 4 weeks)
+    four_weeks_ago = (datetime.today() - relativedelta(weeks=4)).strftime("%Y-%m-%d")
+
+    very_recent = [p for p in parsed if p.get("pub_date", "") >= four_weeks_ago]
+    by_citations = sorted(parsed, key=lambda x: x.get("citation_count") or 0, reverse=True)
+
+    # 4. Combine: top cited + most recent, deduplicated
+    seen_titles = set()
+    combined = []
+
+    for p in by_citations[:top_n]:
+        if p["title"] not in seen_titles:
+            combined.append(p)
+            seen_titles.add(p["title"])
+
+    for p in sorted(very_recent, key=lambda x: x.get("pub_date", ""), reverse=True):
+        if p["title"] not in seen_titles and len(combined) < top_n + 3:
+            combined.append(p)
+            seen_titles.add(p["title"])
+
+    return combined[:top_n + 3]
+
 
 def fetch_for_topic(
     topic: dict,
@@ -261,30 +281,20 @@ def fetch_for_topic(
     journal_issn_set: set[str],
     months_back: int = 1,
 ) -> dict:
-    """
-    For a given topic, fetches:
-    - Articles from curated journals (PubMed)
-    - Top 10 cited articles from any other journal (Semantic Scholar)
-    Returns dict with both lists.
-    """
     date_from, date_to = _date_range_str(months_back)
     logger.info(f"Fetching topic: {topic['name_en']} ({date_from} → {date_to})")
 
-    # Build PubMed query
     journal_filter = " OR ".join([f'"{ta}"[Journal]' for ta in journal_ta_list])
     keyword_parts = topic.get("keywords", [])
     mesh_parts = [f'"{m}"[MeSH Terms]' for m in topic.get("mesh_terms", [])]
-
     topic_terms = " OR ".join([f'"{k}"' for k in keyword_parts] + mesh_parts)
     date_filter = f'("{date_from}"[PDAT] : "{date_to}"[PDAT])'
-
     pubmed_query = f"({topic_terms}) AND ({journal_filter}) AND {date_filter}"
 
     pmids = _pubmed_search(pubmed_query, max_results=50)
     pubmed_articles = _pubmed_fetch(pmids)
     logger.info(f"  PubMed: {len(pubmed_articles)} articles")
 
-    # Semantic Scholar: top cited outside curated journals
     ss_query = " ".join(topic.get("keywords", [])[:4])
     ss_articles = _semantic_scholar_top_cited(
         query=ss_query,
@@ -306,7 +316,6 @@ def fetch_for_topic(
 
 
 def fetch_adhoc_topic(adhoc: dict) -> dict:
-    """Fetches articles for a user-defined ad-hoc topic."""
     date_map = {"1month": 1, "3months": 3, "6months": 6}
     months = date_map.get(adhoc.get("date_range", "1month"), 1)
     max_results = adhoc.get("max_results", 20)
@@ -320,7 +329,6 @@ def fetch_adhoc_topic(adhoc: dict) -> dict:
     pmids = _pubmed_search(query, max_results=max_results)
     articles = _pubmed_fetch(pmids)
 
-    # Also get top cited from Semantic Scholar
     ss_articles = _semantic_scholar_top_cited(
         query=adhoc["query"],
         journal_issns=set(),
