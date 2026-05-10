@@ -1,271 +1,250 @@
-# PODCAST RADIOTÓRAX - EPISODIO MAYO 2026
-
-## "Novedades en Radiología Torácica: De las NETs Pleurales al Futuro de la IA"
+# PODCAST: ACTUALIZACIÓN EN RADIOLOGÍA TORÁCICA
+## Mayo 2026 — Episodio Mensual
 
 ---
 
 **[00:00]**
 
-**ANA:** ¡Muy buenos días! Bienvenidos a un nuevo episodio de RadioTórax, el podcast donde repasamos lo más relevante de la radiología torácica y cardiovascular. Soy Ana, radióloga torácica, y como siempre me acompaña...
+**ANA:** Muy buenos días a todos y bienvenidos a un nuevo episodio de nuestro podcast de actualización en radiología torácica. Soy Ana Martínez, radióloga torácica, y como cada mes me acompaña mi compañero Carlos Ruiz, radiólogo cardiovascular. Carlos, ¿cómo estás?
 
-**CARLOS:** ¡Hola a todos! Carlos, radiólogo cardiovascular. Ana, qué mes tan intenso hemos tenido, ¿verdad? He estado leyendo los artículos para hoy y no sé ni por dónde empezar.
+**CARLOS:** Muy bien, Ana, encantado de estar aquí otro mes más. Y la verdad es que este mes viene cargado de novedades interesantes, especialmente en el terreno de la inteligencia artificial y las nuevas tecnologías de imagen.
 
-**ANA:** Totalmente de acuerdo. Es uno de esos meses donde parece que todas las revistas se pusieron de acuerdo para publicar cosas interesantes a la vez. Tenemos de todo: desde biomarcadores pronósticos en infecciones pleurales hasta avances importantes en inteligencia artificial, pasando por novedades en imagen cardiovascular que sé que te van a encantar.
+**ANA:** Totalmente de acuerdo. Este mes tenemos material de sobra para mantener a nuestra audiencia actualizada. Así que sin más preámbulos, vamos a adelantar lo que vamos a cubrir hoy.
 
-**CARLOS:** Me conoces bien. Aunque tengo que decir que lo que has preparado sobre resonancia en enfermedad intersticial me ha parecido fascinante, y mira que no es mi campo habitual.
+---
 
 **[01:00]**
 
-**ANA:** Bueno, vamos a adelantar un poco lo que viene hoy. Empezaremos con las infecciones torácicas, donde hay un estudio sobre las trampas extracelulares de neutrófilos en líquido pleural que creo que va a cambiar cómo estratificamos a estos pacientes.
+**ANA:** Bien, vamos con el resumen rápido de lo que nos espera. En primer lugar, tenemos novedades muy relevantes en el campo de las infecciones torácicas, particularmente sobre la neumonía por *Pneumocystis jirovecii* y cómo los patrones tomográficos varían según el estado inmunitario del paciente. Esto tiene implicaciones diagnósticas directas que creo que a muchos os van a interesar.
 
-**CARLOS:** Luego nos metemos con la enfermedad pulmonar intersticial difusa, y aquí hay algo que me ha sorprendido mucho: la resonancia magnética con tiempo de eco ultracorto está empezando a competir seriamente con la TC de alta resolución.
+**CARLOS:** Luego vamos a hablar de algo que me entusiasma especialmente: los avances en imagen cardiaca, donde la inteligencia artificial está alcanzando una madurez realmente impresionante. Tenemos datos nuevos sobre detección de amiloidosis cardíaca con IA que supera el 90% de precisión, y también resultados muy prometedores con CT-FFR on-site que democratiza el acceso a la evaluación funcional.
 
-**ANA:** Exacto. Después pasaremos por neoplasia pulmonar, donde la inteligencia artificial sigue dando pasos de gigante, y tenemos que hablar del ensayo VERITAS que ha generado bastante controversia...
+**ANA:** En enfermedad pulmonar intersticial difusa vamos a discutir algo que puede cambiar nuestra práctica: la RM con tiempo de eco ultracorto como alternativa a la TCAR para el seguimiento de pacientes con fibrosis pulmonar. Esto es especialmente relevante para reducir la carga de radiación acumulada.
 
-**CARLOS:** Ah, sí, la batalla entre biopsia transtorácica y broncoscopia navegacional. Tengo opiniones sobre eso.
+**CARLOS:** También tenemos novedades en TEP e hipertensión pulmonar, donde el SPECT V/Q está demostrando no inferioridad frente a la angio-TC en un ensayo multicéntrico muy bien diseñado. Y el detector de conteo de fotones sigue dando que hablar.
 
-**ANA:** Ya me imagino. También tocaremos nódulo pulmonar, EPOC y vía aérea, tromboembolismo pulmonar con los detectores de conteo de fotones, que cada vez dan más de sí...
+**ANA:** En nódulo pulmonar y neoplasia, la IA cuantitativa para diferenciación histológica está madurando de forma impresionante, y hay datos nuevos sobre resección sublobar que cuestionan la necesidad de lobectomía sistemática en ciertos escenarios.
 
-**CARLOS:** Y en la parte cardiovascular repasaremos cardiopatía isquémica, donde la IA para FFR por TC está madurando muy rápido, y miocardiopatías, con avances importantes en amiloidosis cardíaca y enfermedad de Fabry.
+**CARLOS:** Y finalmente, cerraremos con las implicaciones de la variabilidad entre fabricantes en TC cuantitativa, algo que afecta tanto al tórax como al corazón y que debemos tener muy presente en nuestro día a día. ¿Empezamos?
 
-**ANA:** Terminaremos con un repaso a la resonancia torácica no cardíaca y los avances generales en IA que nos afectan a todos. ¿Arrancamos?
-
-**CARLOS:** Arrancamos.
+**ANA:** Vamos allá.
 
 ---
 
 **[03:00]**
 
-**ANA:** Empezamos con infecciones torácicas, y el protagonista indiscutible de este mes son las trampas extracelulares de neutrófilos, las famosas NETs. Carlos, ¿te acuerdas de cuando estudiábamos inmunología y las NETs parecían algo muy de investigación básica?
+## INFECCIONES TORÁCICAS: EL CASO DE PNEUMOCYSTIS
 
-**CARLOS:** Perfectamente. Era como... "los neutrófilos lanzan su ADN al exterior para atrapar patógenos". Muy bonito en el laboratorio, pero ¿qué hacemos con eso en clínica?
+**ANA:** Bien, Carlos, empecemos por algo que vemos con frecuencia pero que a veces nos genera dudas diagnósticas: la neumonía por *Pneumocystis jirovecii*. Este mes se ha publicado un trabajo muy interesante en *Radiology* que analiza los patrones tomográficos según el estado inmunitario del paciente.
 
-**ANA:** Pues ahora tenemos la respuesta, al menos para las infecciones pleurales. Este mes se ha publicado un estudio multicéntrico internacional que valida las NETs en líquido pleural como biomarcadores pronósticos. Y los resultados son bastante contundentes.
+**CARLOS:** Cuéntame más, porque reconozco que cuando veo un paciente inmunodeprimido con neumonía atípica, el primer reflejo es buscar el patrón clásico de vidrio deslustrado bilateral y perihiliar que asociamos al VIH.
 
-**CARLOS:** Cuéntame más, porque esto me suena a que podría cambiar cómo manejamos los derrames paraneumónicos complicados.
+**ANA:** Exacto, y ahí está precisamente el problema. Lo que demuestra este estudio es que ese patrón clásico es más típico del paciente VIH-positivo, pero la población de inmunodeprimidos no-VIH está creciendo enormemente: trasplantados, pacientes con biológicos, quimioterapia... Y en estos pacientes, la presentación radiológica puede ser muy diferente.
 
-**ANA:** Exactamente. Lo que han encontrado es una asociación clara entre los niveles de NETs en el líquido pleural y dos cosas: la severidad de la infección al momento del diagnóstico y, lo más importante, la mortalidad al año.
+**CARLOS:** ¿En qué sentido diferente?
 
-**CARLOS:** O sea, que tenemos un marcador que nos dice no solo cómo de grave está el paciente ahora, sino cómo le va a ir.
+**ANA:** Pues mira, los hallazgos atípicos como consolidación, nódulos, distribución asimétrica e incluso formas quísticas son significativamente más frecuentes en inmunodeprimidos no-VIH. El artículo reporta que hasta un 40% de estos pacientes pueden presentar patrones que no encajan con la descripción clásica.
 
-**ANA:** Así es. Y esto conecta directamente con otro tema que me parece muy relevante: la terapia enzimática intrapleural, el régimen MIST2 con dornasa alfa y alteplasa.
+**CARLOS:** Eso tiene implicaciones directas en el diagnóstico diferencial. Porque si ves consolidación focal en un paciente con artritis reumatoide bajo metotrexato, igual no piensas en *Pneumocystis* como primera opción.
 
-**[05:00]**
+**ANA:** Exactamente. Y el mensaje clave aquí es mantener alta sospecha diagnóstica en cualquier inmunodeprimido con infiltrados pulmonares, aunque el patrón no sea el "típico". La correlación clínica y el umbral bajo para solicitar broncoscopia o lavado broncoalveolar son fundamentales.
 
-**CARLOS:** Ah, que es el tratamiento para los empiemas y derrames complicados. ¿Qué hay de nuevo?
+**[05:30]**
 
-**ANA:** Pues un estudio que analiza cómo se está implementando en la práctica real. Y aquí hay buenas y malas noticias. La buena: cuando se aplica el protocolo completo, los resultados son muy buenos, con beneficios significativos en términos de necesidad de cirugía y estancia hospitalaria.
+**CARLOS:** Cambiando un poco de tema pero siguiendo en infecciones, he visto que hay un artículo interesante sobre las trampas extracelulares de neutrófilos en líquido pleural. ¿Qué nos aporta eso a los radiólogos?
 
-**CARLOS:** ¿Y la mala?
+**ANA:** Es un tema más de laboratorio, pero tiene una conexión directa con nuestra práctica. Lo que han demostrado es que los niveles de NETs —estas estructuras que liberan los neutrófilos activados— en el líquido pleural se correlacionan con la gravedad clínica y, lo más importante, con la mortalidad al año.
 
-**ANA:** La variabilidad entre centros es enorme. Hay hospitales que lo aplican de libro y otros donde la implementación es, digamos, parcial. Y eso afecta a los resultados.
+**CARLOS:** ¿Y cómo encaja eso con la imagen?
 
-**CARLOS:** Esto me suena mucho a lo que vemos en otros protocolos. La evidencia está ahí, pero la traslación a la práctica es desigual.
+**ANA:** Bueno, la imagen nos dice que hay derrame pleural complicado: loculaciones, engrosamiento pleural, realce... Pero no nos dice el pronóstico. Lo que sugiere este trabajo es que en el futuro podríamos tener biomarcadores de líquido pleural que, combinados con la imagen, nos ayuden a estratificar mejor a estos pacientes y decidir tratamientos más agresivos.
 
-**ANA:** Totalmente. Y esto tiene implicaciones para nosotros como radiólogos, porque si estamos haciendo el seguimiento de estos pacientes, tenemos que saber qué tratamiento han recibido realmente para interpretar los hallazgos.
+**CARLOS:** Interesante. Es un ejemplo más de cómo la radiología no trabaja aislada, sino en un contexto multiparamétrico.
 
-**CARLOS:** Buena observación. ¿Algo más de infecciones?
-
-**ANA:** Sí, un apunte rápido sobre infecciones fúngicas invasivas en trasplante pulmonar. Ya sabíamos que eran malas, pero ahora hay datos sólidos de su impacto económico: incremento significativo de costes, utilización de recursos y, por supuesto, mortalidad. No es nada nuevo conceptualmente, pero es bueno tener los números.
+---
 
 **[07:00]**
 
-**CARLOS:** Perfecto. Pasemos entonces a la enfermedad pulmonar intersticial, que sé que es uno de tus temas favoritos.
+## EPID: ¿EL FIN DEL MONOPOLIO DE LA TCAR?
 
-**ANA:** Lo es, y este mes hay material de primera. Lo más impactante para mí es el estudio sobre resonancia magnética con tiempo de eco ultracorto, la UTE-MRI, para detectar patrones de neumonía intersticial usual.
+**ANA:** Vamos ahora con un tema que me parece especialmente relevante para la práctica diaria: las novedades en enfermedad pulmonar intersticial difusa. Y aquí hay un artículo que puede marcar un antes y un después.
 
-**CARLOS:** A ver, esto me interesa mucho porque siempre he pensado que la resonancia tenía un papel limitado en pulmón por el tema del aire y los artefactos de susceptibilidad...
+**CARLOS:** Te refieres al estudio de RM con tiempo de eco ultracorto, ¿verdad?
 
-**ANA:** Y tenías razón, con las secuencias convencionales. Pero las secuencias UTE, con tiempos de eco por debajo del milisegundo, están cambiando las reglas del juego. En este estudio han conseguido una sensibilidad del 93% y una especificidad del 80% para detectar patrón NIU.
+**ANA:** Exacto. Publicado en *European Radiology*, este trabajo demuestra que la RM-UTE tiene una precisión diagnóstica alta para identificar patrones de neumonía intersticial usual. Hablamos de sensibilidades y especificidades por encima del 85% para identificar el patrón radiológico UIP.
 
-**CARLOS:** Un momento, un 93% de sensibilidad es impresionante. ¿Comparado con qué?
+**CARLOS:** Vale, pero la TCAR sigue siendo el gold standard. ¿Por qué cambiaríamos?
 
-**ANA:** Con TC de alta resolución como referencia, claro. Y el valor de esto no es que vayamos a abandonar la TCAR, que sigue siendo nuestro estándar, sino que tenemos una alternativa para pacientes que queremos evitar irradiar repetidamente.
+**ANA:** Por una razón muy sencilla: la radiación acumulada. Piensa en un paciente con fibrosis pulmonar idiopática que necesita seguimiento semestral o anual durante años. La dosis acumulada de múltiples TCAR es un problema real, especialmente si el paciente es relativamente joven o si añadimos otros estudios.
 
-**CARLOS:** Seguimientos, pacientes jóvenes, embarazadas...
+**CARLOS:** Entiendo el argumento. ¿Pero la RM del pulmón no es técnicamente muy limitada? El parénquima tiene muy poca señal...
 
-**ANA:** Exacto. Y hay otro estudio complementario muy interesante sobre RM funcional con resolución de fase, el PREFUL, para predecir progresión en EPI asociadas a conectivopatías.
+**ANA:** Ahí está precisamente la innovación de las secuencias UTE. Al usar tiempos de eco ultracortos, del orden de cientos de microsegundos, consigues captar señal del parénquima pulmonar antes de que decaiga. No es perfecto, la resolución espacial sigue siendo inferior a la TC, pero para detectar reticulación, panalización y tracción bronquial, parece suficiente.
 
 **[09:00]**
 
-**CARLOS:** ¿Y qué aporta respecto a lo morfológico?
+**CARLOS:** Me parece prometedor, pero soy un poco escéptico. ¿Cuántos pacientes incluía el estudio?
 
-**ANA:** Que los parámetros de ventilación y perfusión regional superan a las métricas morfológicas convencionales para predecir quién va a progresar. Es decir, no es solo cómo se ve el pulmón, sino cómo funciona a nivel regional.
+**ANA:** Es un estudio de validación con cohortes moderadas, no es el ensayo definitivo. Pero la señal es clara y consistente con otros trabajos previos. Creo que en los próximos dos o tres años veremos implementaciones clínicas, al menos para seguimiento de pacientes ya diagnosticados.
 
-**CARLOS:** Esto tiene mucho sentido. Al final, lo que nos importa es la función.
+**CARLOS:** Vale, me convence más para seguimiento que para diagnóstico inicial. Ahí sigo pensando que la TCAR es irremplazable.
 
-**ANA:** Ahora viene un tema que me genera cierta preocupación, y quiero tu opinión. La variabilidad inter-vendedor en TC cuantitativa para EPI.
+**ANA:** Totalmente de acuerdo. El diagnóstico inicial, especialmente en casos atípicos o que requieren discusión multidisciplinar, necesita la máxima resolución y la estandarización que ofrece la TCAR. Pero para el paciente número diez de tu consulta de seguimiento de FPI, la RM-UTE puede ser una alternativa muy razonable.
 
-**CARLOS:** Ah, el problema de que si haces la TC en un equipo de Siemens y el control en un GE, los números no son comparables.
+**CARLOS:** Cambiando de tema pero siguiendo en EPID, había un artículo sobre variabilidad entre fabricantes de TC cuantitativa que me llamó la atención.
 
-**ANA:** Exactamente. Este estudio prospectivo ha encontrado diferencias medias del 2 al 4% en la extensión de fibrosis según el fabricante del equipo. Eso puede parecer poco, pero cuando estás decidiendo si un paciente ha progresado y necesita cambio de tratamiento...
+**ANA:** Sí, y esto es preocupante. El estudio, publicado en *Chest*, demuestra diferencias de hasta 3-4 puntos porcentuales en mediciones de extensión fibrótica según el fabricante del TC. Estamos hablando de diferencias clínicamente significativas.
 
-**CARLOS:** Un 4% puede ser la diferencia entre "estable" y "progresión". Es un problema real.
+**CARLOS:** Eso es un problema enorme para el seguimiento longitudinal. Si un paciente se hace el primer estudio en un equipo Siemens y el segundo en un GE, ¿cómo sabemos si la progresión es real o es artefacto de la medición?
 
-**ANA:** Y la conclusión es clara: necesitamos estandarización antes de implementar seguimiento longitudinal con diferentes equipos. Esto es especialmente relevante para los centros que tienen varios escáneres de diferentes marcas.
+**ANA:** Exactamente el problema. La recomendación práctica inmediata es intentar que los estudios seriados se hagan en el mismo equipo siempre que sea posible. Y cuando no sea posible, interpretar las diferencias cuantitativas con mucha cautela.
 
-**[11:00]**
+---
 
-**CARLOS:** Cambiemos a algo que también te toca de cerca: la IA en detección de anomalías intersticiales en radiografía simple.
+**[11:30]**
 
-**ANA:** Sí, este estudio demuestra que los algoritmos de inteligencia artificial alcanzan rendimiento comparable al radiólogo experto en detectar ILA, las anomalías pulmonares intersticiales, con áreas bajo la curva entre 0.78 y 0.82.
+## TEP: EL RENACIMIENTO DEL SPECT V/Q
 
-**CARLOS:** Que no está mal para una radiografía simple, donde tradicionalmente la sensibilidad ha sido bastante limitada.
+**CARLOS:** Ana, ahora me toca a mí coger el protagonismo porque tenemos novedades muy interesantes en TEP e hipertensión pulmonar. Y el titular principal es el ensayo multicéntrico que compara SPECT V/Q con angio-TC para el diagnóstico de TEP.
 
-**ANA:** Exacto. No va a reemplazar a la TCAR para el diagnóstico, pero como herramienta de cribado o para identificar pacientes que necesitan estudio adicional, tiene potencial.
+**ANA:** Este lo he seguido con mucho interés. Cuéntanos los resultados.
 
-**CARLOS:** Y un apunte antes de pasar a oncología: los nuevos biomarcadores séricos, los neoepítopos de MMP-CRP, para predecir pronóstico en fibrosis pulmonar idiopática bajo tratamiento antifibrótico.
+**CARLOS:** Pues el hallazgo principal es que el SPECT V/Q demuestra no inferioridad frente a la angio-TC para el diagnóstico de TEP agudo. Pero lo más llamativo es la tasa de resultados inconclusos: solo un 3,3% con SPECT frente a un 6,3% con angio-TC.
 
-**ANA:** Sí, las trayectorias a corto plazo de estos marcadores predicen mortalidad independientemente de la función pulmonar basal. Esto es importante porque nos da información complementaria a las pruebas de función respiratoria.
+**ANA:** Eso es sorprendente. Siempre hemos asumido que la angio-TC era más definitiva.
 
-**[12:30]**
+**CARLOS:** Lo mismo pensaba yo. Pero si lo piensas, tiene sentido. La angio-TC puede ser inconclusa por artefactos de movimiento, opacificación subóptima, pacientes no colaboradores... El SPECT V/Q es menos susceptible a algunos de estos problemas.
 
-**CARLOS:** Muy bien, pasemos a neoplasia pulmonar. Aquí hay varios temas gordos.
+**ANA:** ¿Y qué implicaciones tiene esto para la práctica clínica?
 
-**ANA:** El más llamativo, sin duda, es la consolidación de la IA para caracterización de nódulos. Estamos viendo modelos que alcanzan AUC superiores a 0.90 para diferenciar tipos histológicos de adenocarcinoma y lesiones inflamatorias.
+**CARLOS:** Potencialmente grandes. No estoy diciendo que vayamos a abandonar la angio-TC, que sigue teniendo ventajas enormes: disponibilidad, rapidez, diagnósticos alternativos... Pero este estudio legitima al SPECT V/Q como una alternativa real, especialmente en pacientes con contraindicación al contraste yodado o función renal límite.
 
-**CARLOS:** Eso es estratificación prequirúrgica, básicamente decidir qué tipo de intervención necesita el paciente antes de operarle.
+**[13:30]**
 
-**ANA:** Exacto. Y tiene implicaciones prácticas inmediatas: si puedes predecir con alta fiabilidad que un nódulo es un adenocarcinoma in situ versus un invasor, el abordaje quirúrgico cambia.
+**ANA:** ¿Y qué hay del detector de conteo de fotones en TEP?
 
-**CARLOS:** Ahora cuéntame del VERITAS, porque he leído opiniones muy dispares.
+**CARLOS:** Ahí tenemos datos muy interesantes de varios grupos. Lo más destacado es la posibilidad de reducir la dosis de contraste hasta un 40% manteniendo calidad diagnóstica equivalente para detección de TEP.
 
-**ANA:** El ensayo VERITAS compara biopsia transtorácica con aguja versus broncoscopia navegacional para nódulos periféricos. Y los resultados cuestionan la supremacía histórica de la TTNB...
+**ANA:** Eso es muy significativo. El contraste yodado siempre es un punto de fricción, especialmente en pacientes con enfermedad renal.
 
-**CARLOS:** Pero hay un "pero".
+**CARLOS:** Exacto. Pero además, el PCD-CT permite algo que a mí me parece revolucionario: la cuantificación de perfusión lobar en la misma adquisición anatómica. Tenemos datos que muestran excelente correlación con el SPECT V/Q de perfusión en pacientes con hipertensión pulmonar tromboembólica crónica.
 
-**ANA:** Hay un pero grande. La infrautilización de ROSE, la evaluación citológica rápida in situ, en el brazo de biopsia transtorácica limitó el rendimiento de esa técnica.
+**ANA:** O sea, evaluación anatómica y funcional en un solo estudio.
 
-**[14:00]**
+**CARLOS:** Precisamente. Imagina el escenario de un paciente con HPTEC candidato a endarterectomía. Con un solo PCD-CT puedes evaluar la distribución de los trombos, la anatomía arterial pulmonar para planificación quirúrgica, y la perfusión lobar para predecir el beneficio funcional postoperatorio.
 
-**CARLOS:** O sea que no estaban comparando las técnicas en condiciones óptimas.
+**ANA:** Impresionante. ¿Cuándo crees que veremos esto de forma generalizada?
 
-**ANA:** Exactamente. Es como si comparas un coche con el tanque medio vacío. El resultado es relevante, pero hay que interpretarlo con cautela.
+**CARLOS:** Los equipos de conteo de fotones se están instalando progresivamente, pero la curva de adopción va a ser lenta. Diría que en centros terciarios lo veremos de forma rutinaria en dos o tres años, pero la democratización completa tardará más.
 
-**CARLOS:** Mi opinión es que esto refleja más la realidad de la práctica en muchos centros, donde ROSE no está disponible 24/7, que una comparación ideal entre técnicas.
-
-**ANA:** Estoy de acuerdo. Y para los radiólogos intervencionistas que nos escuchan: si queréis defender vuestra técnica, aseguraos de tener ROSE disponible.
-
-**CARLOS:** Cambiando de tema, Node-RADS versión 1.0 para evaluación ganglionar mediastínica. ¿Cómo va?
-
-**ANA:** Bien. Demuestra buena reproducibilidad interobservador, con concordancia similar entre radiólogos expertos y junior. Esto es importante porque los sistemas de clasificación solo funcionan si diferentes lectores llegan a las mismas conclusiones.
-
-**CARLOS:** Como PI-RADS o LI-RADS, pero para ganglios mediastínicos.
-
-**ANA:** Exacto. Y un hallazgo muy interesante de este periodo: el ADN tumoral circulante preoperatorio se asocia con upstaging patológico en cáncer de pulmón estadio clínico I.
+---
 
 **[15:30]**
 
-**CARLOS:** Esto es liquid biopsy identificando enfermedad ganglionar oculta.
+## IMAGEN CARDIACA: IA Y MIOCARDIOPATÍAS
 
-**ANA:** Sí. Pacientes que clínicamente y por imagen parecen estadio I, pero que tienen ctDNA detectable, tienen mayor probabilidad de tener afectación ganglionar real cuando se opera. Esto podría cambiar la planificación quirúrgica en un futuro.
+**ANA:** Carlos, este es tu terreno natural. ¿Qué nos traes de imagen cardiaca este mes?
 
-**CARLOS:** Fascinante. ¿Algo sobre cribado?
+**CARLOS:** Ana, estoy genuinamente entusiasmado con los avances en IA aplicada a miocardiopatías. Hay un estudio multicéntrico que me ha dejado impresionado: detección de amiloidosis cardíaca mediante ecocardiografía con IA, con rendimiento diagnóstico superior al 90%.
 
-**ANA:** Un comentario sobre sostenibilidad de los programas de cribado de cáncer de pulmón. La conclusión es que necesitamos un enfoque multidimensional que integre aspectos ecológicos, sociales y económicos. No basta con demostrar que el cribado funciona; hay que hacerlo sostenible a largo plazo.
+**ANA:** ¿Ecocardiografía? Eso es territorio de los cardiólogos, ¿no?
 
-**CARLOS:** Pasemos a nódulo pulmonar específicamente, que siempre genera mucho interés.
+**CARLOS:** Sí y no. Lo interesante es el paradigma: están usando deep learning para identificar patrones sutiles en ecocardiogramas que sugieren amiloidosis, antes de que el cardiólogo lo sospeche clínicamente. Y la validación incluye más de 5.700 pacientes de múltiples centros internacionales.
 
-**ANA:** El dato más relevante de este mes: la resección sublobar emerge como estrategia preferida para cánceres de pulmón estadio IA que se presentan como nódulos subsólidos menores de 3 cm.
+**ANA:** ¿Y qué implicaciones tiene para nosotros como radiólogos?
 
-**CARLOS:** O sea, no hace falta lobectomía en todos los casos.
+**CARLOS:** Varias. Primero, esto va a aumentar las solicitudes de estudios confirmatorios: gammagrafía con pirofosfato para amiloidosis TTR, o RM cardiaca para caracterización. Segundo, nos invita a reflexionar sobre cómo podemos aplicar paradigmas similares en nuestras modalidades.
 
-**ANA:** No. Los resultados oncológicos son comparables y la morbilidad es menor. Esto es importante porque nos obliga a caracterizar bien si el nódulo es sólido o subsólido; esa distinción tiene ahora implicaciones terapéuticas directas.
+**[17:30]**
 
-**[17:00]**
+**ANA:** Hablando de RM cardiaca, ¿qué hay de nuevo en caracterización tisular?
 
-**CARLOS:** Y algo que me parece preocupante: el seguimiento de nódulos incidentales sigue siendo subóptimo en la práctica real.
+**CARLOS:** El mapeo T1 nativo sigue consolidándose. Este mes hay un artículo muy interesante sobre enfermedad de Fabry, demostrando correlación directa entre valores T1 y la cantidad de depósito de glucoesfingolípidos confirmada por biopsia endomiocárdica.
 
-**ANA:** Lamentablemente, sí. Hay propuestas de marcos prácticos de bajo coste adaptables a diferentes entornos, pero la adherencia a las guías sigue siendo un reto.
+**ANA:** Eso es validación histológica directa, que es el gold standard.
 
-**CARLOS:** Un último apunte de esta sección: el enfisema centrilobular predice progresión de calcificación coronaria a 18 años.
+**CARLOS:** Exacto. Y el mensaje clínico es que el T1 nativo no solo detecta Fabry, sino que puede estratificar la gravedad y potencialmente monitorizar la respuesta al tratamiento de reemplazo enzimático.
 
-**ANA:** Esto me encanta porque refuerza algo que llevamos tiempo diciendo: el TC torácico es una herramienta de evaluación cardiovascular integrada. No miramos solo pulmones.
+**ANA:** ¿Y qué hay del CT-FFR? Eso es algo que mis colegas de otros hospitales preguntan constantemente.
 
-**CARLOS:** O no deberíamos. Muy bien, pasemos a EPOC y vía aérea.
+**CARLOS:** Ahí tenemos una noticia excelente. Los sistemas CT-FFR on-site, que procesan las imágenes localmente sin necesidad de enviar a un servidor externo, están alcanzando rendimiento comparable a las soluciones off-site establecidas.
 
-**ANA:** Aquí el protagonista es el deep learning aplicado a la detección de cambios enfisematosos subclínicos. Lo interesante es que estos algoritmos pueden detectar enfisema incluso en individuos sin diagnóstico establecido de EPOC, correlacionándolo con pérdida de densidad mineral ósea vertebral.
+**ANA:** ¿Qué significa eso en la práctica?
 
-**CARLOS:** Es el concepto de cribado oportunista llevado al extremo. Detectar enfermedad antes de que sea clínicamente evidente.
+**CARLOS:** Democratización. Hasta ahora, obtener un CT-FFR requería enviar las imágenes a un centro de procesamiento externo, con demoras de horas o días y costes significativos. Con soluciones on-site, puedes tener el resultado mientras el paciente aún está en el departamento.
 
-**ANA:** Exacto. Y hay un concepto nuevo que me parece muy potente: la "estabilidad de la enfermedad en EPOC" como objetivo terapéutico validado.
+**ANA:** Eso cambia completamente el flujo de trabajo.
 
-**[19:00]**
+**CARLOS:** Completamente. Y lo hace accesible a hospitales medianos que antes no podían planteárselo por logística o presupuesto.
 
-**CARLOS:** ¿Qué implica eso?
+---
 
-**ANA:** Que los pacientes que alcanzan estabilidad muestran menor declive funcional, menos exacerbaciones y mejor supervivencia. No es solo controlar síntomas, es conseguir estabilidad objetiva.
+**[20:00]**
 
-**CARLOS:** Y esto tiene implicaciones para imagen porque necesitamos herramientas para medir esa estabilidad.
+## NÓDULO PULMONAR: PRECISIÓN DIAGNÓSTICA PREQUIRÚRGICA
 
-**ANA:** Correcto. También hay novedades en el uso de mepolizumab, el anti-IL5, que demuestra eficacia en remodelado bronquial en asma eosinofílica grave y en tos crónica refractaria eosinofílica. Las indicaciones de biológicos se amplían.
+**ANA:** Volvamos al tórax no cardiaco. En nódulo pulmonar tenemos novedades muy relevantes que creo que van a cambiar nuestra forma de trabajar.
 
-**CARLOS:** ¿Algo de cirugía?
+**CARLOS:** Soy todo oídos.
 
-**ANA:** Sí, la cirugía de reducción de volumen pulmonar presenta mortalidad significativamente inferior a lo reportado históricamente. Y lo más interesante: buenos resultados incluso en morfologías de enfisema no convencionales, que antes se consideraban contraindicaciones relativas.
+**ANA:** El primer punto clave es la maduración de la IA cuantitativa para diferenciación histológica de nódulos. Hay un estudio publicado en *Radiology* que usa modelos de deep learning para distinguir entre hiperplasia adenomatosa atípica, adenocarcinoma in situ, adenocarcinoma mínimamente invasivo y adenocarcinoma invasivo.
 
-**CARLOS:** Y para cerrar esta sección, la sensibilización a Aspergillus fumigatus.
+**CARLOS:** Eso es impresionante. ¿Con qué precisión?
 
-**ANA:** Identifica un fenotipo de bronquiectasias de alto riesgo con implicaciones pronósticas y terapéuticas. Estos pacientes necesitan seguimiento más estrecho y posiblemente tratamiento antifúngico profiláctico.
+**ANA:** Precisiones globales por encima del 80% para la clasificación multiclase, y lo más importante: capacidad para identificar nódulos inflamatorios, reduciendo potencialmente el número de resecciones innecesarias.
 
-**[20:30]**
+**CARLOS:** El sobretratamiento es un problema real en el cribado de cáncer de pulmón. Si podemos identificar prequirúrgicamente qué nódulos son benignos con alta confianza, el beneficio es enorme.
 
-**CARLOS:** Muy bien, ahora entramos en mi territorio: TEP e hipertensión pulmonar. Y tenemos novedades importantes.
-
-**ANA:** Cuéntame, porque sé que estás entusiasmado con el tema de los detectores de conteo de fotones.
-
-**CARLOS:** Lo estoy. Pero primero, el estudio más relevante clínicamente: un ensayo multicéntrico randomizado que demuestra que el SPECT de ventilación-perfusión no es inferior al angio-TC pulmonar ni al V/Q planar para diagnóstico de TEP.
-
-**ANA:** ¿Con qué tasa de eventos tromboembólicos en el seguimiento?
-
-**CARLOS:** 0.7% a tres meses en pacientes con estudio negativo no tratados, con un intervalo de confianza muy razonable. Esto es importante porque nos da más opciones, especialmente en pacientes con contraindicación a contraste o en embarazadas.
-
-**ANA:** Ahora sí, cuéntame de los detectores de conteo de fotones.
-
-**CARLOS:** Dos estudios muy buenos. El primero demuestra que el PCD-CT permite reducir significativamente la dosis de contraste manteniendo calidad diagnóstica equivalente al TC convencional con detectores de integración de energía.
+**ANA:** Exacto. Y enlazando con esto, hay datos nuevos sobre resección sublobar que cuestionan la necesidad de lobectomía sistemática en cánceres estadio IA que se presentan como nódulos subsólidos menores de 3 cm.
 
 **[22:00]**
 
-**ANA:** Esto es perfecto para pacientes con enfermedad renal.
+**CARLOS:** Eso va en contra de la doctrina clásica, ¿no? Siempre nos han dicho que la lobectomía es el estándar.
 
-**CARLOS:** Exactamente. El segundo estudio muestra excelente correlación entre PCD-CT y V/Q-SPECT para cuantificación de perfusión lobar en hipertensión pulmonar tromboembólica crónica. La idea es que el PCD-CT podría convertirse en una modalidad única, un "one-stop-shop" que nos dé anatomía y función en un solo estudio.
+**ANA:** Así es, pero los datos son cada vez más sólidos. Los nódulos subsólidos, especialmente los puros ground-glass, tienen un comportamiento biológico más indolente. Y si conseguimos caracterizarlos prequirúrgicamente como MIA o AIS mediante análisis de imagen avanzado, la resección sublobar puede ser oncológicamente equivalente con menor morbilidad.
 
-**ANA:** ¿Y los gemelos digitales?
+**CARLOS:** Me parece que estamos convergiendo hacia una cirugía torácica cada vez más personalizada según el fenotipo radiológico-molecular.
 
-**CARLOS:** Ah, eso es ciencia ficción convertida en realidad. Están desarrollando gemelos digitales basados en imagen que predicen pronóstico en hipertensión arterial pulmonar. Integran datos clínicos e imagen mediante inteligencia artificial para estratificación de riesgo personalizada.
+**ANA:** Exactamente. Y el papel del radiólogo es central en esta personalización: no solo detectamos y caracterizamos, sino que proporcionamos información que guía directamente la estrategia quirúrgica.
 
-**ANA:** Suena a que estamos entrando en medicina de precisión de verdad.
+**CARLOS:** Cambiando ligeramente de tema, ¿qué hay de los sistemas Lung-RADS? He visto que hay críticas sobre su rendimiento.
 
-**CARLOS:** Es exactamente eso. Y un detalle que me parece importante: han validado un nuevo autoinforme para clase funcional, el PH-FC-SR, que permite evaluación desde la perspectiva del paciente, complementando la clasificación WHO-FC tradicional.
+**ANA:** Sí, hay un artículo interesante que compara modelos radiómicos multiescala con la clasificación Lung-RADS 4B para nódulos sólidos. Los modelos radiómicos muestran mejor discriminación entre lesiones benignas y adenocarcinoma.
 
-**[23:30]**
+**CARLOS:** ¿Esto significa que Lung-RADS está obsoleto?
 
-**ANA:** Pasemos a cardiopatía isquémica, que sé que tienes mucho que decir.
+**ANA:** No lo diría así. Lung-RADS sigue siendo extremadamente útil como sistema de estratificación poblacional, fácil de implementar y bien validado. Pero estos estudios sugieren que en categorías de alto riesgo, añadir análisis radiómico puede mejorar la selección de pacientes para procedimientos invasivos.
 
-**CARLOS:** El mensaje principal de este mes es que la inteligencia artificial para CT-FFR está madurando muy rápido. Múltiples estudios validan algoritmos de deep learning, y lo más importante: las soluciones on-site, que se procesan localmente en el hospital, alcanzan rendimiento comparable a las plataformas off-site establecidas como HeartFlow.
+---
 
-**ANA:** Eso significa menores tiempos de espera y menores costes.
+**[24:30]**
 
-**CARLOS:** Exactamente. Y hay otro estudio muy potente sobre cuantificación automatizada de placa aterosclerótica mediante IA. El volumen de placa cuantificado por deep learning predice eventos cardiovasculares mayores y permite identificar pacientes que se benefician de terapia hipolipemiante intensiva.
+## EPOC Y HALLAZGOS INCIDENTALES CON VALOR PRONÓSTICO
 
-**ANA:** Es seleccionar a quién tratar más agresivamente basándose en imagen, no solo en factores de riesgo clásicos.
+**CARLOS:** Ana, antes de cerrar quería comentar algo que conecta el tórax con la imagen cardiaca: los hallazgos incidentales con valor pronóstico en TC torácicos.
 
-**CARLOS:** Precisamente. También hay un estudio comparando TC con detector de conteo de fotones versus EID-CT convencional para detectar estenosis significativas, y el rendimiento es comparable, con potencial ventaja en calidad de imagen.
+**ANA:** Sí, este tema está ganando mucha tracción. Cuéntanos.
 
-**[25:00]**
+**CARLOS:** Hay una revisión especial del *AJR* que sistematiza el concepto de "cribado oportunista" en TC torácico. La idea es que cuando hacemos un TC por cualquier indicación, tenemos acceso a información valiosa que no solemos reportar de forma estructurada.
 
-**ANA:** ¿Alguna otra novedad cardiovascular?
+**ANA:** ¿Qué tipo de información?
 
-**CARLOS:** Dos más. La integración de evaluación anatómica y funcional optimiza la selección de candidatos a revascularización; la extensión del defecto de perfusión miocárdica predice quién realmente se va a beneficiar del intervencionismo. Y el tejido adiposo pericoronario emerge como biomarcador de inflamación vascular modulable por estatinas.
+**CARLOS:** Calcificación coronaria, enfisema, composición corporal, densidad vertebral como marcador de osteoporosis... Todos estos son biomarcadores con valor pronóstico demostrado, y están ahí en las imágenes que ya hemos adquirido.
 
-**ANA:** Pasemos a miocardiopatías, que también tienes preparado.
+**ANA:** Y con la IA podemos automatizar la extracción de estos parámetros.
 
-**CARLOS:** Aquí el avance más impactante es la IA para detectar amiloidosis cardíaca en ecocardiografía, con AUC entre 0.91 y 0.94. Supera los sistemas de puntuación multiparamétricos convencionales.
+**CARLOS:** Exactamente. Hay modelos de deep learning que cuantifican automáticamente el músculo pectoral como marcador de sarcopenia en EPOC, que correlacionan la atenuación vertebral con riesgo de fractura, que segmentan grasa visceral y subcutánea...
 
-**ANA:** Esto podría facilitar el cribado en centros no especializados.
+**[26:00]**
 
-**CARLOS:** Esa es la idea. También hay un estudio muy elegante sobre mapeo T1 nativo en enfermedad de Fabry, que permite estratificar la gravedad de la acumulación de glucoesfingolípidos con correlación histológica confirmada.
+**ANA:** Esto me parece una extensión natural de nuestro trabajo. Si la información está ahí y tiene valor clínico, ¿por qué no reportarla?
 
-**ANA:** ¿Y miocardiopatía hipertrófica?
+**CARLOS:** Ahí está el debate. Algunos argumentan que añade carga de trabajo y genera hallazgos incidentales que requieren seguimiento y causan ansiedad. Otros, como yo, pensamos que estamos desaprovechando información valiosa.
 
-**CARLOS:** Dos cosas: la cicatriz miocárdica en pacientes con disfunción sistólica tiene implicaciones pronósticas significativas, el pa
+**ANA:** Creo que la clave está en la automatización. Si el sistema me da automáticamente el score de calcio, la densidad vertebral y una bandera de alerta cuando hay valores anómalos, yo solo tengo que validar e integrar en el informe.
+
+**CARLOS:** Completamente de acuerdo. Y hablando de EPOC específicamente, hay un hallazgo muy interesante este mes: la interacción pronóstica entre enfisema y anomalías pulmonares intersticiales.
+
+**ANA:** ¿En qué sentido?
+
+**CARLOS:** El estudio demuestra que cuando coexisten enfisema e ILAs, el riesgo de mortalidad se modifica de forma no lineal. No es simplemente aditivo. Esto significa que en el cribado de cáncer de pulmón debemos evaluar
