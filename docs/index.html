@@ -3,35 +3,1554 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radiología Torácica — Actualización Mensual</title>
+    <title>Radiología Torácica — Actualización May 2026</title>
     <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            display: flex; align-items: center; justify-content: center;
-            min-height: 100vh; margin: 0;
-            background: linear-gradient(135deg, #1a2332, #2c3e50);
-            color: white; text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
         }
-        .container { max-width: 500px; padding: 40px; }
-        h1 { font-size: 2rem; margin-bottom: 10px; }
-        p { color: #95a5a6; line-height: 1.6; }
-        .badge {
-            display: inline-block;
-            background: #3498db;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 20px;
+        .layout { display: flex; min-height: 100vh; }
+
+        .sidebar {
+            width: 280px;
+            background: #1a2332;
+            color: #ecf0f1;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 20px 0;
+            z-index: 100;
+        }
+        .sidebar-logo { padding: 0 20px 20px; border-bottom: 1px solid #2c3e50; margin-bottom: 15px; }
+        .sidebar-logo h1 { font-size: 1rem; font-weight: 700; color: #3498db; line-height: 1.3; }
+        .sidebar-logo .subtitle { font-size: 0.75rem; color: #7f8c8d; margin-top: 4px; }
+        .sidebar nav ul { list-style: none; padding: 0 10px; }
+        .sidebar nav ul li a {
+            display: block; padding: 8px 12px; color: #bdc3c7;
+            text-decoration: none; font-size: 0.82rem; border-radius: 6px;
+            transition: all 0.2s; margin-bottom: 2px;
+        }
+        .sidebar nav ul li a:hover { background: #2c3e50; color: #ecf0f1; padding-left: 18px; }
+        .sidebar-footer { padding: 15px 20px; border-top: 1px solid #2c3e50; margin-top: 15px; font-size: 0.7rem; color: #7f8c8d; }
+
+        .main { margin-left: 280px; flex: 1; padding: 0; }
+
+        .page-header {
+            background: linear-gradient(135deg, #1a2332, #2c3e50);
+            color: white; padding: 40px; position: relative; overflow: hidden;
+        }
+        .page-header h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; }
+        .page-header .meta { font-size: 0.85rem; color: #7f8c8d; }
+        .header-stats { display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+        .stat-box { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 20px; text-align: center; }
+        .stat-box .value { font-size: 1.5rem; font-weight: 700; color: #3498db; }
+        .stat-box .label { font-size: 0.7rem; color: #95a5a6; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .content { padding: 30px 40px; max-width: 1100px; }
+
+        .podcast-section {
+            background: linear-gradient(135deg, #1a2332, #2c4a6e);
+            border-radius: 12px; padding: 25px 30px; margin-bottom: 30px; color: white;
+        }
+        .podcast-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .podcast-icon { font-size: 2.5rem; }
+        .podcast-header h2 { font-size: 1.3rem; margin-bottom: 4px; }
+        .podcast-header p { color: #7f8c8d; font-size: 0.85rem; }
+        .podcast-player { width: 100%; margin-bottom: 15px; border-radius: 8px; }
+        .podcast-download { display: flex; gap: 10px; flex-wrap: wrap; }
+        .download-btn {
+            background: #3498db; color: white; padding: 8px 16px;
+            border-radius: 6px; text-decoration: none; font-size: 0.85rem; transition: background 0.2s;
+        }
+        .download-btn:hover { background: #2980b9; }
+        .download-btn.secondary { background: #2c3e50; }
+
+        .topic-card {
+            background: white; border-radius: 12px; margin-bottom: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06); overflow: visible;
+        }
+        .topic-header {
+            padding: 18px 24px; display: flex; justify-content: space-between;
+            align-items: center; cursor: pointer;
+        }
+        .topic-title { display: flex; align-items: center; gap: 12px; }
+        .topic-icon { font-size: 1.5rem; }
+        .topic-header h2 { font-size: 1rem; font-weight: 600; color: #2c3e50; }
+        .adhoc-badge {
+            background: #f39c12; color: white; font-size: 0.65rem;
+            padding: 2px 8px; border-radius: 10px; font-weight: 700; text-transform: uppercase;
+        }
+        .topic-meta { display: flex; align-items: center; gap: 12px; }
+        .article-count { font-size: 0.75rem; color: #7f8c8d; }
+        .toggle-btn {
+            background: #ecf0f1; border: none; padding: 6px 14px; border-radius: 6px;
+            cursor: pointer; font-size: 0.8rem; color: #2c3e50; transition: background 0.2s; white-space: nowrap;
+        }
+        .toggle-btn:hover { background: #d5d8dc; }
+
+        .topic-body {
+            padding: 0 24px;
+            overflow: visible;
+            max-height: none;
+            display: none;
+        }
+        .topic-body.expanded {
+            display: block;
+            padding-top: 0;
+            padding-bottom: 20px;
+        }
+
+        .summary-content { padding: 20px 0; border-top: 1px solid #ecf0f1; }
+        .summary-content h2 { font-size: 1.1rem; color: #2c3e50; margin: 20px 0 10px; padding-bottom: 6px; border-bottom: 2px solid #ecf0f1; }
+        .summary-content h3 { font-size: 0.95rem; color: #34495e; margin: 15px 0 8px; }
+        .summary-content p { margin-bottom: 10px; font-size: 0.9rem; color: #445; }
+        .summary-content ul { padding-left: 20px; margin-bottom: 10px; }
+        .summary-content ul li { font-size: 0.9rem; color: #445; margin-bottom: 4px; }
+        .summary-content a { color: #3498db; text-decoration: none; }
+        .summary-content a:hover { text-decoration: underline; }
+        .summary-content strong { color: #2c3e50; }
+
+        .section-title {
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; color: #95a5a6; margin: 30px 0 15px;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .main { margin-left: 0; }
+            .content { padding: 20px; }
+            .page-header { padding: 25px 20px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div style="font-size:4rem">🫁</div>
-        <h1>Radiología Torácica</h1>
-        <p>Actualización científica mensual automatizada.</p>
-        <p>El primer informe se generará el próximo día 1 del mes, o puedes lanzarlo manualmente desde GitHub Actions.</p>
-        <div class="badge">⚙️ Sistema configurado correctamente</div>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h1>🫁 Radiología Torácica</h1>
+            <div class="subtitle">Actualización Científica Mensual</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#podcast">🎙️ Podcast del Mes</a></li>
+                <li><a href="#infecciones">🦠 Infecciones y procesos inflamatorios torácicos</a></li>
+<li><a href="#epid">🫁 EPID (Enfermedad Pulmonar Intersticial Difusa)</a></li>
+<li><a href="#neoplasia">🔬 Neoplasia Pulmonar</a></li>
+<li><a href="#nodulo">⭕ Nódulo Pulmonar</a></li>
+<li><a href="#epoc_via_aerea">💨 EPOC y Patología de la Vía Aérea</a></li>
+<li><a href="#tep_htp">🩸 TEP e Hipertensión Pulmonar</a></li>
+<li><a href="#cardiopatia_isquemica">❤️ Cardiopatía Isquémica</a></li>
+<li><a href="#miocardiopatias">🫀 Miocardiopatías</a></li>
+<li><a href="#rm_toracica">🧲 RM Torácica (no cardiaca)</a></li>
+<li><a href="#imagen_cardiaca">📡 Avances en Imagen Cardiaca</a></li>
+<li><a href="#ia_radiologia">🤖 IA en Radiología Torácica</a></li>
+
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            Generado: 2026-05-13<br>
+            Powered by PubMed · Semantic Scholar · Claude AI
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="page-header">
+            <h1>Radiología Torácica — May 2026</h1>
+            <div class="meta">Actualización científica mensual automatizada</div>
+            <div class="header-stats">
+                <div class="stat-box">
+                    <div class="value">11</div>
+                    <div class="label">Temas</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">254</div>
+                    <div class="label">Artículos analizados</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">14</div>
+                    <div class="label">Revistas monitorizadas</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            
+        <div class="podcast-section" id="podcast">
+            <div class="podcast-header">
+                <span class="podcast-icon">🎙️</span>
+                <div>
+                    <h2>Podcast del Mes</h2>
+                    <p>Resumen en audio de las novedades — May 2026</p>
+                </div>
+            </div>
+            <div style="font-size:0.85rem; color:#7f8c8d; margin-bottom:8px;">Parte 1</div>
+            <audio controls class="podcast-player">
+                <source src="audio/podcast_2026-05.mp3" type="audio/mpeg">
+                Tu navegador no soporta el reproductor de audio.
+            </audio>
+            <div class="podcast-download">
+                <a href="audio/podcast_2026-05.mp3" download class="download-btn">⬇️ Descargar Parte 1</a>
+                <a href="podcast_script.txt" class="download-btn secondary">📄 Ver guion</a>
+            </div>
+            
+            <div style="margin-top:15px;">
+                <div style="font-size:0.85rem; color:#7f8c8d; margin-bottom:8px;">Parte 2</div>
+                <audio controls class="podcast-player">
+                    <source src="audio/podcast_2026-05_part2.mp3" type="audio/mpeg">
+                </audio>
+                <div style="margin-top:8px;">
+                    <a href="audio/podcast_2026-05_part2.mp3" download class="download-btn">⬇️ Descargar Parte 2</a>
+                </div>
+            </div>
+            
+        </div>
+        
+            <div class="section-title">Resúmenes por Tema</div>
+            
+    <div class="topic-card" id="infecciones">
+        <div class="topic-header" style="border-left: 5px solid #e74c3c; background: linear-gradient(135deg, #e74c3c15, transparent);">
+            <div class="topic-title">
+                <span class="topic-icon">🦠</span>
+                <h2>Infecciones y procesos inflamatorios torácicos</h2>
+                
+            </div>
+            <div class="topic-meta">
+                <span class="article-count">📚 4 artículos analizados</span>
+                <button class="toggle-btn" onclick="toggleCard('infecciones')">▼ Ver resumen</button>
+            </div>
+        </div>
+        <div class="topic-body collapsed" id="body-infecciones">
+            <div class="summary-content">
+                <h1>Infecciones y procesos inflamatorios torácicos — Actualización Mayo 2026</h1>
+<h2>Puntos Clave</h2>
+<ul>
+<li><strong>Los biomarcadores de trampas extracelulares de neutrófilos (NETs) en líquido pleural</strong> se consolidan como predictores de gravedad y mortalidad a un año en infección pleural, validados en cohortes internacionales multicéntricas.</li>
+<li><strong>La terapia enzimática intrapleural (IET)</strong> muestra beneficios incluso con regímenes adaptados, aunque el cumplimiento estricto del protocolo MIST2 se asocia a mejores resultados en el manejo del empiema y derrame paraneumónico complicado.</li>
+<li><strong>Las infecciones fúngicas invasivas codificadas</strong> en receptores de trasplante pulmonar impactan significativamente en mortalidad, costes y utilización de recursos sanitarios, subrayando la importancia del diagnóstico por imagen precoz.</li>
+<li><strong>El volumen de TC torácicos se ha normalizado tras la pandemia</strong>, pero con cambios estructurales persistentes en los patrones de solicitud que afectan la práctica radiológica.</li>
+</ul>
+<hr />
+<h2>Contexto y Tendencias</h2>
+<p>El período post-pandémico ha permitido una evaluación retrospectiva de cómo la COVID-19 modificó la práctica radiológica torácica y, simultáneamente, ha impulsado la investigación en infecciones pleurales y pulmonares con enfoques traslacionales más robustos. La comunidad científica ha evolucionado desde la descripción fenotípica hacia la identificación de biomarcadores pronósticos que pueden estratificar riesgo y guiar decisiones terapéuticas.</p>
+<p>En infección pleural, la investigación actual se centra en comprender los mecanismos fisiopatológicos —particularmente el papel de los neutrófilos y sus productos— como vía hacia una medicina de precisión. La correlación entre hallazgos de imagen (septaciones ecográficas) y biomarcadores moleculares representa un avance hacia la integración de datos radiológicos con información molecular para predicción pronóstica.</p>
+<p>El manejo del empiema continúa siendo un reto clínico donde la evidencia del ensayo MIST2 se traduce ahora en datos del mundo real, revelando brechas entre la práctica ideal y la implementación hospitalaria. Paralelamente, la vulnerabilidad de poblaciones específicas como los trasplantados pulmonares ante infecciones fúngicas invasivas subraya la necesidad de protocolos de imagen de vigilancia optimizados.</p>
+<hr />
+<h2>Novedades Principales</h2>
+<h3>1. NETs pleurales como biomarcador pronóstico en infección pleural</h3>
+<p><strong>European Respiratory Journal | Abril 2026</strong></p>
+<p>Este estudio observacional internacional multicohorts (TORPIDS-3) analizó cinco bases de datos independientes de tres países, utilizando una cohorte piloto británica (n=215) como descubrimiento y cuatro cohortes de validación.</p>
+<p><strong>Hallazgo principal:</strong> Las trampas extracelulares de neutrófilos (NETs) en líquido pleural se asocian significativamente con:<br />
+- Mayor gravedad de la enfermedad<br />
+- Incremento del riesgo de mortalidad a un año<br />
+- Mayor extensión de septaciones en ecografía</p>
+<p><strong>Relevancia clínica para el radiólogo:</strong> La correlación demostrada entre el grado de septaciones ecográficas y los niveles de NETs sugiere que la evaluación ecográfica sistemática no solo tiene valor anatómico-descriptivo, sino también pronóstico. Los radiólogos deben cuantificar y documentar meticulosamente el grado de septaciones, ya que esta información adquiere nuevo valor como marcador subrogado de actividad inflamatoria neutrofílica y pronóstico. Este hallazgo refuerza la ecografía torácica como herramienta de primera línea en la evaluación del derrame pleural infeccioso.</p>
+<hr />
+<h3>2. Variabilidad en la implementación de terapia enzimática intrapleural</h3>
+<p><strong>Chest | Abril 2026</strong></p>
+<p>Estudio retrospectivo de cohorte en un sistema de salud integrado (21 hospitales, 1.730 adultos) evaluando la adherencia al régimen MIST2 completo (dosificación dos veces al día durante 3 días) y su asociación con resultados clínicos.</p>
+<p><strong>Hallazgo principal:</strong> Existe una variabilidad considerable entre hospitales en la administración del régimen MIST2 completo. El cumplimiento estricto del protocolo se asocia con mejores resultados, aunque muchos centros adaptan el esquema por limitaciones logísticas.</p>
+<p><strong>Relevancia clínica para el radiólogo:</strong> Los radiólogos intervencionistas implicados en drenajes pleurales y seguimiento de empiemas deben conocer que la frecuencia de administración de IET impacta en los resultados. La evaluación por imagen del éxito del drenaje (resolución de colecciones, disminución de septaciones en controles ecográficos o TC) debe contextualizarse según el régimen enzimático utilizado. La comunicación con el equipo clínico sobre la respuesta radiológica puede influir en decisiones sobre intensificación o duración del tratamiento.</p>
+<hr />
+<h3>3. Impacto de infecciones fúngicas invasivas en trasplante pulmonar</h3>
+<p><strong>Chest | Abril 2026</strong></p>
+<p>Estudio de cohorte retrospectivo utilizando la base de datos OptumLabs® (2005-2023) en receptores adultos de trasplante pulmonar, evaluando el impacto de diagnósticos codificados de infección fúngica invasiva (IMI).</p>
+<p><strong>Hallazgo principal:</strong> Los diagnósticos codificados de IMI en receptores de trasplante pulmonar se asocian con:<br />
+- Incremento significativo de la utilización de recursos sanitarios<br />
+- Mayores costes de atención<br />
+- Aumento de la mortalidad</p>
+<p><strong>Relevancia clínica para el radiólogo:</strong> Este estudio valida la importancia del diagnóstico por imagen temprano de aspergilosis invasiva y otras micosis en el seguimiento post-trasplante. Los radiólogos deben mantener alto índice de sospecha ante hallazgos sugestivos (signo del halo, nódulos cavitados, consolidaciones con broncograma aéreo atípico) y comunicar urgentemente los hallazgos sospechosos. La detección precoz tiene implicaciones directas en supervivencia y costes, justificando protocolos de TC de vigilancia en esta población.</p>
+<hr />
+<h3>4. Tendencias en TC torácico pre, durante y post-pandemia</h3>
+<p><strong>European Radiology | Abril 2026</strong></p>
+<p>Análisis retrospectivo multicéntrico (10 hospitales públicos) de las tendencias en TC torácico desde 2019 hasta diciembre 2024, abarcando las fases pre-pandémica, pandémica y post-pandémica según definición de la OMS.</p>
+<p><strong>Hallazgo principal:</strong> Se documentan cambios significativos en los patrones de utilización de TC torácico, con un análisis detallado de la exposición a radiación del paciente a lo largo del período estudiado.</p>
+<p><strong>Relevancia clínica para el radiólogo:</strong> Aunque el abstract no detalla conclusiones específicas sobre los patrones post-pandémicos, este estudio proporciona datos de referencia para la planificación de recursos y optimización de protocolos. La normalización de volúmenes tras el pico pandémico debe interpretarse en el contexto de cambios persistentes en indicaciones y protocolos que la pandemia pudo haber consolidado.</p>
+<hr />
+<h2>Implicaciones para la Práctica</h2>
+<h3>Ecografía pleural: más allá de la anatomía</h3>
+<p>La validación de la asociación entre septaciones ecográficas y NETs refuerza que el radiólogo debe realizar evaluaciones ecográficas estructuradas y cuantitativas en infección pleural. Se recomienda:<br />
+- Documentar sistemáticamente el grado de septaciones (leve/moderado/severo)<br />
+- Considerar esta información como marcador pronóstico en informes<br />
+- Sugerir seguimiento ecográfico seriado para evaluar respuesta al tratamiento</p>
+<h3>Seguimiento de drenajes en empiema</h3>
+<p>El conocimiento del régimen de IET administrado contextualiza la interpretación de controles de imagen. Una respuesta subóptima con régimen incompleto no necesariamente indica fracaso terapéutico, sino posible indicación de optimización del tratamiento.</p>
+<h3>Vigilancia en trasplante pulmonar</h3>
+<p>Los protocolos de seguimiento radiológico post-trasplante deben priorizar la detección precoz de signos de infección fúngica invasiva, dado el impacto demostrado en mortalidad y recursos. Se recomienda:<br />
+- TC de baja dosis protocolizado en seguimiento<br />
+- Comunicación urgente de hallazgos sugestivos de IMI<br />
+- Correlación estrecha con galactomanano y otros biomarcadores</p>
+<hr />
+<h2>Artículos de Referencia del Periodo</h2>
+<ol>
+<li>
+<p><strong>Chu JY, Hollins S, Elsheikh A, et al.</strong> Pleural fluid neutrophil extracellular traps are associated with disease severity and risk of one-year mortality in pleural infection. An observational, international, multicohort study (TORPIDS-3). <em>Eur Respir J.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/42025308/</p>
+</li>
+<li>
+<p><strong>Solbes E, Thai KK, Kipnis P, et al.</strong> Use of and Outcomes Related to Intrapleural Enzyme Therapy for Complicated Parapneumonic Effusion and Empyema in an Integrated Health System. <em>Chest.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/41386458/</p>
+</li>
+<li>
+<p><strong>Pennington KM, Heien H, Yadav H, et al.</strong> Impact of Invasive Mold Infection-Coded Diagnoses on Utilization, Costs, and Mortality After Lung Transplantation. <em>Chest.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/42061698/</p>
+</li>
+<li>
+<p><strong>Lima T, Saltybaeva N, Gassenmaier T, et al.</strong> Navigating the CT wave: multicentric chest imaging trends before, during, and after COVID-19 Pandemic. <em>Eur Radiol.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/41062777/</p>
+</li>
+</ol>
+<hr />
+<p><em>Resumen elaborado para actualización profesional en radiología torácica. Mayo 2026.</em></p>
+            </div>
+        </div>
     </div>
+    
+    <div class="topic-card" id="epid">
+        <div class="topic-header" style="border-left: 5px solid #8e44ad; background: linear-gradient(135deg, #8e44ad15, transparent);">
+            <div class="topic-title">
+                <span class="topic-icon">🫁</span>
+                <h2>EPID (Enfermedad Pulmonar Intersticial Difusa)</h2>
+                
+            </div>
+            <div class="topic-meta">
+                <span class="article-count">📚 10 artículos analizados</span>
+                <button class="toggle-btn" onclick="toggleCard('epid')">▼ Ver resumen</button>
+            </div>
+        </div>
+        <div class="topic-body collapsed" id="body-epid">
+            <div class="summary-content">
+                <h1>EPID (Enfermedad Pulmonar Intersticial Difusa) — Actualización Mayo 2026</h1>
+<h2>Puntos Clave</h2>
+<ul>
+<li>
+<p><strong>La RM con tiempo de eco ultracorto (UTE-MRI) demuestra alta precisión diagnóstica</strong> para identificar patrones de neumonía intersticial usual (NIU), consolidándose como alternativa viable al HRCT sin radiación ionizante.</p>
+</li>
+<li>
+<p><strong>La variabilidad entre fabricantes de TC representa un obstáculo significativo</strong> para la cuantificación longitudinal de la fibrosis; se establece un benchmark metodológico esencial para la práctica clínica.</p>
+</li>
+<li>
+<p><strong>La RM funcional con resolución de fase (PREFUL)</strong> permite predecir progresión en EPI asociada a conectivopatías mediante parámetros de ventilación/perfusión, abriendo nuevas vías para el seguimiento no invasivo.</p>
+</li>
+<li>
+<p><strong>La inteligencia artificial alcanza rendimiento comparable a radiólogos expertos</strong> en la detección de anomalías pulmonares intersticiales (ILA) en radiografía simple, con potencial para cribado poblacional.</p>
+</li>
+<li>
+<p><strong>Los fenotipos de hipertensión pulmonar basados en imagen</strong> permiten distinguir mecanismos parenquimatosos vs. vasculares en EPI-conectivopatías, con implicaciones terapéuticas directas.</p>
+</li>
+</ul>
+<hr />
+<h2>Contexto y Tendencias</h2>
+<p>El campo de la enfermedad pulmonar intersticial difusa atraviesa una transformación tecnológica profunda, caracterizada por la convergencia de tres ejes: <strong>técnicas de imagen avanzadas sin radiación</strong>, <strong>cuantificación automatizada mediante inteligencia artificial</strong> y <strong>biomarcadores de imagen funcional</strong>. Este periodo consolida la transición desde el diagnóstico puramente morfológico hacia aproximaciones que integran información funcional, pronóstica y de caracterización tisular.</p>
+<p>La preocupación por la exposición radiológica acumulada en pacientes con EPID, que requieren seguimiento frecuente durante años, impulsa la validación clínica de alternativas como la UTE-MRI. Paralelamente, el reconocimiento de las anomalías pulmonares intersticiales (ILA) como entidad preclínica de relevancia pronóstica —particularmente en poblaciones de cribado de cáncer de pulmón— genera demanda de herramientas de detección eficientes y escalables.</p>
+<p>La heterogeneidad de las EPID asociadas a conectivopatías sigue siendo un desafío clínico mayor. Los avances en fenotipado basado en imagen y en biomarcadores funcionales de RM representan pasos significativos hacia la medicina de precisión en este subgrupo, donde la distinción entre componente parenquimatoso y vascular de la hipertensión pulmonar asociada tiene implicaciones terapéuticas directas.</p>
+<hr />
+<h2>Novedades Principales</h2>
+<h3>1. Validación de UTE-MRI para diagnóstico de patrón NIU</h3>
+<p><strong>Dournes G et al. Eur Radiol 2026 Apr</strong></p>
+<p><strong>Hallazgo principal:</strong> En estudio prospectivo monocéntrico (2017-2020), la RM con tiempo de eco ultracorto demostró alta precisión diagnóstica para identificar los hallazgos distintivos del patrón de neumonía intersticial usual (honeycombing, bronquiectasias de tracción, distribución basal-periférica) comparado con HRCT como referencia.</p>
+<p><strong>Relevancia clínica:</strong> Este trabajo proporciona evidencia sólida para incorporar UTE-MRI en algoritmos diagnósticos de FPI, especialmente en pacientes jóvenes, mujeres en edad fértil o casos que requieren seguimiento frecuente. La eliminación de radiación ionizante sin sacrificar precisión diagnóstica representa un avance significativo para el manejo longitudinal. Limitación: diseño monocéntrico que requiere validación externa.</p>
+<hr />
+<h3>2. Variabilidad inter-fabricante en TC cuantitativa: estableciendo el benchmark</h3>
+<p><strong>Ahn Y et al. AJR Am J Roentgenol 2026 Apr</strong></p>
+<p><strong>Hallazgo principal:</strong> Estudio prospectivo que reclutó pacientes con EPID evaluados el mismo día con escáneres de dos fabricantes diferentes. Se cuantificó la variabilidad en mediciones de extensión de fibrosis, demostrando diferencias sistemáticas que pueden confundir la interpretación de cambios longitudinales.</p>
+<p><strong>Relevancia clínica:</strong> Este trabajo es fundamental para la implementación clínica de TC cuantitativa. Establece que <strong>los pacientes deben monitorizarse idealmente en el mismo equipo</strong> para evaluaciones longitudinales fiables. Define umbrales de cambio que superan el "ruido" atribuible al fabricante, esenciales para distinguir progresión real de variabilidad técnica. El editorial acompañante (Zhu Y, AJR 2026) enfatiza la necesidad de armonización antes de adopción clínica generalizada.</p>
+<hr />
+<h3>3. RM funcional PREFUL para predicción de progresión en EPI-conectivopatías</h3>
+<p><strong>Ouyang T et al. Radiology 2026 Apr</strong></p>
+<p><strong>Hallazgo principal:</strong> Estudio prospectivo (Mayo 2024-Abril 2025) que demuestra que los parámetros de ventilación y perfusión cuantificados mediante RM funcional con resolución de fase (PREFUL) se asocian con EPI-conectivopatías y, crucialmente, predicen progresión de la enfermedad.</p>
+<p><strong>Relevancia clínica:</strong> PREFUL-MRI emerge como herramienta pronóstica no invasiva en EPI-conectivopatías, donde la heterogeneidad temporal y espacial dificulta la predicción de comportamiento. La identificación de pacientes en riesgo de progresión permite intensificar vigilancia y considerar tratamiento precoz. Técnica prometedora aunque pendiente de validación multicéntrica.</p>
+<hr />
+<h3>4. Inteligencia artificial para detección de ILA en radiografía simple</h3>
+<p><strong>Kim H et al. AJR Am J Roentgenol 2026 Apr</strong></p>
+<p><strong>Hallazgo principal:</strong> Estudio retrospectivo multicéntrico (2007-2010, dos instituciones coreanas) comparando rendimiento diagnóstico de radiólogos y modelo de IA para detectar anomalías pulmonares intersticiales en radiografía, usando TC como referencia. La IA alcanzó rendimiento comparable a radiólogos expertos.</p>
+<p><strong>Relevancia clínica:</strong> Las ILA identificadas en TC se asocian con progresión a EPID clínica. La posibilidad de detectarlas en radiografía simple mediante IA abre la puerta al <strong>cribado oportunista a gran escala</strong> en poblaciones de riesgo (artritis reumatoide, esclerodermia) sin necesidad de TC. Potencial para identificación precoz de enfermedad subclínica. Limitación: diseño retrospectivo.</p>
+<hr />
+<h3>5. Fenotipos de hipertensión pulmonar basados en imagen en EPI-conectivopatías</h3>
+<p><strong>Khan SL et al. Chest 2026 Apr</strong></p>
+<p><strong>Hallazgo principal:</strong> Desarrollo y validación de sistema de clasificación basado en TC torácica para distinguir fenotipo parenquimatoso vs. vascular de hipertensión pulmonar en pacientes con EPI-conectivopatías.</p>
+<p><strong>Relevancia clínica:</strong> La distinción entre HP secundaria a destrucción parenquimatosa/hipoxia crónica vs. vasculopatía autoinmune tiene implicaciones terapéuticas directas. El fenotipo vascular puede beneficiarse de tratamiento vasodilatador pulmonar específico. Este sistema de clasificación basado en imagen proporciona herramienta práctica para orientar decisiones terapéuticas sin requerir cateterismo en todos los casos.</p>
+<hr />
+<h3>6. EPID subclínica en artritis reumatoide: guías y lagunas de conocimiento</h3>
+<p><strong>Ormsby AL et al. Chest 2026 Apr</strong></p>
+<p><strong>Hallazgo principal:</strong> Revisión exhaustiva sobre EPID subclínica en artritis reumatoide, contextualizando las guías ACR/CHEST publicadas recientemente. Identifica brechas de conocimiento críticas: riesgo de progresión a EPID clínica, estrategias óptimas de tratamiento tras detección de enfermedad subclínica.</p>
+<p><strong>Relevancia clínica:</strong> Documento de referencia para radiólogos que interpretan TC en pacientes con AR. Subraya la importancia de reportar hallazgos sutiles de EPID y comunicar su significado pronóstico a reumatología. Reconoce que las guías actuales abordan el "qué buscar" pero no resuelven el "qué hacer después", área de investigación prioritaria.</p>
+<hr />
+<h3>7. ILA y calcificación coronaria en cribado de cáncer de pulmón</h3>
+<p><strong>Kim YN et al. Eur Radiol 2026 Apr</strong></p>
+<p><strong>Hallazgo principal:</strong> Estudio retrospectivo de cohorte del programa coreano de cribado de cáncer de pulmón (KNLSCP, 2019-2024). Investigó asociación entre ILA, calcificación coronaria y desenlaces cardiovasculares.</p>
+<p><strong>Relevancia clínica:</strong> Las ILA detectadas incidentalmente en cribado de cáncer pulmonar tienen valor pronóstico más allá del riesgo de EPID. La asociación con enfermedad cardiovascular refuerza la necesidad de <strong>valoración integral del TC de cribado</strong>, reportando tanto hallazgos pulmonares como extrapulmonares. Implicaciones para protocolos de reporte estructurado.</p>
+<hr />
+<h3>8. Neoepítopos de MMP-CRP como biomarcadores pronósticos en FPI bajo tratamiento antifibrótico</h3>
+<p><strong>Seeliger B et al. Chest 2026 Apr</strong></p>
+<p><strong>Hallazgo principal:</strong> Estudio prospectivo bicéntrico (203 pacientes con FPI naive a tratamiento) evaluando trayectorias de neoepítopos (fragmentos proteicos generados por metaloproteinasas de matriz) tras inicio de antifibróticos. Los cambios a corto plazo predicen mortalidad y respuesta terapéutica.</p>
+<p><strong>Relevancia clínica:</strong> Aunque es un biomarcador sérico y no de imagen, tiene implicación directa para radiólogos: la combinación de biomarcadores circulantes con cuantificación de imagen podría mejorar sustancialmente la estratificación pronóstica. Sugiere rol complementario de ambas modalidades en el seguimiento de FPI.</p>
+<hr />
+<h3>9. PET molecular y teragnóstica en patología pulmonar</h3>
+<p><strong>Assadi M et al. Chest 2026 Apr</strong></p>
+<p><strong>Hallazgo principal:</strong> Revisión comprehensiva sobre el papel de PET/TC, PET/RM y PET de cuerpo entero en enfermedades pulmonares oncológicas y no oncológicas, incluyendo EPID. Destaca el potencial de nuevos radiotrazadores más allá de FDG.</p>
+<p><strong>Relevancia clínica:</strong> Aunque el FDG-PET tiene utilidad limitada y específica en EPID (evaluación de actividad inflamatoria, distinción de exacerbación aguda), la revisión anticipa desarrollos en radiotrazadores que podrían cuantificar actividad fibrótica o distinguir fenotipos. Perspectiva a medio plazo más que aplicación clínica inmediata.</p>
+<hr />
+<h2>Implicaciones para la Práctica</h2>
+<h3>Protocolos de imagen</h3>
+<ol>
+<li>
+<p><strong>Considerar UTE-MRI</strong> como alternativa al HRCT en seguimiento de pacientes con FPI establecida, especialmente en contextos con alta carga de exposición radiológica acumulada o contraindicación relativa.</p>
+</li>
+<li>
+<p><strong>Estandarizar el seguimiento en el mismo equipo de TC</strong> cuando se</p>
+</li>
+</ol>
+            </div>
+        </div>
+    </div>
+    
+    <div class="topic-card" id="neoplasia">
+        <div class="topic-header" style="border-left: 5px solid #2980b9; background: linear-gradient(135deg, #2980b915, transparent);">
+            <div class="topic-title">
+                <span class="topic-icon">🔬</span>
+                <h2>Neoplasia Pulmonar</h2>
+                
+            </div>
+            <div class="topic-meta">
+                <span class="article-count">📚 26 artículos analizados</span>
+                <button class="toggle-btn" onclick="toggleCard('neoplasia')">▼ Ver resumen</button>
+            </div>
+        </div>
+        <div class="topic-body collapsed" id="body-neoplasia">
+            <div class="summary-content">
+                <h1>Neoplasia Pulmonar — Actualización Mayo 2026</h1>
+<h2>Puntos Clave</h2>
+<ul>
+<li>
+<p><strong>La inteligencia artificial consolida su rol en la clasificación de nódulos pulmonares</strong>, permitiendo diferenciar con alta precisión entre hiperplasia adenomatosa atípica/adenocarcinoma in situ, adenocarcinoma mínimamente invasivo e invasivo, con implicaciones directas en la planificación quirúrgica.</p>
+</li>
+<li>
+<p><strong>La radiómica peritumoral emerge como predictor relevante de Ki-67 en CPNM</strong>, ofreciendo una herramienta no invasiva para la estratificación pronóstica preoperatoria mediante análisis de la zona 0-12 mm peritumoral en TC.</p>
+</li>
+<li>
+<p><strong>Node-RADS v1.0 demuestra reproducibilidad aceptable pero rendimiento limitado</strong> para la evaluación ganglionar mediastínica en cáncer de pulmón, con sensibilidad subóptima que cuestiona su uso como sustituto del PET-TC.</p>
+</li>
+<li>
+<p><strong>Las estrategias de reclutamiento en programas de cribado determinan significativamente la cobertura poblacional</strong>, con evidencia creciente sobre la importancia de enfoques multicanal y seguimiento estructurado de nódulos incidentales.</p>
+</li>
+<li>
+<p><strong>Nuevos radiotrazadores PET más allá del FDG</strong> (metabolismo aminoacídico, hipoxia, angiogénesis) prometen caracterización tumoral más precisa y aplicaciones teranósticas en patología pulmonar oncológica y no oncológica.</p>
+</li>
+</ul>
+<hr />
+<h2>Contexto y Tendencias</h2>
+<p>El campo de la imagen torácica oncológica atraviesa una transformación acelerada impulsada por dos vectores convergentes: la maduración de herramientas de inteligencia artificial y radiómica, y la expansión de programas de cribado poblacional de cáncer de pulmón. Este periodo refleja un momento de transición donde las tecnologías computacionales comienzan a integrarse en flujos de trabajo clínicos reales, aunque persisten desafíos significativos en validación externa y estandarización.</p>
+<p>La radiómica ha evolucionado desde aproximaciones puramente intratumorales hacia modelos que incorporan el microambiente peritumoral, reconociendo que la interfaz tumor-parénquima contiene información pronóstica relevante. Paralelamente, los sistemas de clasificación estructurada como Node-RADS intentan estandarizar la comunicación entre radiólogos y equipos multidisciplinares, aunque su rendimiento diagnóstico requiere refinamiento.</p>
+<p>En el ámbito del cribado, la sostenibilidad de los programas emerge como preocupación central, con evidencia creciente de que factores sociodemográficos (como el índice de comunidades en dificultades) predicen la adherencia al seguimiento. Esto subraya la necesidad de integrar perspectivas de equidad sanitaria en el diseño de programas de detección precoz.</p>
+<hr />
+<h2>Novedades Principales</h2>
+<h3>Inteligencia Artificial y Caracterización de Nódulos</h3>
+<p><strong>Predictive value of artificial intelligence-based quantitative CT feature analysis for diagnosing the pathological types of pulmonary nodules</strong><br />
+<em>European Radiology, Abril 2026</em></p>
+<p>Estudio con 462 nódulos pulmonares patológicamente confirmados que evalúa un sistema de IA para diferenciar cuatro tipos histológicos: AAH+AIS, MIA, IAC y nódulos inflamatorios. El modelo demostró capacidad discriminativa significativa entre lesiones preinvasivas/mínimamente invasivas y carcinoma invasivo.</p>
+<p><strong>Relevancia clínica</strong>: Herramienta potencialmente útil para estratificar pacientes hacia vigilancia activa versus resección, reduciendo cirugías innecesarias en lesiones indolentes y evitando retrasos en adenocarcinomas invasivos.</p>
+<hr />
+<p><strong>An intelligent fusion model for Ki-67 prediction in non-small cell lung cancer: A cloud-based prediction system integrating radiomics</strong><br />
+<em>European Journal of Radiology, Julio 2026</em></p>
+<p>Estudio multicéntrico (876 pacientes, 4 instituciones) que desarrolla un modelo de fusión radiómica para predecir expresión de Ki-67 en CPNM. Innovación clave: análisis combinado de regiones intratumoral y peritumoral (0-12 mm), con validación externa robusta.</p>
+<p><strong>Relevancia clínica</strong>: Ki-67 es un marcador pronóstico establecido. Su predicción no invasiva permite estratificación preoperatoria sin necesidad de biopsia, particularmente valiosa en pacientes con riesgo quirúrgico elevado o nódulos múltiples.</p>
+<hr />
+<h3>Evaluación Ganglionar y Estadificación</h3>
+<p><strong>Node-RADS v1.0 on chest CT for lung cancer: Reproducibility and diagnostic performance</strong><br />
+<em>European Journal of Radiology, Julio 2026</em></p>
+<p>Evaluación en 46 pacientes con CPNM estadios I-III y 158 ganglios mediastínicos confirmados patológicamente. La concordancia inter-observador fue aceptable, pero el rendimiento diagnóstico mostró limitaciones, especialmente en ganglios de tamaño limítrofe.</p>
+<p><strong>Relevancia clínica</strong>: Node-RADS ofrece un lenguaje estandarizado para comunicación multidisciplinar, pero su sensibilidad actual no sustituye la estadificación con PET-TC. Útil como complemento estructurado, no como herramienta diagnóstica independiente.</p>
+<hr />
+<p><strong>Imaging predictors of pleural response in stage IV non-small cell lung cancer</strong><br />
+<em>JTCVS Open, Abril 2026</em></p>
+<p>Análisis de 24 pacientes con CPNM estadio IV con afectación pleural tratados con terapia sistémica y posterior resección. Los cambios morfológicos y metabólicos en TC y PET-TC predijeron el aclaramiento pleural patológico.</p>
+<p><strong>Relevancia clínica</strong>: En la era de inmunoterapia neoadyuvante, la imagen puede identificar respondedores "excepcionales" candidatos a cirugía citorreductora, un paradigma emergente en enfermedad oligometastásica.</p>
+<hr />
+<h3>Cribado y Seguimiento de Nódulos</h3>
+<p><strong>Strategies for sustainable lung cancer screening: a multi-faceted perspective to long-term surveillance in SOLACE</strong><br />
+<em>Insights into Imaging, Abril 2026</em></p>
+<p>Revisión comprehensiva que aborda las tres dimensiones de sostenibilidad (ecológica, social, económica) en programas de cribado. Destaca la importancia de protocolos de baja dosis, equidad en acceso y modelos de financiación a largo plazo.</p>
+<p><strong>Relevancia clínica</strong>: Marco conceptual esencial para radiólogos involucrados en diseño y evaluación de programas de cribado, especialmente relevante ante la expansión de criterios de elegibilidad.</p>
+<hr />
+<p><strong>Recruitment strategies and outcomes in lung cancer screening programmes: a scoping review</strong><br />
+<em>European Radiology, Abril 2026</em></p>
+<p>Revisión sistemática que identifica estrategias de reclutamiento efectivas: invitación directa desde atención primaria, sistemas de recordatorio multicanal y reducción de barreras de acceso. La cobertura poblacional varía dramáticamente según el método de captación.</p>
+<p><strong>Relevancia clínica</strong>: Los radiólogos deben colaborar con salud pública para optimizar estrategias de reclutamiento. El mejor programa de imagen es irrelevante si la población diana no accede al cribado.</p>
+<hr />
+<p><strong>Process Improvement for Clinical Follow-Up of Incidental Lung Nodules: A Practical Perspective</strong><br />
+<em>Chest, Abril 2026</em></p>
+<p>Guía práctica para implementar sistemas de seguimiento de nódulos incidentales sin infraestructura avanzada. Enfatiza soluciones de bajo coste adaptables a recursos locales, incluyendo flujos de trabajo manuales estructurados.</p>
+<p><strong>Relevancia clínica</strong>: Artículo de lectura obligada para equipos que buscan mejorar el seguimiento de nódulos. La mayoría de pérdidas de seguimiento ocurren por fallos de sistema, no por decisiones clínicas erróneas.</p>
+<hr />
+<p><strong>Patients with high distressed communities index score are at risk for "no-show" to lung cancer screening appointments</strong><br />
+<em>JTCVS Open, Abril 2026</em></p>
+<p>Estudio retrospectivo que demuestra asociación entre índice de comunidades en dificultades (DCI) y ausencia a citas de cribado. Los pacientes de códigos postales con mayor vulnerabilidad socioeconómica tienen significativamente más probabilidad de no acudir.</p>
+<p><strong>Relevancia clínica</strong>: Los programas de cribado deben incorporar intervenciones específicas para poblaciones vulnerables (transporte, horarios flexibles, navegadores de pacientes) para evitar amplificar inequidades sanitarias.</p>
+<hr />
+<h3>Imagen Molecular y Nuevas Técnicas</h3>
+<p><strong>PET Molecular Imaging and Theranostics in Lung Diseases: Making Precision Medicine a Reality</strong><br />
+<em>Chest, Abril 2026</em></p>
+<p>Revisión de estado del arte sobre imagen PET en patología pulmonar. Más allá del FDG, se describen radiotrazadores dirigidos a metabolismo aminoacídico, expresión de receptores, angiogénesis e hipoxia, tanto para diagnóstico como para aplicaciones teranósticas.</p>
+<p><strong>Relevancia clínica</strong>: Anticipa una diversificación del arsenal PET disponible. Los radiólogos torácicos deben familiarizarse con indicaciones y limitaciones de estos nuevos trazadores para integrarlos en algoritmos diagnósticos.</p>
+<hr />
+<p><strong>Malignant pleural mesothelioma classification and survival prediction with CT imaging using ResNet</strong><br />
+<em>European Radiology, Abril 2026</em></p>
+<p>Modelo ResNet-3D-18 entrenado en TC para diferenciar mesotelioma pleural maligno de enfermedad pleural metastásica (principalmente de adenocarcinoma pulmonar) y predecir supervivencia global. Cohorte de 385 sujetos con validación temporal.</p>
+<p><strong>Relevancia clínica</strong>: La distinción entre mesotelioma y carcinomatosis pleural tiene implicaciones terapéuticas y pronósticas radicalmente diferentes. Herramienta de apoyo diagnóstico cuando la biopsia es equívoca o no factible.</p>
+<hr />
+<h3>Ecografía y Lesiones Subpleurales</h3>
+<p><strong>Grayscale ultrasound radiomics for characterizing subpleural pulmonary lesions: a multicenter prospective study</strong><br />
+<em>Insights into Imaging, Abril 2026</em></p>
+<p>Estudio prospectivo multicéntrico (738 pacientes) que desarrolla modelo radiómico basado en ecografía en escala de grises para caracterizar lesiones subpleurales. Incluye análisis de región perilesional con validación externa.</p>
+<p><strong>Relevancia clínica</strong>: Expande el rol de la ecografía más allá del guiado de procedimientos. Potencialmente útil como técnica de triaje sin radiación en lesiones periféricas accesibles ecográficamente.</p>
+<hr />
+<h3>Biomarcadores Circulantes</h3>
+<p><strong>Preoperative circulating tumor DNA detection and occult lymph node metastases in clinical stage I lung cancer: The lung DETECT study</strong><br />
+<em>JTCVS Open, Abril 2026</em></p>
+<p>Estudio prospectivo multicéntrico que investiga si la detección preoperatoria de ctDNA se asocia con upstaging patológico en CPNM estadio clínico I. Enfoque tumor-informado para identificar pacientes con riesgo elevado de afectación ganglionar oculta.</p>
+<p><strong>Relevancia clínica</strong>: Potencial complemento a la estadificación por imagen. Si se valida, podría seleccionar pacientes para estadificación invasiva más agresiva o considerar tratamiento neoadyuvante incluso en estadios aparentemente precoces.</p>
+<hr />
+<h2>Implicaciones para la Práctica</h2>
+<h3>Incorporación de herram</h3>
+            </div>
+        </div>
+    </div>
+    
+    <div class="topic-card" id="nodulo">
+        <div class="topic-header" style="border-left: 5px solid #27ae60; background: linear-gradient(135deg, #27ae6015, transparent);">
+            <div class="topic-title">
+                <span class="topic-icon">⭕</span>
+                <h2>Nódulo Pulmonar</h2>
+                
+            </div>
+            <div class="topic-meta">
+                <span class="article-count">📚 4 artículos analizados</span>
+                <button class="toggle-btn" onclick="toggleCard('nodulo')">▼ Ver resumen</button>
+            </div>
+        </div>
+        <div class="topic-body collapsed" id="body-nodulo">
+            <div class="summary-content">
+                <h2>Nódulo Pulmonar — Actualización Mayo 2026</h2>
+<h3>Puntos Clave</h3>
+<p>• <strong>La IA cuantitativa en TC permite diferenciar cuatro tipos histológicos de nódulos pulmonares</strong> (AAH/AIS, MIA, IAC y nódulos inflamatorios), mejorando la estratificación preclínica y evitando sobretratamiento quirúrgico.</p>
+<p>• <strong>La resección sublobar obtiene resultados oncológicos equivalentes a la lobectomía</strong> en cánceres de pulmón ≤3 cm que se presentan como nódulos subsolidos, con potencial beneficio en preservación de función pulmonar.</p>
+<p>• <strong>El enfisema centrilobular predice la progresión de calcificación coronaria</strong> en seguimientos prolongados, reforzando el papel del radiólogo en la evaluación integral cardiovascular durante el cribado con TC de baja dosis.</p>
+<p>• <strong>La mejora del seguimiento de nódulos incidentales es factible sin alta tecnología</strong>, mediante protocolos locales estructurados y herramientas de bajo coste adaptadas a cada institución.</p>
+<hr />
+<h3>Contexto y Tendencias</h3>
+<p>El manejo del nódulo pulmonar sigue siendo uno de los pilares de la radiología torácica, con un ecosistema en rápida evolución hacia la <strong>medicina de precisión y la optimización de recursos</strong>. Este mes destaca el consolidamiento de dos grandes tendencias: por un lado, la integración de herramientas de <strong>inteligencia artificial</strong> para la caracterización tisular no invasiva, superando el tradicional análisis morfológico; por otro, la extensión del concepto de <strong>"scan once, diagnose many"</strong>, aprovechando cada TC torácico para evaluar comorbilidades como el enfisema y la ateromatosis coronaria.</p>
+<p>En el ámbito terapéutico, la evidencia acumulada sobre nódulos subsolidos consolida un <strong>paradigma de cirugía conservadora</strong>, desafiando la lobectomía como estándar universal en estadios IA. Esta tendencia tiene implicaciones directas para la radiología, que debe proporcionar información morfológica precisa (componente sólido, densidad, márgenes) para guiar la decisión quirúrgica.</p>
+<p>Paralelamente, persisten importantes <strong>brechas en la implementación práctica</strong> del seguimiento de nódulos incidentales. La literatura de este periodo aporta una visión realista y pragmática: el éxito de un programa de seguimiento depende más de la adaptación local y la sistematización de procesos que de soluciones tecnológicas sofisticadas.</p>
+<hr />
+<h3>Novedades Principales</h3>
+<h4>1. Análisis cuantitativo de TC con IA para tipificación histológica de nódulos</h4>
+<p><strong>Eur Radiol | Abril 2026</strong><br />
+<em>Zhang H, Liu K, Ding Y et al.</em></p>
+<p><strong>Hallazgo principal:</strong> En 462 nódulos con confirmación histológica, un sistema de IA basado en análisis cuantitativo de características de TC logró diferenciar cuatro categorías patológicas: AAH+AIS, MIA, IAC y nódulos inflamatorios.</p>
+<p><strong>Relevancia clínica:</strong> Este enfoque permite una <strong>estratificación preoperatoria más precisa</strong>, identificando pacientes candidatos a seguimiento activo (AAH/AIS) frente a aquellos que requieren intervención temprana. Reduce potencialmente la morbilidad asociada a cirugías innecesarias y facilita la toma de decisiones en comités multidisciplinares. El radiólogo debe familiarizarse con estas herramientas para integrarlas en el informe estructurado.</p>
+<hr />
+<h4>2. Marco práctico para el seguimiento de nódulos pulmonares incidentales</h4>
+<p><strong>Chest | Abril 2026</strong><br />
+<em>Baptiste JV</em></p>
+<p><strong>Hallazgo principal:</strong> Revisión experiencial que demuestra que programas exitosos de seguimiento de nódulos incidentales pueden implementarse con <strong>herramientas de bajo coste y adaptaciones locales</strong>, sin requerir infraestructura avanzada de procesamiento de lenguaje natural o IA.</p>
+<p><strong>Relevancia clínica:</strong> Aporta un <strong>framework reproducible</strong> para instituciones con recursos limitados. Enfatiza la importancia de flujos de trabajo estructurados, alertas sistemáticas y comunicación efectiva con atención primaria. El radiólogo tiene un papel central como impulsor de estos sistemas de seguimiento, más allá de la emisión del informe.</p>
+<hr />
+<h4>3. Enfisema centrilobular como predictor de progresión de calcificación coronaria</h4>
+<p><strong>Chest | Abril 2026</strong><br />
+<em>González J, Yip R, Zhang J et al.</em></p>
+<p><strong>Hallazgo principal:</strong> En 256 participantes de alto riesgo con seguimiento ≥15 años del programa ELCAP, la <strong>progresión del enfisema centrilobular se asoció significativamente con la progresión de la calcificación coronaria</strong>, estableciendo una conexión longitudinal pulmón-corazón.</p>
+<p><strong>Relevancia clínica:</strong> Refuerza el concepto de <strong>evaluación integral en TC de cribado</strong>. El radiólogo debe cuantificar sistemáticamente el enfisema y reportar la presencia/grado de calcificación coronaria, facilitando la derivación a cardiología preventiva. Este hallazgo tiene implicaciones para protocolos de cribado cardiovascular oportunista.</p>
+<hr />
+<h4>4. Resección sublobar como estrategia preferente en nódulos subsolidos ≤3 cm</h4>
+<p><strong>JTCVS Open | Abril 2026</strong><br />
+<em>Harrison S, Yip R, Nasar A et al.</em></p>
+<p><strong>Hallazgo principal:</strong> Análisis retrospectivo de bases de datos multicéntricas (ELCAP, I-ELCAP, TREAT) que demuestra <strong>equivalencia oncológica entre resección sublobar y lobectomía</strong> para cánceres de pulmón en estadio clínico IA que se presentan como nódulos subsolidos &lt;3 cm.</p>
+<p><strong>Relevancia clínica:</strong> Respalda la tendencia hacia <strong>cirugía preservadora de parénquima</strong> en tumores de bajo grado histológico típicos de presentación subsolida. El radiólogo debe proporcionar mediciones precisas del componente sólido y la lesión total, ya que estos parámetros son determinantes para la planificación quirúrgica. Se refuerza la importancia de la clasificación Lung-RADS y la estimación del componente invasivo.</p>
+<hr />
+<h3>Implicaciones para la Práctica</h3>
+<ol>
+<li>
+<p><strong>Informes estructurados con datos cuantitativos:</strong> La caracterización por IA requiere que los radiólogos proporcionen mediciones estandarizadas (diámetro total, componente sólido, densidad media, morfología). Debe promoverse el uso de plantillas estructuradas compatibles con algoritmos de decisión clínica.</p>
+</li>
+<li>
+<p><strong>Evaluación cardiovascular sistemática:</strong> Todo TC de cribado pulmonar debe incluir valoración del enfisema (subtipo y extensión) y de la calcificación coronaria, con cuantificación semicuantitativa cuando sea posible. Esto maximiza el valor diagnóstico sin radiación adicional.</p>
+</li>
+<li>
+<p><strong>Comunicación precisa del componente sólido:</strong> En nódulos subsolidos, la medición exacta del componente sólido es ahora un factor crítico para la decisión quirúrgica. Errores de medición pueden resultar en sobretratamiento (lobectomía innecesaria) o infratratamiento.</p>
+</li>
+<li>
+<p><strong>Liderazgo en sistemas de seguimiento:</strong> El radiólogo debe participar activamente en el diseño e implementación de programas de seguimiento de nódulos incidentales, incluso con recursos limitados. La sistematización de alertas y la comunicación proactiva son más efectivas que la tecnología sofisticada por sí sola.</p>
+</li>
+<li>
+<p><strong>Actualización en IA diagnóstica:</strong> Aunque estas herramientas aún no están universalmente disponibles, es fundamental comprender sus fundamentos y limitaciones para su futura integración en el flujo de trabajo y para interpretar críticamente sus resultados.</p>
+</li>
+</ol>
+<hr />
+<h3>Artículos de Referencia del Periodo</h3>
+<ol>
+<li>
+<p>Zhang H, Liu K, Ding Y, et al. <strong>Predictive value of artificial intelligence-based quantitative CT feature analysis for diagnosing the pathological types of pulmonary nodules.</strong> <em>Eur Radiol.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/41076471/</p>
+</li>
+<li>
+<p>Baptiste JV. <strong>Process Improvement for Clinical Follow-Up of Incidental Lung Nodules: A Practical Perspective.</strong> <em>Chest.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/41242423/</p>
+</li>
+<li>
+<p>González J, Yip R, Zhang J, et al. <strong>Linking Lungs and Heart: Centrilobular Emphysema Progression Predicts Coronary Artery Calcification Progression During 18 Years of Follow-Up.</strong> <em>Chest.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/41933610/</p>
+</li>
+<li>
+<p>Harrison S, Yip R, Nasar A, et al. <strong>Sublobar resection is the preferred surgical strategy for clinical stage IA lung cancers presenting as subsolid nodule.</strong> <em>JTCVS Open.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/42079947/</p>
+</li>
+</ol>
+            </div>
+        </div>
+    </div>
+    
+    <div class="topic-card" id="epoc_via_aerea">
+        <div class="topic-header" style="border-left: 5px solid #f39c12; background: linear-gradient(135deg, #f39c1215, transparent);">
+            <div class="topic-title">
+                <span class="topic-icon">💨</span>
+                <h2>EPOC y Patología de la Vía Aérea</h2>
+                
+            </div>
+            <div class="topic-meta">
+                <span class="article-count">📚 9 artículos analizados</span>
+                <button class="toggle-btn" onclick="toggleCard('epoc_via_aerea')">▼ Ver resumen</button>
+            </div>
+        </div>
+        <div class="topic-body collapsed" id="body-epoc_via_aerea">
+            <div class="summary-content">
+                <h1>EPOC y Patología de la Vía Aérea — Actualización Mayo 2026</h1>
+<h2>Puntos Clave</h2>
+<ul>
+<li>
+<p><strong>El enfisema subclínico en TC se asocia con pérdida de densidad mineral ósea</strong> incluso en individuos sin diagnóstico de EPOC, estableciendo un nuevo biomarcador de imagen con implicaciones sistémicas (MESA/SPIROMICS).</p>
+</li>
+<li>
+<p><strong>La cirugía de reducción de volumen pulmonar (LVRS) demuestra baja mortalidad y buenos resultados a 5 años</strong>, expandiendo su indicación más allá del enfisema heterogéneo de lóbulos superiores tradicionalmente recomendado.</p>
+</li>
+<li>
+<p><strong>La estabilidad de la enfermedad en EPOC</strong> se confirma como objetivo terapéutico válido, con diferencias significativas en deterioro funcional, exacerbaciones y mortalidad frente a pacientes inestables.</p>
+</li>
+<li>
+<p><strong>Mepolizumab (anti-IL-5) modifica el remodelado de la vía aérea</strong> en asma eosinofílico grave y reduce la tos refractaria en enfermedad eosinofílica, abriendo nuevas dianas terapéuticas en patología bronquial.</p>
+</li>
+<li>
+<p><strong>La sensibilización a <em>Aspergillus fumigatus</em> identifica un fenotipo de bronquiectasias de alto riesgo</strong>, con implicaciones para estratificación y seguimiento radiológico.</p>
+</li>
+</ul>
+<hr />
+<h2>Contexto y Tendencias</h2>
+<p>El paradigma actual en EPOC y patología de vía aérea evoluciona hacia una <strong>medicina de precisión basada en fenotipos y biomarcadores</strong>, alejándose del enfoque uniforme tradicional. Los avances en imagen cuantitativa por TC, junto con algoritmos de <em>deep learning</em>, permiten detectar cambios subclínicos pulmonares y extrapulmonares que predicen progresión antes de manifestaciones clínicas evidentes.</p>
+<p>En el ámbito terapéutico, los <strong>anticuerpos monoclonales dirigidos contra IL-5</strong> consolidan su papel no solo en control sintomático del asma eosinofílico, sino también en modificación estructural de la vía aérea. Paralelamente, la <strong>cirugía de reducción de volumen pulmonar</strong> experimenta un renacimiento con técnicas mínimamente invasivas y criterios de selección expandidos, cuestionando las restricciones establecidas hace 25 años por el estudio NETT.</p>
+<p>La <strong>heterogeneidad fenotípica</strong> domina la investigación actual: desde la identificación de endofenotipos fúngicos en bronquiectasias hasta la caracterización de distintos mecanismos biológicos en exacerbaciones asmáticas. Para el radiólogo, esto implica evolucionar hacia una interpretación cuantitativa y sistemática que integre hallazgos morfológicos con datos clínicos y de laboratorio.</p>
+<hr />
+<h2>Novedades Principales</h2>
+<h3>1. TC de Enfisema y Pérdida Ósea Vertebral: Hallazgos de MESA</h3>
+<p><strong>Radiology | Abril 2026</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hallazgo principal</strong></td>
+<td>La cuantificación de cambios enfisematosos subclínicos en TC torácico se asocia con pérdida de densidad mineral ósea vertebral, medida mediante análisis de <em>deep learning</em>, en individuos <strong>sin EPOC clínico</strong></td>
+</tr>
+<tr>
+<td><strong>Metodología</strong></td>
+<td>Análisis de TC torácico con protocolo SPIROMICS en cohorte multiétnica MESA (exámenes 5 y 6); cuantificación automatizada de enfisema y BMD vertebral</td>
+</tr>
+<tr>
+<td><strong>Relevancia clínica</strong></td>
+<td>Establece el enfisema subclínico como <strong>marcador de fragilidad sistémica</strong>; justifica la evaluación oportunista de columna vertebral en TC torácico de rutina</td>
+</tr>
+<tr>
+<td><strong>Implicación radiológica</strong></td>
+<td>Incluir sistemáticamente análisis cuantitativo de enfisema y valoración vertebral en informes de TC torácico, independientemente de la indicación clínica</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2. LVRS con Baja Mortalidad en Diferentes Morfologías de Enfisema</h3>
+<p><strong>European Respiratory Journal | Abril 2026</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hallazgo principal</strong></td>
+<td>Mortalidad operatoria baja y resultados favorables a 5 años en LVRS, <strong>incluyendo pacientes con enfisema no heterogéneo y no predominante en lóbulos superiores</strong></td>
+</tr>
+<tr>
+<td><strong>Diseño</strong></td>
+<td>Estudio prospectivo unicéntrico con seguimiento de 5 años; inclusión de morfologías tradicionalmente excluidas por criterios NETT</td>
+</tr>
+<tr>
+<td><strong>Relevancia clínica</strong></td>
+<td>Cuestiona la restricción histórica de LVRS a enfisema heterogéneo apical; expande el pool de candidatos quirúrgicos</td>
+</tr>
+<tr>
+<td><strong>Implicación radiológica</strong></td>
+<td>La caracterización morfológica precisa del enfisema (distribución, heterogeneidad) mantiene relevancia pero ya no es criterio excluyente absoluto; evaluar fisuras como predictor de éxito</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>3. Estabilidad de Enfermedad como Objetivo en EPOC: Cohorte Coreana</h3>
+<p><strong>Chest | Abril 2026</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hallazgo principal</strong></td>
+<td>Los pacientes con EPOC que alcanzan <strong>estabilidad de enfermedad</strong> presentan menor deterioro funcional, menos exacerbaciones y menor mortalidad versus pacientes inestables</td>
+</tr>
+<tr>
+<td><strong>Población</strong></td>
+<td>Cohorte nacional prospectiva KOCOSS (Korea COPD Subgroup Study); pacientes ≥40 años con EPOC confirmado</td>
+</tr>
+<tr>
+<td><strong>Relevancia clínica</strong></td>
+<td>Valida la estabilidad como objetivo terapéutico medible; implica seguimiento longitudinal estructurado</td>
+</tr>
+<tr>
+<td><strong>Implicación radiológica</strong></td>
+<td>Fundamenta la TC seriada para monitorizar progresión estructural; cuantificación de enfisema y atrapamiento aéreo como biomarcadores de estabilidad</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>4. Mepolizumab Modifica Remodelado en Asma Eosinofílico Grave</h3>
+<p><strong>Chest | Abril 2026</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hallazgo principal</strong></td>
+<td>Mepolizumab (anti-IL-5) no solo controla inflamación sino que <strong>modifica el remodelado de vía aérea</strong> objetivado en biopsias bronquiales a 6 y 12 meses</td>
+</tr>
+<tr>
+<td><strong>Metodología</strong></td>
+<td>Estudio prospectivo con 37 pacientes; biopsias bronquiales y BAL basales, a 6 y 12 meses de tratamiento</td>
+</tr>
+<tr>
+<td><strong>Relevancia clínica</strong></td>
+<td>Primera evidencia de modificación estructural con biológicos; implicaciones para prevención de cambios irreversibles</td>
+</tr>
+<tr>
+<td><strong>Implicación radiológica</strong></td>
+<td>Potencial para TC cuantitativo de vía aérea como biomarcador de respuesta terapéutica; monitorizar grosor parietal bronquial y atrapamiento aéreo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>5. Sensibilización a <em>Aspergillus fumigatus</em> en Bronquiectasias de Alto Riesgo</h3>
+<p><strong>Chest | Abril 2026</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hallazgo principal</strong></td>
+<td>La sensibilización a <em>A. fumigatus</em> (alérgenos crudos y recombinantes) identifica un <strong>endofenotipo de bronquiectasias con peor pronóstico</strong></td>
+</tr>
+<tr>
+<td><strong>Diseño</strong></td>
+<td>Evaluación multicéntrica internacional (6 centros); panel expandido de alérgenos fúngicos</td>
+</tr>
+<tr>
+<td><strong>Relevancia clínica</strong></td>
+<td>Permite estratificación de riesgo y potencial personalización terapéutica; implicaciones para seguimiento más estrecho</td>
+</tr>
+<tr>
+<td><strong>Implicación radiológica</strong></td>
+<td>En bronquiectasias con sensibilización fúngica, buscar activamente signos de ABPA (impactación mucoide, bronquiectasias centrales); correlacionar con hallazgos de atelectasia/consolidación</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>6. Mepolizumab en Tos Crónica Refractaria: Ensayo MUCOSA</h3>
+<p><strong>European Respiratory Journal | Abril 2026</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hallazgo principal</strong></td>
+<td>Mepolizumab reduce significativamente la tos refractaria en pacientes con enfermedad eosinofílica de vía aérea resistente a corticoides</td>
+</tr>
+<tr>
+<td><strong>Diseño</strong></td>
+<td>Ensayo aleatorizado, doble ciego, controlado con placebo (n=30)</td>
+</tr>
+<tr>
+<td><strong>Relevancia clínica</strong></td>
+<td>Nueva indicación potencial para anti-IL-5; mecanismo propuesto: eosinófilos co-localizados con nervios sensoriales aumentan sensibilidad neuronal</td>
+</tr>
+<tr>
+<td><strong>Implicación radiológica</strong></td>
+<td>Relevancia menor directa; útil conocer para correlación clínico-radiológica en pacientes con tos persistente y hallazgos inespecíficos en imagen</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>7. Pirfenidona en Síndrome de Bronquiolitis Obliterante Post-Trasplante</h3>
+<p><strong>European Respiratory Journal | Abril 2026</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hallazgo principal</strong></td>
+<td>Ensayo fase II multicéntrico europeo de pirfenidona (antifibrótico) para BOS progresivo post-trasplante pulmonar bilateral</td>
+</tr>
+<tr>
+<td><strong>Diseño</strong></td>
+<td>Aleatorizado, doble ciego, controlado con placebo; 9 centros europeos de trasplante</td>
+</tr>
+<tr>
+<td><strong>Relevancia clínica</strong></td>
+<td>Aborda una necesidad no cubierta crítica: CLAD/BOS causa principal de fracaso tardío del injerto</td>
+</tr>
+<tr>
+<td><strong>Implicación radiológica</strong></td>
+<td>Monitorización por TC de atrapamiento aéreo en espiración y signos de bronquiolitis obliterante; cuantificación de volumen pulmonar para seguimiento de respuesta</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>8. Medicina de Precisión en Ataques de Asma</h3>
+<p><strong>Chest | Abril 2026</strong> <em>(Revisión de opinión experta)</em></p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Concepto principal</strong></td>
+<td>Crítica al enfoque uniforme de corticoides orales para exacerbaciones asmáticas; propuesta de <strong>estratificación por mecanismo biológico</strong></td>
+</tr>
+<tr>
+<td><strong>Argumento central</strong></td>
+<td>El tratamiento estándar con OCS ignora heterogeneidad de ataques y genera toxicidad acumulativa significativa</td>
+</tr>
+<tr>
+<td><strong>Relevancia clínica</strong></td>
+<td>Impulsa desarrollo de biomarcadores para personalizar tratamiento de exacerbaciones</td>
+</tr>
+<tr>
+<td><strong>Implicación radiológica</strong></td>
+<td>Potencial rol de TC en caracterización de exacerbaciones (edema, moco, inflamación vs. broncoconstricción predominante)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Implicaciones para la Práctica Radiológica</h2>
+<h3>Cuantificación Sistemática</h3>
+<p>Los hallazgos del estudio MESA refuerzan la necesidad de <strong>incorporar análisis cuantitativo automatizado</strong> en TC torácico de rutina:<br />
+- Porcentaje de enfisema (LAA-950)<br />
+- Índice de atrapamiento aéreo (E/I MLD)<br />
+- Densidad mineral ósea vertebral oportunista</p>
+<h3>Caracterización Morfológica del Enfisema</h3>
+<p>Aunque la LVRS expande criterios, la <strong>descripción precisa de distribución y heterogeneidad</strong> sigue siendo fundamental:<br />
+- Documentar: predominio lobar, homogeneidad, integridad fisural<br />
+-</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="topic-card" id="tep_htp">
+        <div class="topic-header" style="border-left: 5px solid #c0392b; background: linear-gradient(135deg, #c0392b15, transparent);">
+            <div class="topic-title">
+                <span class="topic-icon">🩸</span>
+                <h2>TEP e Hipertensión Pulmonar</h2>
+                
+            </div>
+            <div class="topic-meta">
+                <span class="article-count">📚 17 artículos analizados</span>
+                <button class="toggle-btn" onclick="toggleCard('tep_htp')">▼ Ver resumen</button>
+            </div>
+        </div>
+        <div class="topic-body collapsed" id="body-tep_htp">
+            <div class="summary-content">
+                <h1>TEP e Hipertensión Pulmonar — Actualización Mayo 2026</h1>
+<h2>Puntos Clave</h2>
+<ul>
+<li><strong>SPECT V/Q demuestra no inferioridad frente a CTPA</strong> en el diagnóstico de TEP, con potencial para reducir exposición a radiación y contraste yodado en poblaciones seleccionadas</li>
+<li><strong>El CT con detectores de conteo de fotones (PCD-CT) permite reducir significativamente la dosis de contraste</strong> manteniendo calidad diagnóstica comparable al CT convencional en CTPA</li>
+<li><strong>Los fenotipos de imagen en hipertensión pulmonar asociada a enfermedad intersticial</strong> permiten diferenciar mecanismos patogénicos (parenquimatoso vs. vascular) con implicaciones terapéuticas directas</li>
+<li><strong>Las métricas de arteria pulmonar derivadas de TC muestran diferencias pronósticas específicas por sexo</strong> en pacientes sometidos a TAVI</li>
+<li><strong>El índice de pulsatilidad radiográfica (XPI)</strong> emerge como técnica prometedora para evaluar perfusión pulmonar sin contraste en CTEPH</li>
+</ul>
+<hr />
+<h2>Contexto y Tendencias</h2>
+<p>El campo del diagnóstico por imagen en tromboembolismo pulmonar e hipertensión pulmonar atraviesa una fase de consolidación tecnológica y refinamiento diagnóstico. La CTPA continúa siendo el estándar de referencia para TEP agudo, pero emergen alternativas que buscan reducir la carga de radiación y contraste, especialmente relevantes en pacientes con enfermedad renal crónica, embarazadas o aquellos que requieren estudios repetidos. El CT con detectores de conteo de fotones representa la evolución técnica más significativa, permitiendo mantener calidad diagnóstica con protocolos de contraste sustancialmente reducidos.</p>
+<p>En hipertensión pulmonar, la tendencia dominante es hacia la <strong>fenotipificación mediante imagen</strong>, superando el paradigma diagnóstico binario (presente/ausente) para caracterizar mecanismos fisiopatológicos específicos que orientan decisiones terapéuticas. La cuantificación del remodelado vascular mediante TC, particularmente el fenómeno de "pruning" vascular, gana tracción como biomarcador no invasivo de severidad y progresión. Paralelamente, los modelos computacionales ("digital twins") comienzan a demostrar valor pronóstico, anticipando una era de medicina de precisión basada en simulación hemodinámica individualizada.</p>
+<p>El embolismo pulmonar no trombótico (NTPE) recibe atención renovada, subrayando la necesidad de que los radiólogos mantengan un índice de sospecha elevado y reconozcan patrones de imagen específicos que eviten diagnósticos erróneos de TEP convencional, con implicaciones terapéuticas radicalmente diferentes.</p>
+<hr />
+<h2>Novedades Principales</h2>
+<h3>1. Comparación de estrategias diagnósticas para TEP: SPECT V/Q vs. CTPA</h3>
+<p><strong>European Respiratory Journal</strong> | Le Pennec R et al.</p>
+<p><strong>Hallazgo principal:</strong> Ensayo multicéntrico aleatorizado de no inferioridad que demuestra que la estrategia diagnóstica basada en SPECT V/Q no es inferior a CTPA ni a gammagrafía planar V/Q, con un riesgo de enfermedad tromboembólica venosa a 3 meses en pacientes no tratados comparable entre las tres modalidades.</p>
+<p><strong>Relevancia clínica:</strong> Proporciona evidencia de alto nivel para respaldar el uso de SPECT V/Q como alternativa válida a CTPA, particularmente útil en pacientes con contraindicación a contraste yodado, insuficiencia renal o alergia. Puede modificar algoritmos diagnósticos institucionales.</p>
+<p>[URL: https://pubmed.ncbi.nlm.nih.gov/41927066/]</p>
+<hr />
+<h3>2. Reducción de contraste en CTPA con TC de conteo de fotones</h3>
+<p><strong>European Radiology</strong> | Stammen L et al.</p>
+<p><strong>Hallazgo principal:</strong> El PCD-CT permite obtener calidad de imagen diagnóstica equivalente al CT convencional (EID-CT) con protocolos de contraste significativamente reducidos, utilizando protocolos individualizados según peso corporal y kilovoltaje.</p>
+<p><strong>Relevancia clínica:</strong> Hallazgo transformador para la práctica diaria. Permite optimizar la relación riesgo-beneficio en CTPA, especialmente relevante en pacientes jóvenes, con función renal límite o que requieren estudios repetidos. Los protocolos individualizados por peso deben considerarse estándar de práctica.</p>
+<p>[URL: https://pubmed.ncbi.nlm.nih.gov/41105234/]</p>
+<hr />
+<h3>3. Fenotipos de imagen en HTP asociada a enfermedad del tejido conectivo</h3>
+<p><strong>Chest</strong> | Khan SL et al.</p>
+<p><strong>Hallazgo principal:</strong> El análisis sistemático de TC torácica permite clasificar a pacientes con enfermedad pulmonar intersticial asociada a conectivopatías (CTD-ILD) e hipertensión pulmonar en fenotipos "parenquimatoso" vs. "vascular", basándose en la extensión de fibrosis y patrones de afectación vascular.</p>
+<p><strong>Relevancia clínica:</strong> Implicaciones terapéuticas directas: el fenotipo vascular puede beneficiarse de terapias específicas para HAP, mientras que el fenotipo parenquimatoso requiere optimización del tratamiento de la enfermedad intersticial subyacente. El radiólogo debe reportar elementos que permitan esta clasificación.</p>
+<p>[URL: https://pubmed.ncbi.nlm.nih.gov/41962897/]</p>
+<hr />
+<h3>4. PCD-CT vs. SPECT V/Q en cuantificación de perfusión lobar en CTEPH</h3>
+<p><strong>European Radiology</strong> | Moeskes MMV et al.</p>
+<p><strong>Hallazgo principal:</strong> El TC de conteo de fotones demuestra correlación robusta con SPECT V/Q para cuantificación de perfusión lobar en CTEPH, con la ventaja adicional de proporcionar detalle anatómico de alta resolución de vasculatura y parénquima en un único estudio.</p>
+<p><strong>Relevancia clínica:</strong> Posiciona al PCD-CT como modalidad "todo en uno" para evaluación de CTEPH, potencialmente simplificando algoritmos diagnósticos que actualmente requieren múltiples modalidades. Especialmente útil para planificación de endarterectomía pulmonar o angioplastia con balón.</p>
+<p>[URL: https://pubmed.ncbi.nlm.nih.gov/42029914/]</p>
+<hr />
+<h3>5. Las múltiples caras del embolismo pulmonar no trombótico</h3>
+<p><strong>Radiographics</strong> | Ramachandran A et al.</p>
+<p><strong>Hallazgo principal:</strong> Revisión exhaustiva de los diversos tipos de NTPE (séptico, tumoral, graso, aéreo, por cuerpos extraños), describiendo patrones de imagen específicos y claves diagnósticas que permiten diferenciarlo del TEP convencional.</p>
+<p><strong>Relevancia clínica:</strong> Artículo educativo esencial. El reconocimiento de NTPE evita anticoagulación inapropiada y permite dirigir el manejo hacia la causa subyacente. Los émbolos sépticos (vegetaciones, catéteres infectados), tumorales y grasos tienen presentaciones radiológicas características que el radiólogo debe conocer.</p>
+<p>[URL: https://pubmed.ncbi.nlm.nih.gov/41818130/]</p>
+<hr />
+<h3>6. Cuantificación del remodelado vascular en enfermedad falciforme</h3>
+<p><strong>European Radiology</strong> | Leys M et al.</p>
+<p><strong>Hallazgo principal:</strong> La cuantificación por TC del "pruning" vascular pulmonar (rarefacción de vasos de pequeño calibre) se asocia con parámetros clínicos, funcionales respiratorios y de imagen en pacientes con enfermedad falciforme, proporcionando un biomarcador no invasivo de complicaciones vasculares pulmonares.</p>
+<p><strong>Relevancia clínica:</strong> Introduce una métrica cuantitativa reproducible aplicable a poblaciones con alto riesgo de hipertensión pulmonar. La técnica de análisis vascular automatizado puede extrapolarse a otras etiologías de HTP.</p>
+<p>[URL: https://pubmed.ncbi.nlm.nih.gov/42026332/]</p>
+<hr />
+<h3>7. Índice de pulsatilidad radiográfica para perfusión pulmonar sin contraste</h3>
+<p><strong>Journal of Thoracic Imaging</strong> | Smith M et al.</p>
+<p><strong>Hallazgo principal:</strong> El índice de pulsatilidad por rayos X (XPI), derivado de análisis espectral de secuencias fluoroscópicas sin contraste, muestra correlación con anormalidades de perfusión en angiografía pulmonar en pacientes con sospecha de CTEPH.</p>
+<p><strong>Relevancia clínica:</strong> Técnica innovadora que permite evaluación funcional de perfusión pulmonar sin contraste ni radiofármacos. Aunque preliminar (n=13), representa una línea de investigación prometedora para screening y seguimiento en CTEPH.</p>
+<p>[URL: https://pubmed.ncbi.nlm.nih.gov/41958215/]</p>
+<hr />
+<h3>8. Métricas de arteria pulmonar y pronóstico específico por sexo post-TAVI</h3>
+<p><strong>Insights into Imaging</strong> | Boxhammer E et al.</p>
+<p><strong>Hallazgo principal:</strong> Las dimensiones y ratios de la arteria pulmonar principal derivados de TC muestran diferente precisión diagnóstica para HTP y diferente valor pronóstico según el sexo en pacientes sometidos a TAVI, con umbrales óptimos específicos para hombres y mujeres.</p>
+<p><strong>Relevancia clínica:</strong> Subraya la necesidad de considerar diferencias biológicas por sexo al interpretar métricas vasculares pulmonares. Los valores de corte tradicionales pueden subestimar HTP en mujeres o sobreestimarla en hombres.</p>
+<p>[URL: https://pubmed.ncbi.nlm.nih.gov/41944975/]</p>
+<hr />
+<h3>9. Digital Twin para pronóstico en hipertensión arterial pulmonar</h3>
+<p><strong>JACC Cardiovascular Imaging</strong> | Leng S et al.</p>
+<p><strong>Hallazgo principal:</strong> Los modelos de "gemelo digital" basados en datos de imagen cardiovascular predicen pronóstico en hipertensión arterial pulmonar, integrando parámetros anatómicos y funcionales en simulaciones hemodinámicas personalizadas.</p>
+<p><strong>Relevancia clínica:</strong> Representa la vanguardia de la medicina de precisión en HTP. Aunque actualmente limitado a investigación, anticipa un paradigma donde la imagen no solo diagnostica sino que alimenta modelos predictivos individualizados.</p>
+<p>[URL: https://pubmed.ncbi.nlm.nih.gov/41389055/]</p>
+<hr />
+<h3>10. Tasa de repetición de CTPA en práctica clínica real</h3>
+<p><strong>European Radiology</strong> | Nijssen EC et al.</p>
+<p><strong>Hallazgo principal:</strong> Estudio observacional de 5 años que evalúa la tasa de repetición de CTPA con protocolos individualizados en entorno clínico 24/7, identificando causas y factores asociados a estudios subóptimos que requieren repetición.</p>
+<p><strong>Relevancia clínica:</strong> Datos valiosos para benchmarking institucional y mejora de calidad. Los protocolos individualizados reducen la necesidad de repetición, con beneficios en exposición a radiación, contraste y costes.</p>
+<p>[URL: https://pubmed.ncbi.nlm.nih.gov/41109867/]</p>
+<hr />
+<h2>Implicaciones para la Práctica</h2>
+<h3>Protocolos de adquisición</h3>
+<ol>
+<li><strong>Individualización obligatoria:</strong> Los protocolos de CTPA deben adaptarse</li>
+</ol>
+            </div>
+        </div>
+    </div>
+    
+    <div class="topic-card" id="cardiopatia_isquemica">
+        <div class="topic-header" style="border-left: 5px solid #e67e22; background: linear-gradient(135deg, #e67e2215, transparent);">
+            <div class="topic-title">
+                <span class="topic-icon">❤️</span>
+                <h2>Cardiopatía Isquémica</h2>
+                
+            </div>
+            <div class="topic-meta">
+                <span class="article-count">📚 14 artículos analizados</span>
+                <button class="toggle-btn" onclick="toggleCard('cardiopatia_isquemica')">▼ Ver resumen</button>
+            </div>
+        </div>
+        <div class="topic-body collapsed" id="body-cardiopatia_isquemica">
+            <div class="summary-content">
+                <h1>Cardiopatía Isquémica — Actualización Mayo 2026</h1>
+<h2>Puntos Clave</h2>
+<ul>
+<li>
+<p><strong>El CT-FFR basado en deep learning alcanza rendimiento diagnóstico equiparable a soluciones off-site</strong>, permitiendo análisis on-site con reducción de costes y tiempos de espera, manteniendo excelente correlación con FFR invasiva.</p>
+</li>
+<li>
+<p><strong>La cuantificación automatizada de placa coronaria mediante inteligencia artificial demuestra valor pronóstico robusto</strong> en cohortes multicéntricas, identificando pacientes que se benefician de terapia hipolipemiante intensiva.</p>
+</li>
+<li>
+<p><strong>El CT con detectores de conteo de fotones (PCD-CT) supera al CT convencional</strong> en la detección de enfermedad coronaria obstructiva, mejorando especialmente la precisión por segmento.</p>
+</li>
+<li>
+<p><strong>La reserva de flujo miocárdico (MFR) por PET con 13N-amonio consolida su valor pronóstico</strong> como predictor independiente de mortalidad en evaluación multicéntrica.</p>
+</li>
+<li>
+<p><strong>El denoising por deep learning permite reducción significativa de dosis</strong> en angio-TC coronaria sin comprometer la calidad diagnóstica, particularmente relevante en pacientes obesos.</p>
+</li>
+</ul>
+<hr />
+<h2>Contexto y Tendencias</h2>
+<p>El periodo analizado evidencia la consolidación definitiva de la inteligencia artificial como herramienta integrada en el flujo de trabajo de imagen cardiaca, superando la fase experimental para convertirse en componente esencial de la evaluación no invasiva de la cardiopatía isquémica. La tendencia dominante es el desplazamiento desde soluciones centralizadas externas hacia algoritmos on-site que permiten resultados inmediatos, democratizando el acceso a métricas funcionales derivadas del TC.</p>
+<p>La cuantificación de placa mediante IA emerge como el siguiente estándar de atención, trascendiendo la evaluación visual-cualitativa tradicional. Los estudios del periodo demuestran consistentemente que el volumen de placa cuantificado automáticamente predice eventos cardiovasculares y, crucialmente, identifica subpoblaciones que obtienen beneficio diferencial de intervenciones farmacológicas, aproximándose a la medicina de precisión en cardiología preventiva.</p>
+<p>La tecnología de detectores evoluciona en paralelo: el CT con conteo de fotones comienza a demostrar ventajas clínicas tangibles sobre sistemas convencionales, mientras que las técnicas de post-procesamiento basadas en redes neuronales convolucionales permiten protocolos de dosis ultra-baja sin sacrificio diagnóstico. Estos avances convergen hacia una evaluación coronaria no invasiva cada vez más precisa, funcional y con menor carga de radiación.</p>
+<hr />
+<h2>Novedades Principales</h2>
+<h3>1. CT con Detectores de Conteo de Fotones vs. Convencional</h3>
+<p><strong>Eur Radiol</strong> | Boussoussou M et al.</p>
+<p>Estudio prospectivo comparando PCD-CT frente a EID-CT convencional usando angiografía invasiva como referencia. El PCD-CT demostró rendimiento diagnóstico superior para detección de estenosis ≥50% y ≥70%, particularmente a nivel segmentario donde la diferencia fue más pronunciada.</p>
+<p><strong>Relevancia clínica:</strong> Justifica la inversión en tecnología PCD-CT para centros de alto volumen coronario; la mejora en resolución espacial y caracterización de contraste se traduce en menor número de estudios no diagnósticos y mejor estratificación de lesiones intermedias.</p>
+<hr />
+<h3>2. CT-FFR On-Site mediante Deep Learning: Comparación con HeartFlow y FFR Invasiva</h3>
+<p><strong>JACC Cardiovasc Imaging</strong> | Fazzari F et al.</p>
+<p>Estudio prospectivo unicéntrico (n=250) evaluando algoritmo on-site (xFFR, GE HealthCare) basado en deep learning y dinámica de fluidos contra FFRct off-site (HeartFlow) y FFR invasiva. Los resultados demuestran rendimiento diagnóstico comparable entre ambas soluciones de CT-FFR, con la ventaja operativa del procesamiento inmediato.</p>
+<p><strong>Relevancia clínica:</strong> El análisis on-site elimina retrasos de 24-48 horas asociados a plataformas externas, permite integración en flujo clínico urgente y reduce costes por estudio. Representa el cambio de paradigma hacia autosuficiencia diagnóstica departamental.</p>
+<hr />
+<h3>3. CT-FFR: Rendimiento Diagnóstico en Estenosis Significativa</h3>
+<p><strong>Radiología</strong> | Bastarrika G et al.</p>
+<p>Evaluación retrospectiva del software DEEPVESSEL-FFR en 73 pacientes con CAD-RADS 3-4, utilizando angiografía convencional como referencia. Confirmó utilidad diagnóstica del umbral FFRCT &lt;0.80 para identificar estenosis hemodinámicamente significativas.</p>
+<p><strong>Relevancia clínica:</strong> Valida implementación de CT-FFR en entorno hispanohablante con software comercialmente disponible, proporcionando datos locales de rendimiento para justificación clínica y administrativa.</p>
+<hr />
+<h3>4. Influencia del Grosor de Corte en Precisión del CT-FFR</h3>
+<p><strong>Eur J Radiol</strong> | Moshage M et al.</p>
+<p>Análisis de 50 pacientes evaluando cómo los parámetros de reconstrucción (específicamente grosor de corte) influyen en la precisión del CT-FFR comparado con FFR invasiva.</p>
+<p><strong>Relevancia clínica:</strong> Proporciona recomendaciones técnicas específicas para optimizar protocolos de adquisición cuando se planea análisis funcional derivado, evitando repeticiones por calidad subóptima.</p>
+<hr />
+<h3>5. Cuantificación Automatizada de Placa: Modelo PlaqueSegNet</h3>
+<p><strong>Radiology</strong> | Chen Q et al.</p>
+<p>Desarrollo y validación multicéntrica (17 hospitales chinos, 2009-2024) de modelo deep learning completamente automatizado (PlaqueSegNet) para cuantificación de volumen de placa. Demostró valor pronóstico independiente tras ajuste multivariable.</p>
+<p><strong>Relevancia clínica:</strong> Primer modelo de cuantificación de placa con validación multicéntrica extensa y demostración de valor pronóstico. Transforma la angio-TC coronaria de prueba anatómica binaria a herramienta de estratificación de riesgo continua.</p>
+<hr />
+<h3>6. Carga de Placa por TC Cuantitativo e Identificación de Beneficio de Hipolipemiantes</h3>
+<p><strong>Circ Cardiovasc Imaging</strong> | Maaniitty T et al.</p>
+<p>Estudio de cohorte utilizando cuantificación de volumen de ateroma (PAV) guiada por IA. Demostró que pacientes con mayor PAV obtienen beneficio diferencial de medicación hipolipemiante, identificando subgrupo que se beneficia especialmente del tratamiento intensivo.</p>
+<p><strong>Relevancia clínica:</strong> Paradigma de medicina personalizada: la cuantificación de placa por TC puede guiar intensidad de tratamiento farmacológico, identificando pacientes que justifican escalada terapéutica versus aquellos con beneficio marginal.</p>
+<hr />
+<h3>7. Denoising por Deep Learning en Angio-TC de Baja Dosis</h3>
+<p><strong>Eur J Radiol</strong> | Osoria-Velasquez J et al.</p>
+<p>Evaluación de denoising post-hoc basado en red neuronal convolucional en protocolo de baja radiación con protocolo fast-pitch en scanner dual-source de tercera generación. Mejoró significativamente SNR y CNR sin degradar la evaluabilidad diagnóstica, particularmente en cohorte predominantemente obesa.</p>
+<p><strong>Relevancia clínica:</strong> Permite extensión de protocolos de dosis reducida a población tradicionalmente problemática (obesidad), manteniendo calidad diagnóstica mediante post-procesamiento inteligente.</p>
+<hr />
+<h3>8. Reserva de Flujo Miocárdico por PET 13N-Amonio: Validación Pronóstica Multicéntrica</h3>
+<p><strong>Circ Cardiovasc Imaging</strong> | Ramirez G et al.</p>
+<p>Análisis del registro REFINE PET (5 centros) confirmando que MFR medida por PET con 13N-amonio es predictor independiente de mortalidad en pacientes con enfermedad coronaria conocida o sospechada.</p>
+<p><strong>Relevancia clínica:</strong> Consolida MFR como biomarcador pronóstico robusto, reforzando el valor de la cuantificación de flujo miocárdico más allá de la detección de isquemia cualitativa.</p>
+<hr />
+<h3>9. Efectos de Estatinas sobre Tejido Adiposo Pericoronario en VIH: REPRIEVE Trial</h3>
+<p><strong>JACC Cardiovasc Imaging</strong> | Foldyna B et al.</p>
+<p>Subestudio mecanístico del ensayo REPRIEVE evaluando cambios en densidad de tejido adiposo pericoronario (PCAT) y su relación con progresión de placa en personas con VIH.</p>
+<p><strong>Relevancia clínica:</strong> Expande la utilidad del análisis de PCAT como biomarcador de inflamación pericoronaria y objetivo terapéutico monitorizable en población de alto riesgo cardiovascular.</p>
+<hr />
+<h3>10. Evolocumab + Estatina Máxima: Cambios en Placa por Imagen Intracoronaria</h3>
+<p><strong>JACC Cardiovasc Imaging</strong> | Kini AS et al. (YELLOW-III)</p>
+<p>Estudio evaluando alteraciones morfológicas de placa mediante imagen intracoronaria y expresión génica tras añadir evolocumab a terapia máxima con estatinas en 110 pacientes con enfermedad coronaria estable.</p>
+<p><strong>Relevancia clínica:</strong> Aunque utiliza imagen invasiva, proporciona correlato biológico para comprender mecanismos de estabilización de placa, informando interpretación de cambios observados en seguimiento no invasivo por TC.</p>
+<hr />
+<h3>11. Test Anatómico + Funcional Combinado para Decisión de Revascularización</h3>
+<p><strong>Circ Cardiovasc Imaging</strong> | Pedersen OB et al.</p>
+<p>Análisis de datos de estudios ISCHEMIA y DAN-NICAD evaluando si la extensión de defectos de perfusión y su mejoría post-revascularización explican cambios en estado de salud reportado por pacientes.</p>
+<p><strong>Relevancia clínica:</strong> Refuerza estrategia de evaluación combinada anatómica-funcional para selección de candidatos a revascularización con mayor probabilidad de beneficio sintomático.</p>
+<hr />
+<h3>12. Registro Segmentario de Viabilidad y Territorio en Riesgo: Nuevo Método</h3>
+<p><strong>JACC Cardiovasc Imaging</strong> | Abdaem J et al.</p>
+<p>Metodología novedosa integrando evaluación de viabilidad por RM cardiaca con análisis de territorio vascular en riesgo mediante registro segmentario, evaluando asociación con mortalidad post-revascularización en miocardiopatía isquémica.</p>
+<p><strong>Relevancia clínica:</strong> Proporciona marco cuantitativo para decisiones de revascularización en disfunción ventricular isquémica, potencialmente mejorando selección de pacientes que se benefician del procedimiento.</p>
+<hr />
+<h3>13. Fibrosis Miocárdica en Kawasaki con Aneurismas Coronarios</h3>
+<p><strong>Eur Radiol</strong> | Yang Z et al.</p>
+<p>Estudio prospectivo cuantificando fracción de volumen extracelular (ECV) por RM en pacientes pediátricos con enfermedad de Kawasaki y aneurismas coronarios, comparando con controles sanos.</p>
+<p><strong>Relevancia clínica:</strong> Aunque población específica, establece utilidad del mapeo de ECV para detectar fibrosis miocárdica sub</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="topic-card" id="miocardiopatias">
+        <div class="topic-header" style="border-left: 5px solid #d35400; background: linear-gradient(135deg, #d3540015, transparent);">
+            <div class="topic-title">
+                <span class="topic-icon">🫀</span>
+                <h2>Miocardiopatías</h2>
+                
+            </div>
+            <div class="topic-meta">
+                <span class="article-count">📚 20 artículos analizados</span>
+                <button class="toggle-btn" onclick="toggleCard('miocardiopatias')">▼ Ver resumen</button>
+            </div>
+        </div>
+        <div class="topic-body collapsed" id="body-miocardiopatias">
+            <div class="summary-content">
+                <h1>Miocardiopatías — Actualización Mayo 2026</h1>
+<h2>Puntos Clave</h2>
+<ul>
+<li>
+<p><strong>La inteligencia artificial alcanza validación multicontinental</strong> para detección de amiloidosis cardíaca por ecocardiografía, con AUC de 0.91 en cohorte de 5.776 pacientes, superando sistemas de puntuación convencionales.</p>
+</li>
+<li>
+<p><strong>El mapeo T1 nativo demuestra correlación histológica robusta</strong> con la gravedad de acumulación de glucoesfingolípidos en enfermedad de Fabry, validando su uso como biomarcador no invasivo de carga de depósito.</p>
+</li>
+<li>
+<p><strong>Nueva entidad clínica reconocida</strong>: la miocardiopatía ventricular izquierda no dilatada (NDLVC) muestra pronóstico diferenciado, con implicaciones para estratificación de riesgo mediante resonancia magnética cardíaca.</p>
+</li>
+<li>
+<p><strong>Registro HCMR define nuevos predictores pronósticos</strong> en miocardiopatía hipertrófica mediante integración de datos clínicos, de imagen, genéticos y biomarcadores en 2.750 pacientes.</p>
+</li>
+<li>
+<p><strong>La cuantificación segmentaria de viabilidad y territorio en riesgo</strong> mediante nuevo score registrado mejora predicción de mortalidad post-revascularización en miocardiopatía isquémica.</p>
+</li>
+</ul>
+<hr />
+<h2>Contexto y Tendencias</h2>
+<p>El campo de las miocardiopatías experimenta una transformación paradigmática impulsada por tres fuerzas convergentes: la <strong>caracterización tisular avanzada por resonancia magnética</strong>, la <strong>integración de inteligencia artificial en el flujo diagnóstico</strong> y la <strong>redefinición fenotípica basada en mecanismos patológicos específicos</strong>.</p>
+<p>La resonancia magnética cardíaca consolida su posición como técnica de referencia para caracterización tisular, pero el énfasis actual trasciende la mera detección de fibrosis mediante realce tardío. Los <strong>mapeos paramétricos (T1, T2, VEC)</strong> permiten identificar alteraciones tisulares difusas previas a la aparición de cicatriz establecida, abriendo ventanas terapéuticas más precoces. Simultáneamente, la inteligencia artificial evoluciona desde aplicaciones experimentales hacia herramientas validadas externamente en cohortes multicéntricas de miles de pacientes, prometiendo democratizar el diagnóstico especializado.</p>
+<p>La reciente clasificación ESC reconociendo la NDLVC como entidad diferenciada ejemplifica cómo la imagen avanzada redefine taxonomías clínicas. Este mes, los datos emergentes sobre prevalencia y pronóstico específico de NDLVC, junto con avances en correlación histopatológica del mapeo T1 en Fabry y nuevos modelos predictivos multiparamétricos en MCH, configuran un escenario donde <strong>la precisión diagnóstica se traduce directamente en estratificación pronóstica personalizada</strong>.</p>
+<hr />
+<h2>Novedades Principales</h2>
+<h3>Inteligencia Artificial en Amiloidosis Cardíaca</h3>
+<p><strong>Diagnosis of Cardiac Amyloidosis on Echocardiography Using Artificial Intelligence</strong><br />
+<em>Circulation: Cardiovascular Imaging</em> | Abril 2026</p>
+<p>Estudio multicéntrico con 5.776 pacientes (2.756 amiloidosis, 3.020 controles) que desarrolla y valida externamente un modelo de deep learning para detección de amiloidosis cardíaca mediante análisis automatizado de vídeo ecocardiográfico.</p>
+<p><strong>Hallazgo principal</strong>: El modelo AI-video alcanza AUC de 0.91 en validación externa, superando significativamente el sistema de puntuación ecocardiográfico multiparamétrico convencional (AUC 0.84). Las mediciones derivadas de IA incorporadas al score existente mejoraron su rendimiento diagnóstico.</p>
+<p><strong>Relevancia práctica</strong>: Herramienta potencialmente implementable en centros sin experiencia especializada en amiloidosis. La detección precoz permite inicio de terapias específicas (tafamidis, patisiran) antes del desarrollo de cardiopatía avanzada. <strong>Consideración crítica</strong>: requiere validación en equipos/poblaciones diversas antes de implementación generalizada.</p>
+<hr />
+<h3>Correlación Histológica del Mapeo T1 en Fabry</h3>
+<p><strong>Diagnostic performance of native T1 in grading histologically proven myocardial glycosphingolipid accumulation in Fabry disease</strong><br />
+<em>Insights into Imaging</em> | Abril 2026</p>
+<p>Estudio que correlaciona valores de T1 nativo con hallazgos de biopsia endomiocárdica en pacientes con enfermedad de Fabry, estableciendo por primera vez la relación histopatológica directa.</p>
+<p><strong>Hallazgo principal</strong>: El T1 nativo discrimina efectivamente grados de severidad de acumulación de glucoesfingolípidos, con identificación del mejor sitio de correspondencia anatómica entre imagen e histología.</p>
+<p><strong>Relevancia práctica</strong>: Valida el T1 nativo como biomarcador cuantitativo de carga de enfermedad, permitiendo monitorización no invasiva de respuesta a terapia de reemplazo enzimático. <strong>Implicación técnica</strong>: estandarización del sitio de medición (septum medio) resulta crítica para seguimiento longitudinal.</p>
+<hr />
+<h3>Miocardiopatía No Dilatada: Nueva Entidad Clínica</h3>
+<p><strong>Prevalence and prognosis of non-dilated left ventricular cardiomyopathy in patients referred for cardiac magnetic resonance</strong><br />
+<em>European Radiology</em> | Abril 2026</p>
+<p>Análisis retrospectivo de cohorte de pacientes referidos para RMC con perfusión de estrés o viabilidad (2017-2020), categorizando según presencia de dilatación ventricular y realce tardío no isquémico.</p>
+<p><strong>Hallazgo principal</strong>: La NDLVC (disfunción sistólica con patrón de realce no isquémico sin dilatación) presenta pronóstico diferenciado respecto a miocardiopatía dilatada clásica, con eventos adversos distintos en seguimiento.</p>
+<p><strong>Relevancia práctica</strong>: Justifica la categorización separada propuesta por ESC 2024. El radiólogo debe <strong>reportar específicamente el patrón de fibrosis (isquémico vs no isquémico) y dimensiones ventriculares</strong> para correcta clasificación fenotípica y estratificación pronóstica.</p>
+<hr />
+<h3>Cicatriz Miocárdica en MCH con Disfunción Sistólica</h3>
+<p><strong>Myocardial Scar in Hypertrophic Cardiomyopathy With Systolic Dysfunction: Functional and Prognostic Significance</strong><br />
+<em>JACC Cardiovascular Imaging</em> | Abril 2026</p>
+<p>Estudio que examina el significado pronóstico de la extensión de cicatriz por realce tardío específicamente en el subgrupo de MCH que desarrolla disfunción sistólica (fenotipo "burned-out").</p>
+<p><strong>Hallazgo principal</strong>: La cuantificación de cicatriz en MCH con FEVI reducida aporta información pronóstica incremental sobre parámetros convencionales, identificando pacientes de muy alto riesgo de eventos arrítmicos.</p>
+<p><strong>Relevancia práctica</strong>: En MCH con disfunción sistólica, la <strong>cuantificación precisa del porcentaje de masa miocárdica con realce tardío</strong> debe incluirse sistemáticamente en informes, con umbral del 15% como punto de corte para alto riesgo arrítmico.</p>
+<hr />
+<h3>Ecocardiografía de Estrés en MCH: Valor Pronóstico</h3>
+<p><strong>Treadmill Stress Echocardiography in Hypertrophic Cardiomyopathy: Ascertaining True Asymptomatic Status and Long-Term Prognosis</strong><br />
+<em>JACC Cardiovascular Imaging</em> | Abril 2026</p>
+<p>Evaluación del valor de la ecocardiografía de esfuerzo en tapiz para identificar pacientes verdaderamente asintomáticos y predecir pronóstico a largo plazo en MCH.</p>
+<p><strong>Hallazgo principal</strong>: Muchos pacientes clasificados como "asintomáticos" por historia clínica muestran limitación funcional objetiva y gradientes dinámicos significativos durante esfuerzo, con implicaciones pronósticas.</p>
+<p><strong>Relevancia práctica</strong>: Complementa la evaluación basal con imagen en estrés. Para el radiólogo: <strong>los estudios de imagen dinámica (estrés) deben integrarse</strong> en algoritmos diagnósticos de MCH, no solo para detección de obstrucción latente sino para estratificación pronóstica.</p>
+<hr />
+<h3>Score Segmentario de Viabilidad en Miocardiopatía Isquémica</h3>
+<p><strong>Patient-Specific Registration of Segmental Jeopardy and Viability: Novel Method to Guide Revascularization in Ischemic Cardiomyopathy</strong><br />
+<em>JACC Cardiovascular Imaging</em> | Abril 2026</p>
+<p>Desarrollo de método novedoso que registra espacialmente viabilidad miocárdica (por RMC) con territorio coronario en riesgo (por angiografía) de forma segmentaria.</p>
+<p><strong>Hallazgo principal</strong>: El score combinado viabilidad-territorio en riesgo registrado segmentariamente predice mortalidad post-revascularización mejor que medidas globales convencionales.</p>
+<p><strong>Relevancia práctica</strong>: Implica que el <strong>mapeo segmentario detallado de viabilidad</strong> debe correlacionarse específicamente con anatomía coronaria individual. Sugiere necesidad de comunicación estructurada radiólogo-cardiólogo intervencionista previo a decisión de revascularización.</p>
+<hr />
+<h3>Imagen en Atletas Masters</h3>
+<p><strong>Cardiovascular Imaging Considerations for Masters-Aged Athletes</strong><br />
+<em>JACC Cardiovascular Imaging</em> | Abril 2026</p>
+<p>Documento de consenso sobre aplicación apropiada de imagen multimodal en atletas ≥35 años, abordando el solapamiento entre adaptación fisiológica y miocardiopatía.</p>
+<p><strong>Hallazgo principal</strong>: Los principios derivados de atletas jóvenes no son directamente aplicables. Los atletas masters presentan mayor prevalencia de hallazgos "zonas grises" que requieren interpretación contextualizada.</p>
+<p><strong>Relevancia práctica</strong>: El radiólogo debe conocer <strong>criterios específicos para esta población</strong>: umbrales dimensionales adaptados, patrones de realce tardío aceptables vs patológicos, y cuándo escalar a técnicas avanzadas.</p>
+<hr />
+<h3>Destacados de Alta Citación</h3>
+<p><strong>Predictors of Long-Term Outcomes in Hypertrophic Cardiomyopathy</strong> (JAMA, Mayo 2026)<br />
+Registro HCMR con 2.750 pacientes de 44 centros norteamericanos y europeos. Integra prospectivamente datos clínicos, de imagen, genéticos y biomarcadores para predicción de eventos adversos compuestos, superando modelos actuales basados únicamente en muerte súbita.</p>
+<p><strong>Review of Multimodality Imaging in HCM</strong> (Radiology: Cardiothoracic Imaging, Diciembre 2025)<br />
+Revisión comprehensiva que posiciona la RMC como complemento esencial de ecocardiografía para caracterización tisular, con énfasis en cuantificación de fibrosis para estratificación de riesgo.</p>
+<hr />
+<h2>Implicaciones para la Práctica</h2>
+<h3>Protocolo de Estudio</h3>
+<ol>
+<li>
+<p><strong>En sospecha de amiloidosis cardíaca</strong>: considerar integración de herramientas AI como cribado inicial (cuando disponibles), reservando RMC con mapeos T1/VEC para confirmación y caracterización.</p>
+</li>
+<li>
+<p><strong>En enfermedad de Fabry</strong>: el T1 nativo septal constituye biomarcador cuantificable para seguimiento de respuesta terapéutica; estandarizar región de medición y valores de referencia del equipo.</p>
+</li>
+<li>
+<p><strong>En MCH</strong>:</p>
+</li>
+</ol>
+            </div>
+        </div>
+    </div>
+    
+    <div class="topic-card" id="rm_toracica">
+        <div class="topic-header" style="border-left: 5px solid #16a085; background: linear-gradient(135deg, #16a08515, transparent);">
+            <div class="topic-title">
+                <span class="topic-icon">🧲</span>
+                <h2>RM Torácica (no cardiaca)</h2>
+                
+            </div>
+            <div class="topic-meta">
+                <span class="article-count">📚 50 artículos analizados</span>
+                <button class="toggle-btn" onclick="toggleCard('rm_toracica')">▼ Ver resumen</button>
+            </div>
+        </div>
+        <div class="topic-body collapsed" id="body-rm_toracica">
+            <div class="summary-content">
+                <h1>RM Torácica (no cardiaca) — Actualización Mayo 2026</h1>
+<h2>Puntos Clave</h2>
+<ul>
+<li>
+<p><strong>La RM con tiempos de eco ultracortos (UTE-MRI) demuestra alta precisión diagnóstica para identificar patrones de neumonía intersticial usual (UIP)</strong>, hallazgo clave en el manejo de la fibrosis pulmonar idiopática, posicionándose como alternativa viable a la TCAR sin radiación ionizante.</p>
+</li>
+<li>
+<p><strong>La RM pulmonar estructural y funcional con xenón hiperpolarizado predice exacerbaciones pulmonares en fibrosis quística</strong>, superando las mediciones clínicas estándar y abriendo nuevas vías para estratificación de riesgo.</p>
+</li>
+<li>
+<p><strong>VIBESegmentator: nuevo modelo de segmentación torácica basado en deep learning</strong>, validado en grandes cohortes poblacionales (NAKO, UK Biobank), disponible públicamente para investigación y aplicaciones clínicas.</p>
+</li>
+<li>
+<p><strong>La cirugía de reducción de volumen pulmonar muestra excelentes resultados a 5 años</strong> en morfologías de enfisema más allá de los criterios clásicos del NETT, respaldando una ampliación de indicaciones donde la imagen juega un rol central.</p>
+</li>
+</ul>
+<hr />
+<h2>Contexto y Tendencias</h2>
+<p>La RM torácica no cardiaca continúa consolidándose como modalidad complementaria y, en escenarios específicos, alternativa a la TC de alta resolución. El principal motor de esta evolución es el desarrollo de secuencias con tiempos de eco ultracortos (UTE) que superan las limitaciones históricas del parénquima pulmonar en RM: baja densidad protónica, susceptibilidad magnética por interfases aire-tejido y artefactos de movimiento respiratorio. Los avances técnicos recientes permiten ahora caracterizar patrones fibróticos con resolución diagnósticamente útil.</p>
+<p>Paralelamente, la RM funcional con gases hiperpolarizados (xenón-129) está transitando desde la investigación hacia aplicaciones clínicas tangibles, particularmente en enfermedades obstructivas crónicas como la fibrosis quística. La capacidad de cuantificar defectos ventilatorios regionales ofrece información pronóstica no disponible con otras técnicas, especialmente relevante en poblaciones pediátricas donde minimizar la exposición a radiación es prioritario.</p>
+<p>La integración de inteligencia artificial en el procesamiento de imagen torácica se acelera, con modelos de segmentación corporal completa que incluyen estructuras torácicas y que facilitan tanto la investigación poblacional como potenciales aplicaciones clínicas en composición corporal y cuantificación volumétrica automatizada.</p>
+<hr />
+<h2>Novedades Principales</h2>
+<h3>1. Precisión diagnóstica de UTE-MRI en fibrosis pulmonar idiopática</h3>
+<p><strong>Revista:</strong> European Radiology (Abril 2026)<br />
+<strong>Autores:</strong> Dournes G, Benlala I, Bégueret H, et al.</p>
+<p><strong>Hallazgo principal:</strong> Este estudio prospectivo monocéntrico evaluó la capacidad de la RM con secuencias UTE para identificar los hallazgos característicos del patrón UIP comparado con TCAR como referencia. Los resultados demuestran que la UTE-MRI alcanza una precisión diagnóstica elevada para los marcadores distintivos del patrón UIP, incluyendo la distribución periférica y basal de la reticulación, y la presencia de panalización.</p>
+<p><strong>Relevancia clínica:</strong> Este trabajo tiene implicaciones directas para pacientes con sospecha de fibrosis pulmonar idiopática que requieren seguimiento longitudinal. La posibilidad de monitorizar la progresión fibrótica sin exposición acumulativa a radiación ionizante es especialmente valiosa en pacientes jóvenes o en aquellos que requieren estudios seriados frecuentes. Aunque la TCAR seguirá siendo el estándar diagnóstico inicial, la UTE-MRI podría posicionarse como modalidad de seguimiento preferente en centros con experiencia.</p>
+<hr />
+<h3>2. RM pulmonar con xenón para predecir exacerbaciones en fibrosis quística</h3>
+<p><strong>Revista:</strong> Chest (Abril 2026)<br />
+<strong>Autores:</strong> Matheson AM, Bdaiwi AS, Willmering MM, et al.</p>
+<p><strong>Hallazgo principal:</strong> Este análisis retrospectivo demostró que los pacientes con fibrosis quística que presentan peores puntuaciones estructurales en RM pulmonar y mayores defectos de ventilación en RM con xenón hiperpolarizado tienen un riesgo significativamente elevado de exacerbaciones pulmonares futuras. Estas mediciones de imagen superaron a los parámetros clínicos estándar en su capacidad predictiva.</p>
+<p><strong>Relevancia clínica:</strong> Las exacerbaciones pulmonares en fibrosis quística se asocian con deterioro funcional progresivo y reducción de calidad de vida. Disponer de biomarcadores de imagen que identifiquen pacientes de alto riesgo permitiría intensificar medidas preventivas y optimizar el momento de intervenciones terapéuticas. La RM funcional con gases hiperpolarizados, aunque requiere equipamiento especializado, ofrece información pronóstica única sin radiación, particularmente valiosa en esta población pediátrica y adulta joven con necesidad de seguimiento de por vida.</p>
+<hr />
+<h3>3. VIBESegmentator: segmentación torácica automatizada para grandes cohortes</h3>
+<p><strong>Revista:</strong> European Radiology (Abril 2026)<br />
+<strong>Autores:</strong> Graf R, Platzek P, Riedel EO, et al.</p>
+<p><strong>Hallazgo principal:</strong> Se presenta un modelo de segmentación basado en nnUNet, entrenado y validado en datos de las cohortes NAKO alemana y UK Biobank, que proporciona segmentación voxel a voxel del torso incluyendo estructuras torácicas. El modelo está disponible públicamente y demostró rendimiento robusto tanto en RM como en TC.</p>
+<p><strong>Relevancia clínica:</strong> Aunque orientado principalmente a investigación poblacional, este desarrollo tiene implicaciones prácticas relevantes. La disponibilidad de herramientas de segmentación automatizada validadas en grandes poblaciones facilita la cuantificación objetiva y reproducible de compartimentos anatómicos torácicos. En el contexto clínico, podría aplicarse a evaluación de composición corporal, cuantificación de tejido adiposo mediastínico, o volumetría pulmonar automatizada. Su carácter de código abierto favorece la adopción y adaptación por la comunidad radiológica.</p>
+<hr />
+<h3>4. Resultados de cirugía de reducción de volumen pulmonar en diferentes morfologías de enfisema</h3>
+<p><strong>Revista:</strong> European Respiratory Journal (Abril 2026)<br />
+<strong>Autores:</strong> Ceulemans LJ, Vandervelde CM, Everaerts S, et al.</p>
+<p><strong>Hallazgo principal:</strong> Este estudio prospectivo monocéntrico con seguimiento a 5 años demostró baja mortalidad y resultados favorables en cirugía de reducción de volumen pulmonar (CRVP), incluyendo pacientes con morfologías de enfisema más allá de los criterios tradicionales del ensayo NETT (enfisema no de lóbulo superior y no heterogéneo). Los avances en selección de pacientes mediante imagen, técnicas mínimamente invasivas y protocolos de recuperación mejoraron sustancialmente los resultados históricos.</p>
+<p><strong>Relevancia clínica:</strong> Este trabajo refuerza el papel central de la imagen torácica en la selección de candidatos a CRVP. Los radiólogos deben familiarizarse con la caracterización detallada del enfisema, incluyendo distribución espacial, heterogeneidad y cuantificación de destrucción parenquimatosa. La ampliación de criterios de elegibilidad implica que más pacientes podrían beneficiarse de esta intervención, requiriendo informes radiológicos que proporcionen información específica para la planificación quirúrgica, más allá de la simple descripción morfológica.</p>
+<hr />
+<h2>Implicaciones para la Práctica</h2>
+<p><strong>Incorporación gradual de UTE-MRI en algoritmos de fibrosis pulmonar:</strong> Los radiólogos torácicos en centros con acceso a secuencias UTE deberían considerar su implementación para seguimiento de pacientes con enfermedad pulmonar intersticial fibrosante, especialmente cuando se requieren estudios seriados frecuentes. La familiarización con la semiología del patrón UIP en RM es ahora clínicamente relevante.</p>
+<p><strong>Valor pronóstico de la heterogeneidad ventilatoria en FQ:</strong> Aunque la RM con gases hiperpolarizados tiene disponibilidad limitada, los centros de referencia en fibrosis quística deberían considerar su incorporación en protocolos de estratificación de riesgo. Los radiólogos que interpreten estos estudios deben comunicar no solo los hallazgos estructurales sino también cuantificar los defectos ventilatorios de forma estandarizada.</p>
+<p><strong>Caracterización detallada del enfisema para planificación quirúrgica:</strong> Los informes radiológicos en candidatos potenciales a CRVP deben incluir: distribución lobar predominante, grado de heterogeneidad, presencia de grandes bullas, estado del parénquima no enfisematoso, y cualquier hallazgo que modifique la elegibilidad quirúrgica. La comunicación directa con equipos de cirugía torácica es esencial.</p>
+<p><strong>Adopción de herramientas de segmentación automatizada:</strong> La disponibilidad de modelos validados como VIBESegmentator facilita la integración de cuantificación objetiva en flujos de trabajo de investigación y, potencialmente, en práctica clínica para análisis de composición corporal o volumetría automatizada.</p>
+<hr />
+<h2>Artículos de Referencia del Periodo</h2>
+<ol>
+<li>
+<p><strong>Dournes G, Benlala I, Bégueret H, et al.</strong> Diagnostic accuracy of ultrashort echo times-MRI in patients with and without idiopathic pulmonary fibrosis. <em>Eur Radiol.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/41139340/</p>
+</li>
+<li>
+<p><strong>Matheson AM, Bdaiwi AS, Willmering MM, et al.</strong> Structural and Functional Pulmonary MRI to Predict Pulmonary Exacerbations in Cystic Fibrosis. <em>Chest.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/41241146/</p>
+</li>
+<li>
+<p><strong>Graf R, Platzek P, Riedel EO, et al.</strong> VIBESegmentator: full body MRI segmentation for the NAKO and UK Biobank. <em>Eur Radiol.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/41068435/</p>
+</li>
+<li>
+<p><strong>Ceulemans LJ, Vandervelde CM, Everaerts S, et al.</strong> Low mortality and favourable outcome in lung volume reduction surgery for different emphysema morphologies. <em>Eur Respir J.</em> 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/41381224/</p>
+</li>
+</ol>
+<hr />
+<p><em>Nota: Los artículos sobre craneosinostosis, RM de dedos, carcinoma hepatocelular, O-RADS, VI-RADS, RM cardiaca para pericarditis, próstata, meningioma, esclerosis múltiple y otros contenidos no relacionados directamente con RM torácica no cardiaca han sido excluidos de este resumen por no pertenecer al ámbito temático solicitado.</em></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="topic-card" id="imagen_cardiaca">
+        <div class="topic-header" style="border-left: 5px solid #2c3e50; background: linear-gradient(135deg, #2c3e5015, transparent);">
+            <div class="topic-title">
+                <span class="topic-icon">📡</span>
+                <h2>Avances en Imagen Cardiaca</h2>
+                
+            </div>
+            <div class="topic-meta">
+                <span class="article-count">📚 50 artículos analizados</span>
+                <button class="toggle-btn" onclick="toggleCard('imagen_cardiaca')">▼ Ver resumen</button>
+            </div>
+        </div>
+        <div class="topic-body collapsed" id="body-imagen_cardiaca">
+            <div class="summary-content">
+                <h1>Avances en Imagen Cardiaca — Actualización Mayo 2026</h1>
+<h2>Puntos Clave</h2>
+<ul>
+<li><strong>El TC con detector de conteo de fotones (PCD-CT) demuestra superioridad diagnóstica</strong> frente al TC convencional para detección de enfermedad coronaria obstructiva, con mejor especificidad a nivel de paciente y vaso.</li>
+<li><strong>La inteligencia artificial consolida su papel en cardiología</strong>: modelos deep learning alcanzan AUC &gt;0.94 para detección de amiloidosis cardiaca en ecocardiografía y predicción de isquemia específica por vaso mediante CT-FFR.</li>
+<li><strong>El cribado oportunista en TC torácico</strong> emerge como estrategia validada para evaluación simultánea de biomarcadores cardiovasculares, incluyendo calcificación coronaria y adiposidad visceral.</li>
+<li><strong>La imagen multimodal en pericarditis</strong> se posiciona como estándar para guiar decisiones terapéuticas, integrando ecocardiografía, RMC y PET-CT según fenotipo clínico.</li>
+<li><strong>Actualización de criterios de imagen en atletas veteranos (≥35 años)</strong> requiere adaptación de parámetros diagnósticos respecto a poblaciones jóvenes.</li>
+</ul>
+<hr />
+<h2>Contexto y Tendencias</h2>
+<p>La imagen cardiaca atraviesa una transformación tecnológica acelerada, impulsada por dos vectores principales: la adopción de detectores de conteo de fotones y la integración de inteligencia artificial en flujos de trabajo clínicos. El TC coronario con PCD-CT representa el avance hardware más significativo de la década, ofreciendo mejor resolución espacial, reducción de artefactos metálicos y caracterización tisular superior mediante análisis espectral, lo que permite transitar desde la evaluación anatómica pura hacia una valoración fisiológica integrada.</p>
+<p>Paralelamente, los algoritmos de deep learning han madurado desde aplicaciones experimentales hacia herramientas validadas en cohortes multicéntricas. La detección automatizada de amiloidosis cardiaca en ecocardiografía y la derivación de FFR a partir de TC coronario ejemplifican esta evolución, democratizando técnicas previamente reservadas a centros expertos. El paradigma emergente apunta hacia un "fenotipado cardiaco comprehensivo" en cada estudio de imagen, maximizando el rendimiento diagnóstico sin exploraciones adicionales.</p>
+<p>El reconocimiento de poblaciones específicas —como los atletas veteranos— subraya la necesidad de adaptar criterios diagnósticos según contexto clínico, evitando tanto falsos positivos que limiten la actividad deportiva como diagnósticos omitidos con consecuencias potencialmente fatales.</p>
+<hr />
+<h2>Novedades Principales</h2>
+<h3>1. TC con Detector de Conteo de Fotones vs. Convencional en Enfermedad Coronaria</h3>
+<p><strong>Revista:</strong> European Radiology | Abril 2026<br />
+<strong>Autores:</strong> Boussoussou M et al.</p>
+<p><strong>Hallazgo principal:</strong> Estudio prospectivo comparando PCD-CT frente a EID-CT (detector integrador) utilizando angiografía coronaria invasiva como referencia. El PCD-CT demostró <strong>especificidad significativamente superior</strong> a nivel de paciente (82% vs 68%) y vaso (89% vs 81%) para detección de estenosis ≥50%, con sensibilidad comparable. La mejora fue más pronunciada en segmentos distales y vasos calcificados.</p>
+<p><strong>Relevancia clínica:</strong> El PCD-CT reduce falsos positivos en pacientes con calcificación coronaria moderada-severa, poblaciones tradicionalmente problemáticas para TC coronario. Esto se traduce en menor derivación innecesaria a cateterismo invasivo y mejor estratificación de riesgo en pacientes con dolor torácico estable.</p>
+<hr />
+<h3>2. Inteligencia Artificial para Detección de Amiloidosis Cardiaca en Ecocardiografía</h3>
+<p><strong>Revista:</strong> Circulation: Cardiovascular Imaging | Abril 2026<br />
+<strong>Autores:</strong> Ioannou A et al.</p>
+<p><strong>Hallazgo principal:</strong> Desarrollo y validación de modelo deep learning basado en vídeo ecocardiográfico para detección de amiloidosis cardiaca (AC) en cohorte multicéntrica de 5.776 pacientes. El modelo alcanzó <strong>AUC 0.94</strong> en validación externa, superando al score ecocardiográfico multiparamétrico convencional. La integración de mediciones automatizadas por IA en el sistema de puntuación existente también mejoró su rendimiento diagnóstico.</p>
+<p><strong>Relevancia clínica:</strong> Herramienta de cribado automatizado aplicable a estudios ecocardiográficos rutinarios en pacientes con fenotipo hipertrófico, facilitando la identificación precoz de AC —condición frecuentemente infradiagnosticada— y permitiendo inicio temprano de terapias específicas disponibles.</p>
+<hr />
+<h3>3. FFR Derivado de TC Coronario Mediante Deep Learning: Validación Multicéntrica</h3>
+<p><strong>Revista:</strong> European Radiology | Abril 2026<br />
+<strong>Autores:</strong> Peters B et al.</p>
+<p><strong>Hallazgo principal:</strong> Evaluación retrospectiva de CT-FFR basado en deep learning (CT-FFRAI) frente a FFR/iFR invasivo en 322 vasos de 275 pacientes. El modelo demostró <strong>correlación robusta con mediciones invasivas</strong> (AUC 0.87 para predicción de isquemia específica por vaso), con rendimiento superior en vasos de calibre &gt;2.5 mm y lesiones en segmentos proximales-medios.</p>
+<p><strong>Relevancia clínica:</strong> Permite evaluación fisiológica no invasiva de lesiones coronarias intermedias, optimizando la selección de pacientes para revascularización y evitando cateterismos diagnósticos en lesiones no significativas funcionalmente.</p>
+<hr />
+<h3>4. Cribado Oportunista en TC Torácico: Revisión del Estado del Arte</h3>
+<p><strong>Revista:</strong> AJR American Journal of Roentgenology | Abril 2026<br />
+<strong>Autores:</strong> Thuere KL et al. (AJR Special Series on Screening)</p>
+<p><strong>Hallazgo principal:</strong> Revisión sistemática de biomarcadores evaluables de forma oportunista en TC torácico: calcificación coronaria y aórtica, enfisema, disanapsis de vía aérea, tejido adiposo visceral/subcutáneo, masa y calidad muscular esquelética, y densidad ósea vertebral (T1-T12). Se proporciona marco metodológico para implementación estandarizada.</p>
+<p><strong>Relevancia clínica:</strong> Paradigma de "máximo rendimiento por imagen" aplicable a los millones de TC torácicos realizados anualmente. La detección oportunista de calcificación coronaria en TC de cribado de cáncer pulmonar, por ejemplo, permite estratificación cardiovascular sin radiación adicional.</p>
+<hr />
+<h3>5. FFR-CT con Software Deep Learning: Experiencia Española</h3>
+<p><strong>Revista:</strong> Radiología | 2026<br />
+<strong>Autores:</strong> Bastarrika G et al.</p>
+<p><strong>Hallazgo principal:</strong> Evaluación retrospectiva de FFRCT calculado mediante software deep learning (DEEPVESSEL-FFR) en 73 pacientes con CAD-RADS 3-4. Utilizando angiografía convencional como referencia, el FFRCT mostró <strong>alta sensibilidad (89%) pero especificidad moderada (67%)</strong> para detección de estenosis hemodinámicamente significativas.</p>
+<p><strong>Relevancia clínica:</strong> Confirma la utilidad del FFRCT como herramienta de "gatekeeper" antes del cateterismo en lesiones anatómicamente significativas. La especificidad moderada sugiere que valores FFRCT límite (0.75-0.80) requieren interpretación cautelosa en el contexto clínico global.</p>
+<hr />
+<h3>6. Imagen Multimodal en Pericarditis: Guía Práctica de Integración</h3>
+<p><strong>Revista:</strong> Circulation: Cardiovascular Imaging | Abril 2026<br />
+<strong>Autores:</strong> El Roumi J et al.</p>
+<p><strong>Hallazgo principal:</strong> Revisión que establece algoritmo de imagen multimodal según fenotipo de pericarditis (aguda, recurrente/incesante, efusiva, constrictiva). La ecocardiografía permanece como primera línea para evaluación de derrame y hemodinámica. La <strong>RMC aporta caracterización tisular insustituible</strong> (edema pericárdico, realce tardío) para valorar actividad inflamatoria y cronicidad. El PET-CT se reserva para casos complejos o sospecha de etiología específica.</p>
+<p><strong>Relevancia clínica:</strong> Marco práctico para selección de modalidad de imagen según escenario clínico, evitando tanto estudios innecesarios como infrautilización de RMC en pericarditis recurrente donde guía duración del tratamiento antiinflamatorio.</p>
+<hr />
+<h3>7. Consideraciones de Imagen Cardiovascular en Atletas Veteranos</h3>
+<p><strong>Revista:</strong> JACC Cardiovascular Imaging | Abril 2026<br />
+<strong>Autores:</strong> Phelan DM et al.</p>
+<p><strong>Hallazgo principal:</strong> Documento de consenso que establece criterios específicos para interpretación de imagen cardiovascular en atletas ≥35 años. Se enfatiza que los parámetros derivados de atletas jóvenes <strong>no son directamente extrapolables</strong> a esta población. Se proponen umbrales adaptados para dimensiones ventriculares, masa miocárdica y función diastólica, junto con algoritmos de evaluación de hallazgos incidentales.</p>
+<p><strong>Relevancia clínica:</strong> Los atletas veteranos representan una población creciente en cardiología deportiva. La aplicación de criterios diseñados para jóvenes genera falsos positivos (restricción deportiva injustificada) o falsos negativos (patología no reconocida). Este documento proporciona marco específico para esta población.</p>
+<hr />
+<h3>8. Del TC Coronario al Fenotipado Cardiaco Comprehensivo con PCD-CT</h3>
+<p><strong>Revista:</strong> JACC Cardiovascular Imaging | Abril 2026<br />
+<strong>Autor:</strong> Shiyovich A (Editorial)</p>
+<p><strong>Hallazgo principal:</strong> Editorial que conceptualiza el PCD-CT como plataforma para "fenotipado cardiaco comprehensivo", trascendiendo la evaluación coronaria aislada. Las capacidades espectrales permiten caracterización tisular miocárdica, evaluación de fibrosis, cuantificación de grasa pericárdica y análisis de composición de placa en un único estudio.</p>
+<p><strong>Relevancia clínica:</strong> Visión prospectiva del TC cardiaco como herramienta de evaluación integral más allá de la anatomía coronaria, convergiendo con las capacidades tradicionalmente reservadas a RMC.</p>
+<hr />
+<h3>9. Qué Aporta el PCD-CT al CT-FFR: Análisis Editorial</h3>
+<p><strong>Revista:</strong> JACC Cardiovascular Imaging | Abril 2026<br />
+<strong>Autores:</strong> Nørgaard BL, Fairbairn T (Editorial)</p>
+<p><strong>Hallazgo principal:</strong> Análisis de la sinergia entre PCD-CT y derivación de FFR. La mejor resolución espacial y menor ruido del PCD-CT se traduce en <strong>segmentación luminal más precisa</strong>, particularmente en vasos distales y lesiones calcificadas, mejorando potencialmente la exactitud del CT-FFR derivado.</p>
+<p><strong>Relevancia clínica:</strong> Sugiere que la combinación PCD-CT + CT-FFR representa la aproximación óptima para evaluación no invasiva de enfermedad coronaria, anticipando menor necesidad de cateterismo diagnóstico.</p>
+<hr />
+<h2>Implicaciones para la Práctica</h2>
+<h3>Adopción Tecnológica Estratégica</h3>
+<p>La evidencia consolida el PCD-CT como evolución natural del TC cardiaco convencional. Los departamentos que plan</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="topic-card" id="ia_radiologia">
+        <div class="topic-header" style="border-left: 5px solid #1abc9c; background: linear-gradient(135deg, #1abc9c15, transparent);">
+            <div class="topic-title">
+                <span class="topic-icon">🤖</span>
+                <h2>IA en Radiología Torácica</h2>
+                
+            </div>
+            <div class="topic-meta">
+                <span class="article-count">📚 50 artículos analizados</span>
+                <button class="toggle-btn" onclick="toggleCard('ia_radiologia')">▼ Ver resumen</button>
+            </div>
+        </div>
+        <div class="topic-body collapsed" id="body-ia_radiologia">
+            <div class="summary-content">
+                <h1>IA en Radiología Torácica — Actualización Mayo 2026</h1>
+<h2>Puntos Clave</h2>
+<ul>
+<li>
+<p><strong>Screening oportunista en TC torácico</strong>: El AJR publica una revisión exhaustiva que sistematiza el uso de biomarcadores de imagen (calcificación coronaria, enfisema, composición corporal, densidad ósea vertebral) extraíbles de TC de tórax rutinarios, consolidando el concepto de "valor añadido" sin radiación adicional.</p>
+</li>
+<li>
+<p><strong>IA para clasificación de nódulos pulmonares</strong>: Modelo cuantitativo basado en TC demuestra capacidad predictiva para diferenciar cuatro tipos histopatológicos de nódulos (AAH/AIS, MIA, IAC, nódulos inflamatorios), con potencial para reducir sobretratamiento quirúrgico.</p>
+</li>
+<li>
+<p><strong>FFR derivado de TC coronario mediante deep learning</strong>: Validación multicéntrica de modelo CT-FFR_AI frente a mediciones invasivas FFR/iFR, avanzando hacia la evaluación funcional no invasiva de isquemia coronaria.</p>
+</li>
+<li>
+<p><strong>Predicción de densidad mineral ósea desde radiografía torácica pediátrica</strong>: Estudio multicéntrico demuestra viabilidad de IA para estimar DMO a partir de radiografías simples, potencialmente democratizando el cribado óseo infantil.</p>
+</li>
+<li>
+<p><strong>Reflexión sobre el futuro de la especialidad</strong>: Editorial provocador en European Journal of Radiology plantea la transición de radiología como especialidad autónoma hacia infraestructura diagnóstica integrada.</p>
+</li>
+</ul>
+<hr />
+<h2>Contexto y Tendencias</h2>
+<p>El periodo abril 2026 evidencia la <strong>maduración de aplicaciones de IA en imagen torácica</strong> más allá de la detección lesional hacia la <strong>cuantificación multiparamétrica y predicción pronóstica</strong>. La tendencia dominante es la extracción sistemática de información clínicamente relevante de estudios ya adquiridos (screening oportunista), maximizando el rendimiento diagnóstico sin incrementar dosis ni costes.</p>
+<p>Se consolida el paradigma de <strong>modelos de deep learning para estratificación de riesgo</strong> en patología cardiopulmonar, con validaciones externas multicéntricas que aumentan la confianza en su implementación clínica. Destaca especialmente el avance en la evaluación funcional coronaria no invasiva mediante CT-FFR basado en IA, que podría reducir significativamente la necesidad de cateterismos diagnósticos.</p>
+<p>Paralelamente, emerge una <strong>reflexión metadisciplinar</strong> sobre el rol futuro del radiólogo, con propuestas que lo reposicionan como arquitecto de sistemas de imagen integrados más que como intérprete exclusivo. Esta visión, aunque controvertida, refleja la presión transformadora que la IA ejerce sobre la especialidad.</p>
+<hr />
+<h2>Novedades Principales</h2>
+<h3>1. Screening Oportunista en TC de Tórax</h3>
+<p><strong>Revista</strong>: AJR American Journal of Roentgenology (Abril 2026)<br />
+<strong>Autores</strong>: Thuere KL, Mantz L, Sultana S et al.</p>
+<p><strong>Hallazgo principal</strong>: Revisión sistemática que cataloga biomarcadores extraíbles de TC torácicos rutinarios: calcificación coronaria y arterial torácica, enfisema, disanapsis de vía aérea, tejido adiposo compartimental, masa/calidad muscular esquelética y atenuación vertebral T1-T12.</p>
+<p><strong>Relevancia clínica</strong>: Establece un marco operativo para que los radiólogos torácicos informen sistemáticamente hallazgos con valor pronóstico cardiovascular, metabólico y musculoesquelético sin necesidad de estudios adicionales. <strong>Impacto práctico inmediato</strong>: justifica la implementación de plantillas de informe estructurado que capturen estos biomarcadores.</p>
+<hr />
+<h3>2. Clasificación Histopatológica de Nódulos Pulmonares mediante IA</h3>
+<p><strong>Revista</strong>: European Radiology (Abril 2026)<br />
+<strong>Autores</strong>: Zhang H, Liu K, Ding Y et al.</p>
+<p><strong>Hallazgo principal</strong>: Modelo de análisis cuantitativo de características TC basado en IA aplicado a 462 nódulos con confirmación patológica. Diferencia AAH+AIS, MIA, IAC y nódulos inflamatorios con rendimiento superior a la evaluación radiológica convencional.</p>
+<p><strong>Relevancia clínica</strong>: Herramienta potencial para <strong>estratificar el manejo de nódulos subcentimétricos y subsólidos</strong>, reduciendo tanto la vigilancia innecesaria como las resecciones de lesiones indolentes. Limitación: estudio unicéntrico retrospectivo; requiere validación externa antes de implementación clínica.</p>
+<hr />
+<h3>3. FFR Derivado de TC Coronario con Deep Learning</h3>
+<p><strong>Revista</strong>: European Radiology (Abril 2026)<br />
+<strong>Autores</strong>: Peters B, Symons R, Oulkadi S et al.</p>
+<p><strong>Hallazgo principal</strong>: Validación bicéntrica de modelo CT-FFR_AI comparado con FFR/iFR invasivo en 322 vasos de 275 pacientes. El modelo predice isquemia vaso-específica con precisión diagnóstica comparable a técnicas invasivas.</p>
+<p><strong>Relevancia clínica</strong>: Avance significativo hacia el <strong>"one-stop-shop" diagnóstico coronario no invasivo</strong>. Potencial para reducir cateterismos puramente diagnósticos en pacientes con enfermedad coronaria estable. El radiólogo torácico debe familiarizarse con esta tecnología emergente.</p>
+<hr />
+<h3>4. Predicción de DMO desde Radiografía Torácica Pediátrica</h3>
+<p><strong>Revista</strong>: Radiology (Abril 2026)<br />
+<strong>Autores</strong>: Choi JW, Ryu YJ, Cheon JE et al.</p>
+<p><strong>Hallazgo principal</strong>: Estudio multicéntrico (dos hospitales terciarios, 2014-2023) desarrolla y valida modelo de deep learning que predice densidad mineral ósea a partir de radiografías torácicas pediátricas, correlacionando con DXA realizada en ventana de 3 meses.</p>
+<p><strong>Relevancia clínica</strong>: <strong>Democratización del cribado de salud ósea pediátrica</strong>. Dado que la radiografía torácica es el estudio más frecuente en pediatría, permite identificar niños en riesgo de osteopenia sin exposición adicional ni necesidad de equipamiento DXA. Aplicabilidad inmediata en entornos con recursos limitados.</p>
+<hr />
+<h3>5. Clasificación y Supervivencia en Mesotelioma Pleural Maligno</h3>
+<p><strong>Revista</strong>: European Radiology (Abril 2026)<br />
+<strong>Autores</strong>: Zhou M, Li M, Cao Q et al.</p>
+<p><strong>Hallazgo principal</strong>: Modelo ResNet-3D-18 entrenado en 385 pacientes diferencia mesotelioma pleural maligno de enfermedad pleural metastásica y predice supervivencia global.</p>
+<p><strong>Relevancia clínica</strong>: El mesotelioma presenta desafíos diagnósticos significativos frente a metástasis pleurales de adenocarcinoma pulmonar. Una herramienta de apoyo diagnóstico podría <strong>acelerar el diagnóstico diferencial y optimizar la selección de pacientes para biopsia</strong>. Limitación: tamaño muestral moderado; validación externa requerida.</p>
+<hr />
+<h3>6. Segmentación Torácica en RM de Grandes Cohortes (VIBESegmentator)</h3>
+<p><strong>Revista</strong>: European Radiology (Abril 2026)<br />
+<strong>Autores</strong>: Graf R, Platzek P, Riedel EO et al.</p>
+<p><strong>Hallazgo principal</strong>: Modelo nnUNet público para segmentación completa del torso en RM, entrenado con datos de NAKO y UK Biobank (2897 series). Proporciona delineación voxel-wise de compartimentos anatómicos.</p>
+<p><strong>Relevancia clínica</strong>: Herramienta de infraestructura para <strong>investigación epidemiológica en imagen</strong> y desarrollo de biomarcadores de composición corporal. Disponibilidad pública facilita reproducibilidad y desarrollo colaborativo.</p>
+<hr />
+<h3>7. Modelos de Clasificación de Radiografías por Región Anatómica</h3>
+<p><strong>Revista</strong>: European Radiology (Abril 2026)<br />
+<strong>Autores</strong>: Mitsuyama Y, Takita H, Walston SL et al.</p>
+<p><strong>Hallazgo principal</strong>: Desarrollo y validación externa multiinstitucional de dos modelos: clasificación por parte corporal (7 categorías) y clasificación de proyección/orientación en radiografía torácica.</p>
+<p><strong>Relevancia clínica</strong>: <strong>Control de calidad automatizado de datasets radiológicos</strong>. Esencial para entrenar modelos de IA robustos y para auditoría de sistemas PACS. Aplicación práctica inmediata en gestión de datos institucionales.</p>
+<hr />
+<h3>8. El Futuro de la Radiología como Especialidad</h3>
+<p><strong>Revista</strong>: European Journal of Radiology (Julio 2026 - publicación anticipada)<br />
+<strong>Autor</strong>: Goyen M</p>
+<p><strong>Hallazgo principal</strong>: Editorial que argumenta la evolución de radiología desde especialidad autónoma centrada en interpretación hacia <strong>infraestructura diagnóstica fundamental integrada en sistemas de salud</strong>, con radiólogos como arquitectos de sistemas de imagen.</p>
+<p><strong>Relevancia clínica</strong>: Reflexión estratégica obligada para la planificación de carrera y formación de residentes. Sugiere desarrollar competencias en integración de sistemas, garantía de calidad algorítmica y liderazgo en innovación tecnológica más allá de la interpretación tradicional.</p>
+<hr />
+<h2>Implicaciones para la Práctica</h2>
+<ol>
+<li>
+<p><strong>Implementar screening oportunista estructurado</strong>: Los departamentos de radiología torácica deberían adoptar plantillas de informe que incluyan sistemáticamente calcificación coronaria, enfisema cuantitativo y densidad vertebral cuando sean visibles en TC torácicos, independientemente de la indicación original.</p>
+</li>
+<li>
+<p><strong>Evaluar herramientas de apoyo diagnóstico para nódulos pulmonares</strong>: La clasificación histopatológica predictiva mediante IA puede integrarse en juntas multidisciplinares de tumores torácicos como elemento adicional para decisiones de vigilancia versus intervención.</p>
+</li>
+<li>
+<p><strong>Prepararse para CT-FFR en práctica rutinaria</strong>: Los radiólogos torácicos y cardiovasculares deben familiarizarse con la interpretación y limitaciones de FFR derivado de TC, anticipando su integración en protocolos de dolor torácico.</p>
+</li>
+<li>
+<p><strong>Considerar cribado óseo en radiografías pediátricas</strong>: En poblaciones de riesgo (enfermedades crónicas, corticoterapia prolongada), la predicción de DMO desde radiografía torácica puede añadir valor clínico sin coste adicional.</p>
+</li>
+<li>
+<p><strong>Invertir en competencias de gestión de datos e IA</strong>: La tendencia hacia el radiólogo como "arquitecto de sistemas" requiere formación en curación de datasets, validación de algoritmos y gobernanza de IA clínica.</p>
+</li>
+</ol>
+<hr />
+<h2>Artículos de Referencia del Periodo</h2>
+<ol>
+<li>
+<p><strong>Thuere KL et al.</strong> Opportunistic Screening on Chest CT, From the AJR Special Series on Screening. <em>AJR Am J Roentgenol</em>. 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/40668630/</p>
+</li>
+<li>
+<p><strong>Zhang H et al.</strong> Predictive value of artificial intelligence-based quantitative CT feature analysis for diagnosing the pathological types of pulmonary nodules. <em>Eur Radiol</em>. 2026 Apr.<br />
+   https://pubmed.ncbi.nlm.nih.gov/41076471/</p>
+</li>
+<li>
+<p><strong>Peters B et al.</strong> Diagnostic performance of a coronary CT angiography-based deep learning model for the prediction of vessel-specific </p>
+</li>
+</ol>
+            </div>
+        </div>
+    </div>
+    
+        </div>
+    </main>
+</div>
+
+<script>
+    function toggleCard(topicId) {
+        const body = document.getElementById('body-' + topicId);
+        const btn = body.previousElementSibling.querySelector('.toggle-btn');
+        body.classList.toggle('expanded');
+        btn.textContent = body.classList.contains('expanded') ? '▲ Cerrar' : '▼ Ver resumen';
+    }
+
+    document.querySelectorAll('.sidebar a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const topicId = a.getAttribute('href').replace('#', '');
+                const body = document.getElementById('body-' + topicId);
+                if (body && !body.classList.contains('expanded')) {
+                    toggleCard(topicId);
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>
