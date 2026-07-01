@@ -1,264 +1,284 @@
-# PODCAST: Actualización en Radiología Torácica
-## Episodio: Junio 2026
+# PODCAST: RADIOLOGÍA TORÁCICA AL DÍA
+## Episodio: Actualización Julio 2026
 
 ---
 
 **[00:00]**
 
-**ANA:** Muy buenos días a todos y bienvenidos a un nuevo episodio de nuestro podcast de actualización en radiología torácica. Soy Ana, radióloga torácica, y como siempre me acompaña mi compañero Carlos.
+**ANA:** ¡Muy buenos días! Bienvenidos a un nuevo episodio de *Radiología Torácica al Día*, el podcast donde repasamos las novedades más relevantes de nuestra especialidad. Soy Ana Martínez, radióloga torácica en el Hospital Universitario, y como siempre me acompaña...
 
-**CARLOS:** ¡Hola a todos! Encantado de estar aquí otro mes más. Y la verdad, Ana, que este mes viene cargadito de novedades interesantes, especialmente en el terreno cardiovascular, que ya sabes que es mi debilidad.
+**CARLOS:** Carlos Vega, radiólogo cardiovascular. ¡Hola a todos! Ana, tenemos un mes de julio que viene cargadísimo. Me he tomado tres cafés esta mañana para procesar todo lo que ha salido publicado.
 
-**ANA:** Pues sí, Carlos, tenemos un mes muy completo. Vamos a hablar de inteligencia artificial —que ya es un clásico—, de avances tecnológicos importantes como los detectores de conteo de fotones, de fibrosis pulmonar, de nódulos... En fin, hay para todos los gustos.
+**ANA:** *[riendo]* Y creo que nos va a hacer falta, Carlos, porque hay cambios importantes. Algunos que van a modificar cómo trabajamos en nuestro día a día.
 
-**CARLOS:** Y lo que más me llama la atención es que este mes vemos una tendencia clara: ya no basta con desarrollar herramientas nuevas, ahora toca demostrar que realmente funcionan en la práctica clínica real. Hay una maduración del campo que me parece muy sana.
+---
 
 **[01:00]**
 
-**ANA:** Exactamente. Bueno, vamos a hacer un repaso rápido de lo que vamos a cubrir hoy para que los oyentes sepan qué les espera. Empezaremos hablando de inteligencia artificial en radiología torácica, que este mes tiene un enfoque muy crítico y realista. Luego pasaremos a los avances en imagen cardíaca, donde el PCD-CT —el detector de conteo de fotones— se lleva el protagonismo.
+**ANA:** Venga, vamos a hacer un repaso rápido de lo que viene en el episodio de hoy. En el bloque de patología pulmonar tenemos novedades muy potentes: la Fleischner Society ha actualizado su terminología para nódulos pulmonares, y te adelanto que vamos a tener que desaprender algunas cosas.
 
-**CARLOS:** Después tocaremos las enfermedades pulmonares intersticiales difusas, con datos muy relevantes sobre cómo cuantificar la progresión de la fibrosis. Y hablaremos del manejo del nódulo pulmonar, que siempre genera debate.
+**CARLOS:** Eso siempre duele un poco, ¿no? *[risas]* Yo vengo con noticias del mundo cardiovascular: el TC con detector de conteo de fotones está demostrando cosas increíbles en la evaluación de stents, y tenemos varios estudios multicéntricos que validan scores de inteligencia artificial para predicción de eventos. Y hablando de IA...
 
-**ANA:** También cubriremos EPOC y patología de la vía aérea, donde los tapones mucosos emergen como una diana terapéutica muy interesante. Y cerraremos con tromboembolismo pulmonar e hipertensión pulmonar, donde hay novedades técnicas importantes.
+**ANA:** Hablando de IA, que es tema transversal este mes. Vamos a ver qué hay de nuevo en los modelos de visión-lenguaje, y también vamos a comentar un tema que me parece fundamental: la evidencia sobre si la IA realmente nos está ayudando con el burnout... spoiler: la respuesta no está tan clara como nos gustaría.
 
-**CARLOS:** Y por supuesto, al final elegiremos nuestro artículo del mes, que este mes no va a ser fácil porque hay varios candidatos muy buenos.
+**CARLOS:** También tenemos que hablar de infecciones fúngicas en inmunocompetentes, que parece que el cambio climático nos está trayendo sorpresas, y de avances en EPID con nuevos trazadores PET.
+
+**ANA:** Y para tu parte cardiovascular, hay un estudio muy interesante sobre cómo la progresión de la fibrosis miocárdica en resonancia predice eventos en miocardiopatía hipertrófica.
+
+**CARLOS:** Exacto. Bueno, empezamos, que tenemos mucho que cubrir.
+
+---
 
 **[03:00]**
 
-**ANA:** Perfecto. Pues empecemos con la inteligencia artificial, que es un tema que llevamos meses siguiendo. Carlos, ¿qué te ha parecido lo que hemos visto este mes?
+**ANA:** Vale, vamos a arrancar con lo que creo que es *la* noticia del mes para cualquiera que informe TC torácicos de rutina: **la actualización del glosario de la Fleischner Society**. Carlos, esto afecta a todos los radiólogos, no solo a los torácicos.
 
-**CARLOS:** Mira, Ana, lo que más me ha llamado la atención es que por fin empezamos a ver estudios que cuestionan si todo esto de la IA realmente vale la pena desde el punto de vista económico. Hay una revisión sistemática publicada que analiza los estudios de coste-efectividad de la IA en radiología, y las conclusiones son... digamos que moderadoras del entusiasmo.
+**CARLOS:** Totalmente. ¿Qué ha cambiado exactamente?
 
-**ANA:** Sí, lo leí con mucho interés. Básicamente lo que dicen es que la mayoría de los estudios económicos publicados tienen importantes lagunas metodológicas. No es que la IA no sea útil, sino que todavía no tenemos evidencia sólida de que sea coste-efectiva en la práctica real.
+**ANA:** Pues mira, llevamos años con la tricotomía clásica: nódulo sólido, subsólido y parte-sólido. Era simple, práctica, pero la verdad es que en la práctica clínica real nos quedábamos cortos. ¿Cuántas veces has visto un nódulo que no encaja bien en ninguna categoría?
 
-**CARLOS:** Exacto. Y esto es importante porque muchos hospitales están invirtiendo cantidades significativas de dinero en estas herramientas, y la justificación económica sigue siendo bastante débil. No digo que no haya que invertir, pero hay que ser realistas.
+**CARLOS:** Constantemente. Sobre todo esos nódulos con atenuación heterogénea, o los que tienen morfología irregular pero sin componente claramente sólido...
 
-**[04:30]**
+**ANA:** Exacto. Pues la Fleischner ahora propone una clasificación en **"simple" versus "complejo"**. Los nódulos simples serían aquellos homogéneos, bien definidos, que encajan claramente en una categoría. Los complejos son todos los demás: heterogéneos, con bordes irregulares, con características mixtas...
 
-**ANA:** Y hablando de realismo, este mes también tenemos datos muy interesantes sobre el rendimiento de los productos comerciales de IA para detección de cáncer pulmonar en radiografía de tórax. Es una comparación independiente, cabeza a cabeza, de varios dispositivos comerciales.
+**CARLOS:** Y supongo que esto tiene implicaciones directas en los intervalos de seguimiento.
 
-**CARLOS:** Ah sí, este estudio me pareció fundamental. Las sensibilidades oscilan entre el 61% y el 80% según el dispositivo. Es una variabilidad enorme.
+**ANA:** Totalmente. Un nódulo complejo va a requerir un manejo más individualizado, posiblemente seguimiento más estrecho o derivación más precoz a multidisciplinar. Ya no vale el algoritmo automático de "mide 6 mm, sólido, seguimiento a 12 meses". Hay que mirar más allá.
 
-**ANA:** Enorme. Y esto tiene implicaciones prácticas muy importantes, ¿no? Porque si estás eligiendo qué herramienta comprar para tu hospital, no puedes asumir que todas funcionan igual. La selección del producto específico importa, y mucho.
+**CARLOS:** Esto va a generar trabajo, ¿eh? Porque implica que el radiólogo tiene que caracterizar más, no solo medir.
 
-**CARLOS:** Totalmente de acuerdo. Y relacionado con esto, otro estudio analiza qué tan bien cubren los productos comerciales de IA las tareas definidas en las guías de manejo de nódulos pulmonares. Y la conclusión es que la cobertura es incompleta.
+**[05:30]**
 
-**ANA:** Sí, solo una minoría de las soluciones con marcado CE abordan todas las tareas recomendadas. Y la evidencia científica publicada para la mayoría de dispositivos es limitada y variable. Esto debería preocuparnos.
+**ANA:** Sí, pero creo que es un cambio necesario. Y enlaza con otro estudio que ha salido este mes, precisamente sobre **la variabilidad entre distintos softwares de IA** para nódulos pulmonares. Un grupo británico ha evaluado tres herramientas comerciales... y las discrepancias son preocupantes.
 
-**[06:00]**
+**CARLOS:** ¿En qué sentido?
 
-**CARLOS:** Sin embargo, no todo son críticas. También hay avances positivos. Por ejemplo, el modelo Sybil de deep learning para predicción de riesgo de cáncer pulmonar ha sido validado en población asiática, lo cual es importante porque demuestra su aplicabilidad transcultural.
+**ANA:** Pues tanto en detección como en segmentación. Un mismo nódulo puede ser medido de forma significativamente diferente por distintas herramientas, hasta el punto de que las recomendaciones de manejo según guías BTS o Fleischner cambiarían dependiendo de qué software uses.
 
-**ANA:** Sí, esto abre la puerta a personalizar los intervalos de cribado según el riesgo individual predicho por el modelo. Si podemos identificar a los pacientes de mayor riesgo, podríamos optimizar los recursos y hacer un cribado más eficiente.
+**CARLOS:** Eso es un problema serio para la reproducibilidad...
 
-**CARLOS:** Y hablando de multimodalidad, hay un estudio muy interesante sobre IA para detección de amiloidosis cardíaca que integra datos de ecocardiografía con información clínica y de laboratorio. El rendimiento supera claramente a los modelos basados en una única fuente de datos.
+**ANA:** Exacto. Y esto me lleva a ser un poco más cauta con la adopción acrítica de estas herramientas. No digo que no sean útiles, que lo son, pero tenemos que entender sus limitaciones y no delegar completamente.
 
-**ANA:** Eso tiene mucho sentido clínico. La amiloidosis es una enfermedad sistémica, así que tiene lógica que un enfoque multimodal funcione mejor. Es la dirección hacia la que deberíamos ir.
+**CARLOS:** Estoy de acuerdo. La IA como copiloto, no como piloto automático.
 
-**[07:30]**
+---
 
-**CARLOS:** Otro tema importante que ha surgido este mes son los factores de aceptación de la IA por parte de los radiólogos. Se han identificado sistemáticamente los determinantes críticos para la adopción clínica.
+**[07:00]**
 
-**ANA:** Sí, y no son sorprendentes: la confianza del radiólogo en el algoritmo, la transparencia de cómo llega a sus conclusiones, y sobre todo la integración en el flujo de trabajo. Si la herramienta interrumpe tu forma de trabajar, no la vas a usar.
+**ANA:** Bueno, cambiando un poco de tema pero siguiendo en pulmón: este mes ha salido un artículo muy interesante sobre el concepto de **"cancerización de campo" mediante radiómica lobar**. ¿Te suena?
 
-**CARLOS:** Exacto. Y esto conecta con algo que hemos comentado antes: no basta con que la IA sea técnicamente buena, tiene que encajar en la práctica real. La implementación es tan importante como el algoritmo en sí.
+**CARLOS:** He visto el abstract. ¿Es el estudio con más de 10.000 pacientes de alto riesgo?
 
-**[08:30]**
+**ANA:** Ese mismo. Lo que han hecho es analizar características radiómicas del parénquima pulmonar *más allá* del nódulo individual. La idea es que los cambios difusos en el pulmón podrían reflejar un "campo" de predisposición al cáncer.
 
-**ANA:** Bueno, Carlos, pasemos a tu terreno favorito: la imagen cardíaca. ¿Qué nos traes este mes?
+**CARLOS:** Es conceptualmente muy interesante. Pasamos de fijarnos solo en la lesión focal a evaluar el contexto.
 
-**CARLOS:** Ana, este mes es el mes del detector de conteo de fotones en imagen cardíaca, sin duda. El PCD-CT se está consolidando como una tecnología verdaderamente transformadora, especialmente para un grupo de pacientes que siempre nos ha dado problemas: los que tienen calcificación coronaria severa.
+**ANA:** Y los resultados son prometedores. Identifican patrones parenquimatosos asociados a mayor riesgo de desarrollo de cáncer pulmonar, independientemente de las características del nódulo. Esto podría ayudar a estratificar mejor a quién seguimos más de cerca.
 
-**ANA:** Ah sí, los Agatston por encima de 600 que siempre nos hacen sufrir con el blooming.
+**CARLOS:** ¿Pero está listo para la clínica?
 
-**CARLOS:** Exactamente. Pues bien, los estudios de este mes demuestran que el PCD-CT reduce significativamente esos artefactos de blooming y mejora la precisión diagnóstica comparado con la angiografía invasiva. Estamos hablando de pacientes que antes eran prácticamente "no evaluables" y que ahora sí podemos estudiar de forma no invasiva.
+**ANA:** Todavía no. Es un estudio exploratorio, necesita validación externa. Pero marca una dirección muy interesante: la radiómica del pulmón "sano" como biomarcador de riesgo.
 
-**[09:30]**
+---
 
-**ANA:** Eso es un avance muy significativo. ¿Y hay ya guías sobre cómo usar esta tecnología?
+**[09:00]**
 
-**CARLOS:** Sí, se han publicado guías multi-institucionales para protocolos de PCD-CT cardíaco. Sintetizan la evidencia actual sobre selección de protocolos, optimización de dosis y las aplicaciones espectrales intrínsecas que ofrece esta tecnología.
+**CARLOS:** Oye, Ana, antes de que me pase a cardiovascular quiero que hablemos de algo que me ha llamado mucho la atención este mes: **el auge de las infecciones fúngicas en pacientes inmunocompetentes**.
 
-**ANA:** Lo de las aplicaciones espectrales me parece muy interesante. Es como tener un TC de energía dual "de serie", sin necesidad de protocolos especiales.
+**ANA:** Sí, es un tema que está emergiendo con fuerza. Tradicionalmente, cuando veíamos un patrón compatible con infección fúngica pulmonar, lo primero que preguntábamos era: "¿está inmunodeprimido?". Pero ahora esto está cambiando.
 
-**CARLOS:** Exacto. Y esto abre posibilidades muy interesantes, como la caracterización de placas coronarias o la cuantificación de yodo en el miocardio para evaluar perfusión. Estamos solo al principio de explorar las posibilidades.
+**CARLOS:** ¿Y qué factores están detrás?
 
-**[10:30]**
+**ANA:** Es una tormenta perfecta. Por un lado, el cambio climático está alterando la distribución geográfica de hongos patógenos. Por otro, tenemos las secuelas post-virales, que ya sabemos que pueden dejar al pulmón más vulnerable. Y además, los avances en cuidados intensivos hacen que sobrevivan pacientes que antes no lo hacían, pero con cierto grado de inmunodisfunción adquirida.
 
-**ANA:** ¿Y qué hay del análisis cuantitativo de placa coronaria? He visto que el American College of Cardiology ha publicado algo al respecto.
+**CARLOS:** ¿Y la candidiasis invasiva sigue siendo la protagonista?
 
-**CARLOS:** Sí, han publicado su primer Scientific Statement sobre QCPA —análisis cuantitativo de placa coronaria—. Establecen criterios de uso apropiado para productos aprobados por la FDA. Es un paso importante hacia la madurez clínica de esta técnica.
+**ANA:** Sigue representando el 20% de las infecciones del torrente sanguíneo en UCI, pero lo que me preocupa es la emergencia de *Candida auris*. Este bicho es capaz de causar brotes nosocomiales y tiene perfiles de resistencia complicados.
 
-**ANA:** ¿Crees que esto va a cambiar la práctica clínica?
+**CARLOS:** Desde el punto de vista de imagen, ¿qué deberíamos buscar?
 
-**CARLOS:** Creo que sí, aunque de forma gradual. La caracterización de la placa —identificar placas de alto riesgo, cuantificar el volumen de placa no calcificada, detectar remodelado positivo— aporta información pronóstica que va más allá del simple score de calcio o del grado de estenosis. Pero todavía falta integrar esto en las guías de decisión clínica.
+**ANA:** Ahí está el reto. Los patrones radiológicos no son específicos: nódulos, consolidaciones, cavitaciones, patrón en vidrio deslustrado... Lo importante es tener un índice de sospecha alto, especialmente en pacientes con factores de riesgo más sutiles que la inmunosupresión clásica.
+
+---
 
 **[11:30]**
 
-**ANA:** Y hablando de cosas nuevas, ¿qué hay del TC de baja dosis para cribado coronario?
+**ANA:** Y ya que hablamos de infecciones, ha salido el ensayo **SCOPE** sobre manejo del empiema, que creo que va a cambiar algunas prácticas.
 
-**CARLOS:** Hay un estudio muy interesante sobre TC a 60 kVp —muy baja dosis— combinado con reconstrucción por deep learning para cribado coronario en pacientes asintomáticos con factores de riesgo cardiovascular. Los resultados son prometedores.
+**CARLOS:** ¿El del lavado con suero salino?
 
-**ANA:** 60 kVp es muy bajo. ¿La calidad de imagen es suficiente?
+**ANA:** Exacto. Había cierta esperanza de que el lavado intrapleural con suero salino pudiera ser una alternativa a la terapia enzimática con urokinasa y DNasa, que es más cara y no está disponible en todos los centros. Pues bien, el ensayo demuestra que **el lavado salino solo NO sustituye a la terapia enzimática**.
 
-**CARLOS:** Según el estudio, sí, gracias precisamente a los algoritmos de reconstrucción por deep learning que compensan el ruido. Es una combinación inteligente de reducción de dosis con mejora de imagen por IA.
+**CARLOS:** ¿Qué resultados obtuvieron?
 
-**ANA:** Esto enlaza con algo que hemos comentado sobre el cribado pulmonar: la posibilidad de detectar enfermedad coronaria de forma oportunista en la TC de baja dosis de cribado de cáncer de pulmón.
+**ANA:** Los pacientes tratados solo con lavado salino tuvieron tiempos de drenaje significativamente más largos. La combinación urokinasa/DNasa sigue siendo el estándar.
 
-**CARLOS:** Exactamente. El cribado pulmonar ofrece oportunidades infrautilizadas para detección de calcio coronario, osteoporosis y otros hallazgos. Es el concepto de "screening oportunista" multicomorbilidad.
+**CARLOS:** Bueno, al menos tenemos una respuesta clara. No todo vale.
 
-**[12:45]**
+**ANA:** Exacto. Y para nosotros como radiólogos, el mensaje es que cuando vemos un derrame complicado o un empiema, tenemos que comunicar bien los hallazgos para que el clínico pueda indicar el tratamiento óptimo desde el principio.
 
-**ANA:** Pasemos a las miocardiopatías, que también tienen novedades interesantes este mes.
+---
 
-**CARLOS:** Sí, hay varios estudios relevantes. El que más me ha llamado la atención es sobre la granularidad del realce tardío de gadolinio en miocardiopatía hipertrófica en fase terminal. No es solo cuánto realce hay, sino cómo es ese realce.
+**[13:00]**
 
-**ANA:** ¿Puedes explicar eso un poco más?
+**CARLOS:** Bueno, Ana, me toca a mí hablar de corazón. Y tengo que empezar por lo que para mí es *el* avance tecnológico del año: **el TC con detector de conteo de fotones aplicado a stents coronarios**.
 
-**CARLOS:** Claro. Tradicionalmente cuantificamos el LGE como porcentaje de masa miocárdica afectada. Pero este estudio demuestra que la textura o granularidad del realce —si es más homogéneo o más heterogéneo— tiene valor pronóstico adicional. Un realce más granular, más "moteado", parece asociarse a peor pronóstico.
+**ANA:** Sé que llevas tiempo entusiasmado con esta tecnología...
 
-**ANA:** Interesante. Esto requeriría un análisis más sofisticado de las imágenes, ¿no?
+**CARLOS:** Es que los resultados son espectaculares. Mira, la evaluación de reestenosis intra-stent siempre ha sido el talón de Aquiles de la angio-TC coronaria. Los artefactos de blooming, el endurecimiento del haz... nos quedábamos ciegos dentro del stent.
 
-**CARLOS:** Sí, probablemente con herramientas de análisis de textura o radiómicas. Es otro ejemplo de cómo podemos extraer más información de las imágenes que ya adquirimos.
+**ANA:** ¿Y qué cambia con el conteo de fotones?
 
-**[13:45]**
+**CARLOS:** La resolución. Estamos hablando de **0.2 mm** con los protocolos ultra-high resolution. El estudio de este mes demuestra que con esta tecnología, la precisión diagnóstica para detectar reestenosis intra-stent es comparable a la angiografía invasiva.
 
-**ANA:** ¿Y qué hay de la amiloidosis cardíaca? Veo que has mencionado algo antes.
+**ANA:** Eso es un salto cualitativo enorme.
 
-**CARLOS:** Sí, hay un estudio importante sobre los radiotrazadores de tecnecio para el diagnóstico de amiloidosis por transtiretina. Comparan la cinética del pirofosfato de tecnecio-99m con el HMDP, y resulta que tienen comportamientos diferentes.
+**CARLOS:** Totalmente. Y tiene implicaciones directas: muchos pacientes con stents que antes mandábamos directamente a cateterismo para comprobar permeabilidad, ahora podrían evaluarse de forma no invasiva.
 
-**ANA:** ¿Y esto tiene implicaciones prácticas?
+**ANA:** ¿Está ya disponible de forma generalizada?
 
-**CARLOS:** Absolutamente. Los tiempos de adquisición óptimos pueden ser diferentes según el trazador que uses. Si no tienes esto en cuenta, puedes tener falsos negativos o falsos positivos. El estudio establece datos comparativos mediante SPECT/CT cuantitativo que deberíamos tener en cuenta en nuestros protocolos.
+**CARLOS:** Ahí está el pero. Todavía es tecnología de centros de referencia. Pero la tendencia es clara, y creo que en los próximos años veremos una adopción más amplia.
 
-**[14:30]**
+---
 
-**ANA:** Muy bien, Carlos. Vamos a cambiar de tercio y hablar de enfermedad pulmonar intersticial difusa, que este mes trae datos muy relevantes.
+**[15:00]**
 
-**CARLOS:** Sí, este es tu terreno. ¿Qué destacarías?
+**CARLOS:** Otro tema cardiovascular importante: **el tejido adiposo epicárdico como biomarcador pronóstico**. Este mes tenemos datos del registro PARADIGM que consolidan su valor.
 
-**ANA:** Lo más importante para mí es la definición de umbrales clínicamente significativos para la progresión de la fibrosis mediante TC cuantitativa. Han establecido que un incremento del 5,4% o más en el score de fibrosis a 12 meses constituye la diferencia mínima clínicamente importante.
+**ANA:** Explícame un poco más. Sé que se habla mucho del EAT, pero no siempre me queda claro cómo usarlo.
 
-**CARLOS:** ¿Y por qué es esto importante?
+**CARLOS:** El tejido adiposo epicárdico, el EAT, es la grasa que rodea las coronarias. Lo que se ha demostrado es que no es solo grasa "de relleno", sino que es metabólicamente activa y tiene efectos proinflamatorios sobre las arterias adyacentes.
 
-**ANA:** Porque el concepto de fibrosis pulmonar progresiva —FPP— se ha convertido en central para el manejo de las enfermedades intersticiales no-FPI. Ahora tenemos tratamientos antifibróticos que funcionan, pero necesitamos identificar a los pacientes que están progresando para tratarlos a tiempo.
+**ANA:** Y esto se correlaciona con eventos...
 
-**CARLOS:** Entonces este umbral del 5,4% te permite decir objetivamente "este paciente está progresando".
+**CARLOS:** Exacto. El estudio multicéntrico de este mes establece que el volumen de EAT se asocia de forma independiente con la progresión rápida de placa aterosclerótica y con eventos cardiovasculares adversos. Incluso después de ajustar por otros factores de riesgo.
 
-**ANA:** Exacto. Es mucho mejor que la evaluación visual subjetiva, que tiene una variabilidad interobservador importante.
+**ANA:** ¿Lo cuantificáis de forma rutinaria?
 
-**[15:45]**
+**CARLOS:** Cada vez más. Con las herramientas de IA disponibles, la segmentación del EAT es bastante rápida. Y creo que en el futuro cercano será un parámetro estándar en el informe de angio-TC coronaria.
 
-**CARLOS:** ¿Y qué hay del tema de la posición del paciente? He visto algo sobre el decúbito prono.
+**ANA:** Es interesante cómo la información pronóstica que podemos extraer de un TC va mucho más allá de la anatomía coronaria pura.
 
-**ANA:** Ah, esto es muy interesante y potencialmente disruptivo. Un estudio demuestra que el TC en decúbito prono reduce significativamente la cuantificación de anomalías intersticiales. El volumen de vidrio deslustrado disminuye un 51% respecto al supino.
+**CARLOS:** Totalmente. De hecho, hay otro estudio este mes, del ensayo SCOT-HEART, que demuestra que la **composición corporal multi-órgano** evaluada en la angio-TC coronaria aporta información pronóstica independiente a 10 años.
 
-**CARLOS:** ¡Un 51%! Eso es enorme. ¿Qué implicaciones tiene?
+**ANA:** ¿Te refieres a músculo, grasa visceral...?
 
-**ANA:** Pues cuestiona los protocolos actuales de cuantificación, que se hacen prácticamente siempre en supino. Si parte de lo que vemos en las bases posteriores es atelectasia dependiente y no enfermedad intersticial real, estamos sobreestimando la severidad.
+**CARLOS:** Exacto. Densidad muscular, área de grasa visceral, cosas que ya están en la imagen pero que tradicionalmente no informamos. Cada vez más, el TC cardíaco se convierte en una evaluación integral del riesgo cardiovascular.
 
-**CARLOS:** ¿Crees que deberíamos cambiar a hacer los TC de EPID en prono?
+---
 
-**ANA:** Es una buena pregunta, y honestamente no tengo una respuesta clara. El prono es más incómodo para el paciente y puede introducir otros artefactos. Pero al menos deberíamos ser conscientes de esta limitación cuando interpretamos estudios en supino.
+**[17:30]**
 
-**[17:00]**
+**ANA:** Oye, Carlos, quiero volver un momento a la inteligencia artificial, porque hay varios estudios cardiovasculares que validan scores de IA para predicción de eventos.
 
-**CARLOS:** Cambiando de tema, también habéis mencionado el PCD-CT para imagen pulmonar, no solo cardíaca.
+**CARLOS:** Sí, es el tema del mes. Tenemos el **MIB Score** y el **AI-Ischemia Score**, ambos validados en estudios multicéntricos, y ambos superando a las métricas tradicionales que usábamos.
 
-**ANA:** Sí, el detector de conteo de fotones está emergiendo también como estándar tecnológico para imagen intersticial. Ofrece mejor resolución espacial —que es fundamental para ver el retículo fino—, información espectral intrínseca y potencial reducción de dosis.
+**ANA:** ¿Qué miden exactamente?
 
-**CARLOS:** Es una tecnología que está transformando múltiples áreas de la radiología.
+**CARLOS:** El MIB Score integra características de placa aterosclerótica cuantificadas automáticamente: volumen, composición, remodelado. El AI-Ischemia Score se centra más en la predicción de isquemia funcionalmente significativa. Pero lo importante es que ambos predicen eventos cardiovasculares mayores mejor que la cuantificación tradicional de estenosis.
 
-**ANA:** Sin duda. Y hay otro hallazgo interesante sobre métricas vasculares derivadas de TC que se correlacionan con hipertensión pulmonar en EPID. La ratio arteria pulmonar/aorta igual o mayor a 1 y el volumen vascular pulmonar pequeño predicen hipertensión pulmonar en enfermedades fibrosantes.
+**ANA:** Esto va en la línea de lo que hablábamos antes: pasar de la anatomía pura a la estratificación pronóstica.
 
-**CARLOS:** Esto es importante porque la hipertensión pulmonar es una complicación frecuente y grave de las EPID.
+**CARLOS:** Exacto. Y no es solo predicción: también hay datos sobre **la heterogeneidad de la obstrucción microvascular post-STEMI evaluada por RM**, donde algoritmos de IA superan a la valoración visual convencional para predecir MACE.
 
-**ANA:** Exacto. Si podemos detectarla precozmente con marcadores no invasivos derivados de la TC, podemos intervenir antes.
+**ANA:** La IA está madurando mucho más rápido en cardiovascular que en otras áreas, ¿no te parece?
 
-**[18:15]**
+**CARLOS:** Creo que es porque tenemos endpoints muy definidos: eventos cardiovasculares, mortalidad. Es más fácil entrenar y validar modelos cuando sabes exactamente qué estás prediciendo.
 
-**CARLOS:** ¿Y qué hay de tratamientos nuevos?
+---
 
-**ANA:** Hay buenas noticias para la histiocitosis pulmonar de células de Langerhans. Un ensayo fase II demuestra que la cladribina tiene eficacia significativa con un perfil de seguridad aceptable. Es el primer ensayo que confirma beneficio funcional en esta enfermedad.
+**[19:30]**
 
-**CARLOS:** La histiocitosis de células de Langerhans siempre ha sido un desafío terapéutico.
+**ANA:** Vamos a hablar de EPID, que también ha tenido novedades importantes este mes. La que más me ha llamado la atención es el uso de **PET/CT con FAPI-46** para evaluar fibrosis activa.
 
-**ANA:** Sí, especialmente cuando hay afectación pulmonar progresiva. Tener una opción terapéutica validada es una muy buena noticia.
+**CARLOS:** ¿FAPI? ¿Eso es el trazador dirigido a fibroblastos activados?
 
-**[19:00]**
+**ANA:** Exacto. Los fibroblastos activados expresan FAP, la proteína de activación de fibroblastos. El trazador FAPI-46 se une a esta proteína, lo que permite visualizar dónde hay remodelado fibrótico *activo*, no solo fibrosis establecida.
 
-**ANA:** Bueno, pasemos al nódulo pulmonar, que siempre da para debate.
+**CARLOS:** Eso es muy diferente a lo que nos dice el TC, ¿no?
 
-**CARLOS:** Ah, el eterno nódulo pulmonar. ¿Qué novedades hay este mes?
+**ANA:** Totalmente. El TC nos muestra la fibrosis estructural: panal, bronquiectasias de tracción, reticulación. Pero no nos dice si esa fibrosis está progresando activamente o si está "quiescente". El PET-FAPI sí puede hacer esa distinción.
 
-**ANA:** Lo más tranquilizador es un estudio de historia natural de nódulos subsolidos y opacidades en vidrio deslustrado que confirma lo que sospechábamos: la mayoría tienen un curso muy indolente y pueden vigilarse de forma segura sin intervención.
+**CARLOS:** Y eso tiene implicaciones terapéuticas...
 
-**CARLOS:** ¿Qué tan indolentes?
+**ANA:** Enormes. Si podemos identificar a los pacientes con fibrosis activa, podemos tratarlos de forma más agresiva con antifibróticos. Y lo más interesante es que están usando **imagen de doble tiempo**: comparan la captación temprana con la tardía para diferenciar mejor fibrosis activa de latente.
 
-**ANA:** Pues en el estudio, la causa de muerte más frecuente en estos pacientes fueron otras comorbilidades, no el cáncer pulmonar. Esto es importante porque a veces hay presión para biopsiar o resecar todo lo que vemos, y este estudio apoya una actitud más conservadora en nódulos subsolidos estables.
+**CARLOS:** ¿Está listo para la clínica?
 
-**CARLOS:** Aunque supongo que hay que saber identificar cuáles sí requieren acción.
+**ANA:** Todavía está en fase de investigación, pero creo que va a cambiar el paradigma de monitorización de los pacientes con FPI y fibrosis pulmonar progresiva.
 
-**ANA:** Por supuesto. Y ahí es donde entra otro estudio muy interesante: un modelo delta-radiómico multicéntrico validado que combina características radiómicas de dos puntos temporales con datos clínico-semánticos.
-
-**[20:15]**
-
-**CARLOS:** ¿Delta-radiómico? ¿Puedes explicar eso?
-
-**ANA:** Claro. En lugar de analizar solo las características del nódulo en un momento dado, analizas cómo cambian esas características entre dos estudios. El "delta" representa el cambio. Esto permite una estratificación de riesgo en tres niveles que tiene mejor rendimiento diagnóstico que los modelos de punto único.
-
-**CARLOS:** Tiene sentido. El comportamiento temporal del nódulo es probablemente más informativo que su aspecto estático.
-
-**ANA:** Exactamente. Y otro estudio interesante aborda un problema clínico muy común: en un paciente con antecedente de neoplasia que desarrolla una nueva lesión pulmonar, ¿es un segundo primario o una metástasis?
-
-**CARLOS:** Eso cambia completamente el manejo.
-
-**ANA:** Totalmente. Pues han desarrollado un modelo basado en características semánticas definidas por radiólogos —no radiómicas automatizadas, sino hallazgos que tú y yo podemos identificar— que alcanza buena capacidad discriminativa.
+---
 
 **[21:30]**
 
-**CARLOS:** Pasemos a EPOC y patología de la vía aérea. Veo que los tapones mucosos son protagonistas este mes.
+**ANA:** También hay novedades en RM pulmonar, que es algo que me interesa mucho como alternativa libre de radiación.
 
-**ANA:** Sí, esto me ha parecido muy relevante. La TC cuantitativa está revelando que los tapones mucosos son mucho más prevalentes de lo que pensábamos, tanto en asma como en EPOC.
+**CARLOS:** ¿En qué aplicación concretamente?
 
-**CARLOS:** ¿Y por qué es importante?
+**ANA:** Hay dos que destacan. Por un lado, la **RM a 0.55 Tesla para sarcoidosis pulmonar**, que demuestra viabilidad diagnóstica combinando evaluación morfológica y funcional. Y por otro, la **RM funcional con resolución de fase, el PREFUL**, para caracterizar alteraciones de perfusión y ventilación en EPID.
 
-**ANA:** Porque se asocian independientemente a obstrucción al flujo aéreo y a morbimortalidad. Y lo más llamativo: son resistentes a los corticoides convencionales. Esto los convierte en una diana terapéutica crítica que no estamos abordando bien con los tratamientos actuales.
+**CARLOS:** La RM a bajo campo está teniendo un resurgimiento, ¿no?
 
-**CARLOS:** Interesante. ¿Hay tratamientos alternativos?
+**ANA:** Sí, y tiene sentido para pulmón. A alto campo, los artefactos de susceptibilidad son un problema. A 0.55T, la señal es más homogénea y puedes obtener imágenes más limpias. Y además, los equipos de bajo campo son más baratos y accesibles.
 
-**ANA:** Están en investigación. Pero el primer paso es identificar a los pacientes afectados, y ahí es donde la TC cuantitativa entra en juego.
+**CARLOS:** ¿Crees que la RM puede llegar a sustituir al TC en algunas indicaciones torácicas?
 
-**[22:30]**
+**ANA:** No sustituir, pero sí complementar. Especialmente en pacientes jóvenes, o en seguimiento de enfermedades crónicas donde la acumulación de dosis de radiación es una preocupación. Todavía estamos lejos, pero la tendencia es positiva.
 
-**ANA:** Otro avance importante es un modelo de deep learning que predice la progresión lobar del enfisema.
-
-**CARLOS:** ¿Progresión lobar específica?
-
-**ANA:** Sí, no solo si el enfisema va a progresar, sino en qué lóbulos. Esto es muy relevante porque abre la puerta a intervenciones preventivas dirigidas regionalmente.
-
-**CARLOS:** Como reducción de volumen en lóbulos específicos.
-
-**ANA:** Exactamente. Si sabes que el lóbulo superior derecho va a deteriorarse más rápido, puedes planificar intervenciones de forma más precisa.
+---
 
 **[23:00]**
 
-**CARLOS:** ¿Y qué pasa con la estandarización de las medidas de remodelado bronquial?
+**CARLOS:** Oye, Ana, antes de cerrar quiero que hablemos de algo que me preocupa: **el impacto de la IA sobre el burnout del radiólogo**. He visto la revisión sistemática que ha salido este mes.
 
-**ANA:** Este es un problema importante que se ha puesto de manifiesto este mes. Un estudio identifica al menos 10 metodologías diferentes para calcular el Pi10 y el PiSlope —los biomarcadores de engrosamiento de la pared bronquial—.
+**ANA:** Sí, es un tema importante. Hay mucha narrativa de que la IA nos va a "liberar" de tareas repetitivas, reducir nuestra carga de trabajo, mejorar nuestra calidad de vida profesional...
 
-**CARLOS:** ¿Y eso genera variabilidad?
+**CARLOS:** ¿Y qué dice la evidencia?
 
-**ANA:** Variabilidad significativa. Si cada centro usa una metodología diferente, no podemos comparar resultados ni establecer umbrales universales. Se necesita estandarización urgente.
+**ANA:** Pues que **no está demostrado**. La revisión concluye que la evidencia actual es contradictoria e insuficiente. Algunos estudios muestran beneficios, otros no, y muchos tienen problemas metodológicos serios.
 
-**CARLOS:** Es un problema similar al que tuvimos durante años con los volúmenes cardíacos antes de que se estandarizaran los métodos de medición.
+**CARLOS:** Eso me sorprende un poco, porque subjetivamente yo siento que algunas herramientas me ayudan...
 
-**ANA:** Exactamente. Hasta que no haya consenso metodológico, estos biomarcadores no van a entrar en la práctica clínica rutinaria.
+**ANA:** Y puede que sí ayuden, pero no tenemos datos robustos que lo demuestren a nivel poblacional. Y hay factores que no solemos considerar: el tiempo que tardamos en revisar los resultados de la IA, la carga cognitiva de decidir si estamos de acuerdo o no, la responsabilidad de verificar...
 
-**[24:00]**
+**CARLOS:** Es verdad. A veces me encuentro revisando el análisis de la IA y tardo casi lo mismo que si lo hubiera hecho yo desde cero.
 
-**ANA:** Bueno, Carlos, terminemos con TEP e hipertensión pulmonar.
+**ANA:** Exacto. No digo que la IA no vaya a ser beneficiosa, pero creo que tenemos que ser honestos sobre dónde estamos ahora y no caer en promesas exageradas.
 
-**CARLOS:** Sí, hay varias novedades interesantes. La primera es un nuevo índice de obstrucción para TEP agudo basado en medición directa del área del trombo, que mejora significativamente la cuantificación de carga embólica frente a los scores tradicionales como el Miller modificado.
+---
 
-**ANA:** Los scores tradicionales siempre me han pa
+**[25:00]**
+
+**CARLOS:** Cambiando a mi terreno, este mes también hay novedades importantes en **miocardiopatías**. El estudio sobre progresión de fibrosis miocárdica en miocardiopatía hipertrófica me ha parecido muy relevante.
+
+**ANA:** ¿Qué han encontrado?
+
+**CARLOS:** Han seguido a una cohorte de pacientes con MCH con resonancias seriadas, cuantificando la extensión del realce tardío con gadolinio en cada estudio. Y lo que demuestran es que **la progresión del LGE, no solo su presencia basal, predice eventos adversos de forma independiente**.
+
+**ANA:** O sea, que un paciente que pasa de un 5% a un 15% de LGE tiene peor pronóstico que uno que se mantiene estable en 10%.
+
+**CARLOS:** Exactamente. Y esto tiene implicaciones prácticas: sugiere que deberíamos hacer resonancias de seguimiento no solo para evaluar función, sino para monitorizar la carga de fibrosis.
+
+**ANA:** ¿Y hay intervalos establecidos para este seguimiento?
+
+**CARLOS:** Todavía no hay consenso. Pero creo que vamos hacia una estratificación más dinámica del riesgo en MCH, basada en la evolución de los hallazgos de imagen, no solo en una evaluación puntual.
+
+---
+
+**[26:30]**
+
+**ANA:** También hay un estudio muy interesante sobre **tensor de difusión cardíaco en miocardiopatías pediátricas**. ¿Lo has visto?
+
+**CARLOS:** Sí, es fascinante. El DTI permite evaluar la microestructura miocárdica, la orientación de las fibras. Y lo que demuestran es que los parámetros de difusión, el ADC y la fracción de anisotropía, **distinguen entre miocardiopatía dilatada e hipertrófica en niños**.
+
+**ANA:** Eso es útil porque el fenotipo morfológico puede ser menos claro en pediatría...
+
+**CARLOS:** Exacto. Y además, es una técnica libre de gadolinio, lo cual es especialmente importante en pacientes pediátricos. Todavía no está en uso clínico rutinario, pero es un campo muy prometedor.
+
+---
+
+**[27:30]**
+
+**ANA:** Bueno, Carlos, vamos cerrando. Pero antes tenemos que elegir nuestro **artículo del mes**.
+
+**CARLOS:** *[pensativo]* Para mí hay dos candidatos claros: el
