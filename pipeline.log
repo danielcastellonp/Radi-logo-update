@@ -1772,3 +1772,415 @@
 2026-09-01 13:15:07,327 [INFO] main: === Pipeline complete in 3521s ===
 2026-09-01 13:15:07,327 [INFO] main: Articles analyzed: 264
 2026-09-01 13:15:07,328 [INFO] main: Dashboard: docs/index.html
+2026-10-01 14:05:13,767 [INFO] main: === Radiología Torácica Update — 2026-10 ===
+2026-10-01 14:05:13,776 [INFO] main: Topics: 11 + 0 ad-hoc
+2026-10-01 14:05:13,776 [INFO] main: Journals: 13
+2026-10-01 14:05:13,777 [INFO] fetcher: Fetching topic: Thoracic Infections and Inflammatory Processes (2026/09/01 → 2026/09/30)
+2026-10-01 14:05:14,770 [INFO] fetcher:   PubMed: 4 articles
+2026-10-01 14:05:17,941 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:05:28,119 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=pneumonia+imaging+thoracic+infection+CT+pulmonary+inflammation+pleural+infection&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-07-01%3A2026-10-01
+2026-10-01 14:05:28,120 [INFO] fetcher:   Only 0 articles in 3 months, expanding to 6 months
+2026-10-01 14:05:31,367 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:05:41,532 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=pneumonia+imaging+thoracic+infection+CT+pulmonary+inflammation+pleural+infection&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-04-01%3A2026-10-01
+2026-10-01 14:05:41,533 [INFO] fetcher:   Semantic Scholar top cited: 0 articles
+2026-10-01 14:05:41,533 [INFO] fetcher: Fetching topic: Diffuse Interstitial Lung Disease (2026/09/01 → 2026/09/30)
+2026-10-01 14:05:42,494 [INFO] fetcher:   PubMed: 10 articles
+2026-10-01 14:05:45,634 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:05:55,787 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=interstitial+lung+disease+CT+UIP+pattern+HRCT+pulmonary+fibrosis+imaging+ILD+classification+radiology&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-07-01%3A2026-10-01
+2026-10-01 14:05:55,788 [INFO] fetcher:   Only 0 articles in 3 months, expanding to 6 months
+2026-10-01 14:05:58,952 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:06:09,081 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=interstitial+lung+disease+CT+UIP+pattern+HRCT+pulmonary+fibrosis+imaging+ILD+classification+radiology&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-04-01%3A2026-10-01
+2026-10-01 14:06:09,082 [INFO] fetcher:   Semantic Scholar top cited: 0 articles
+2026-10-01 14:06:09,082 [INFO] fetcher: Fetching topic: Pulmonary Neoplasia (2026/09/01 → 2026/09/30)
+2026-10-01 14:06:10,668 [INFO] fetcher:   PubMed: 22 articles
+2026-10-01 14:06:13,827 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:06:24,117 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=lung+cancer+CT+staging+pulmonary+malignancy+imaging+lung+tumor+radiomics+NSCLC+radiology&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-07-01%3A2026-10-01
+2026-10-01 14:06:24,118 [INFO] fetcher:   Only 0 articles in 3 months, expanding to 6 months
+2026-10-01 14:06:27,590 [INFO] fetcher:   Semantic Scholar top cited: 11 articles
+2026-10-01 14:06:27,590 [INFO] fetcher: Fetching topic: Pulmonary Nodule (2026/09/01 → 2026/09/30)
+2026-10-01 14:06:28,467 [INFO] fetcher:   PubMed: 4 articles
+2026-10-01 14:06:31,601 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:06:41,776 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=pulmonary+nodule+management+lung+nodule+CT+Lung-RADS+subsolid+nodule&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-07-01%3A2026-10-01
+2026-10-01 14:06:41,777 [INFO] fetcher:   Only 0 articles in 3 months, expanding to 6 months
+2026-10-01 14:06:45,029 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:06:55,274 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=pulmonary+nodule+management+lung+nodule+CT+Lung-RADS+subsolid+nodule&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-04-01%3A2026-10-01
+2026-10-01 14:06:55,275 [INFO] fetcher:   Semantic Scholar top cited: 0 articles
+2026-10-01 14:06:55,276 [INFO] fetcher: Fetching topic: COPD and Airway Disease (2026/09/01 → 2026/09/30)
+2026-10-01 14:06:56,224 [INFO] fetcher:   PubMed: 11 articles
+2026-10-01 14:06:59,387 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:07:09,562 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=COPD+CT+phenotypes+emphysema+quantification+CT+airway+remodeling+imaging+bronchiectasis+CT&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-07-01%3A2026-10-01
+2026-10-01 14:07:09,563 [INFO] fetcher:   Only 0 articles in 3 months, expanding to 6 months
+2026-10-01 14:07:12,770 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:07:22,943 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=COPD+CT+phenotypes+emphysema+quantification+CT+airway+remodeling+imaging+bronchiectasis+CT&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-04-01%3A2026-10-01
+2026-10-01 14:07:22,944 [INFO] fetcher:   Semantic Scholar top cited: 0 articles
+2026-10-01 14:07:22,944 [INFO] fetcher: Fetching topic: Pulmonary Embolism and Pulmonary Hypertension (2026/09/01 → 2026/09/30)
+2026-10-01 14:07:24,157 [INFO] fetcher:   PubMed: 17 articles
+2026-10-01 14:07:27,316 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:07:37,490 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=pulmonary+embolism+CTPA+pulmonary+hypertension+imaging+chronic+thromboembolic+disease+right+heart+CT&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-07-01%3A2026-10-01
+2026-10-01 14:07:37,491 [INFO] fetcher:   Only 0 articles in 3 months, expanding to 6 months
+2026-10-01 14:07:40,614 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:07:50,841 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=pulmonary+embolism+CTPA+pulmonary+hypertension+imaging+chronic+thromboembolic+disease+right+heart+CT&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-04-01%3A2026-10-01
+2026-10-01 14:07:50,842 [INFO] fetcher:   Semantic Scholar top cited: 0 articles
+2026-10-01 14:07:50,842 [INFO] fetcher: Fetching topic: Ischemic Heart Disease (2026/09/01 → 2026/09/30)
+2026-10-01 14:07:51,923 [INFO] fetcher:   PubMed: 11 articles
+2026-10-01 14:07:55,039 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:08:05,171 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=coronary+CTA+cardiac+CT+ischemia+CCTA+stenosis+myocardial+perfusion+CT&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-07-01%3A2026-10-01
+2026-10-01 14:08:05,172 [INFO] fetcher:   Only 0 articles in 3 months, expanding to 6 months
+2026-10-01 14:08:08,309 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:08:18,435 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=coronary+CTA+cardiac+CT+ischemia+CCTA+stenosis+myocardial+perfusion+CT&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-04-01%3A2026-10-01
+2026-10-01 14:08:18,436 [INFO] fetcher:   Semantic Scholar top cited: 0 articles
+2026-10-01 14:08:18,436 [INFO] fetcher: Fetching topic: Cardiomyopathies (2026/09/01 → 2026/09/30)
+2026-10-01 14:08:19,394 [INFO] fetcher:   PubMed: 7 articles
+2026-10-01 14:08:22,514 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:08:32,657 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=cardiomyopathy+cardiac+MRI+myocarditis+CMR+hypertrophic+cardiomyopathy+imaging+LGE+cardiac+MRI&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-07-01%3A2026-10-01
+2026-10-01 14:08:32,658 [INFO] fetcher:   Only 0 articles in 3 months, expanding to 6 months
+2026-10-01 14:08:35,885 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:08:46,014 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=cardiomyopathy+cardiac+MRI+myocarditis+CMR+hypertrophic+cardiomyopathy+imaging+LGE+cardiac+MRI&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-04-01%3A2026-10-01
+2026-10-01 14:08:46,015 [INFO] fetcher:   Semantic Scholar top cited: 0 articles
+2026-10-01 14:08:46,015 [INFO] fetcher: Fetching topic: Thoracic MRI (non-cardiac) (2026/09/01 → 2026/09/30)
+2026-10-01 14:08:47,189 [INFO] fetcher:   PubMed: 50 articles
+2026-10-01 14:08:50,351 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:09:00,480 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=lung+MRI+thoracic+MRI+non-cardiac+mediastinum+MRI+pleural+MRI&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-07-01%3A2026-10-01
+2026-10-01 14:09:00,481 [INFO] fetcher:   Only 0 articles in 3 months, expanding to 6 months
+2026-10-01 14:09:03,630 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:09:14,068 [INFO] fetcher:   Semantic Scholar top cited: 10 articles
+2026-10-01 14:09:14,068 [INFO] fetcher: Fetching topic: Advances in Cardiac Imaging (2026/09/01 → 2026/09/30)
+2026-10-01 14:09:15,493 [INFO] fetcher:   PubMed: 50 articles
+2026-10-01 14:09:18,623 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:09:28,751 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=cardiac+imaging+advances+photon+counting+CT+cardiac+4D+flow+MRI+cardiac+CT+new+techniques&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-07-01%3A2026-10-01
+2026-10-01 14:09:28,752 [INFO] fetcher:   Only 0 articles in 3 months, expanding to 6 months
+2026-10-01 14:09:31,945 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:09:42,106 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=cardiac+imaging+advances+photon+counting+CT+cardiac+4D+flow+MRI+cardiac+CT+new+techniques&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-04-01%3A2026-10-01
+2026-10-01 14:09:42,107 [INFO] fetcher:   Semantic Scholar top cited: 0 articles
+2026-10-01 14:09:42,107 [INFO] fetcher: Fetching topic: AI in Thoracic Radiology (2026/09/01 → 2026/09/30)
+2026-10-01 14:09:43,395 [INFO] fetcher:   PubMed: 50 articles
+2026-10-01 14:09:46,560 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:09:56,808 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=deep+learning+chest+radiology+AI+lung+nodule+detection+radiomics+thoracic+machine+learning+chest+CT&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-07-01%3A2026-10-01
+2026-10-01 14:09:56,809 [INFO] fetcher:   Only 0 articles in 3 months, expanding to 6 months
+2026-10-01 14:09:59,939 [WARNING] fetcher: Semantic Scholar rate limit. Waiting 10s...
+2026-10-01 14:10:10,114 [ERROR] fetcher: Semantic Scholar error: 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=deep+learning+chest+radiology+AI+lung+nodule+detection+radiomics+thoracic+machine+learning+chest+CT&fields=title%2Cabstract%2Cauthors%2Cyear%2CcitationCount%2CexternalIds%2Cvenue%2CpublicationDate&limit=50&publicationDateOrYear=2026-04-01%3A2026-10-01
+2026-10-01 14:10:10,115 [INFO] fetcher:   Semantic Scholar top cited: 0 articles
+2026-10-01 14:10:10,123 [INFO] main: Cache saved: .cache/2026-10/articles.json
+2026-10-01 14:10:10,124 [INFO] generator: Generating summary for: Infecciones y procesos inflamatorios torácicos
+2026-10-01 14:10:55,989 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:10:56,008 [INFO] generator: Generating summary for: EPID (Enfermedad Pulmonar Intersticial Difusa)
+2026-10-01 14:11:44,344 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:11:44,345 [INFO] generator: Generating summary for: Neoplasia Pulmonar
+2026-10-01 14:12:38,485 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:12:38,486 [INFO] generator: Generating summary for: Nódulo Pulmonar
+2026-10-01 14:13:16,442 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:13:16,444 [INFO] generator: Generating summary for: EPOC y Patología de la Vía Aérea
+2026-10-01 14:14:04,786 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:14:04,787 [INFO] generator: Generating summary for: TEP e Hipertensión Pulmonar
+2026-10-01 14:14:56,564 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:14:56,565 [INFO] generator: Generating summary for: Cardiopatía Isquémica
+2026-10-01 14:15:43,668 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:15:43,669 [INFO] generator: Generating summary for: Miocardiopatías
+2026-10-01 14:16:34,213 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:16:34,214 [INFO] generator: Generating summary for: RM Torácica (no cardiaca)
+2026-10-01 14:17:26,088 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:17:26,089 [INFO] generator: Generating summary for: Avances en Imagen Cardiaca
+2026-10-01 14:18:08,427 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:18:08,428 [INFO] generator: Generating summary for: IA en Radiología Torácica
+2026-10-01 14:18:57,296 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:18:57,297 [INFO] generator: Generating podcast script...
+2026-10-01 14:20:50,842 [INFO] httpx2: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-10-01 14:20:50,844 [INFO] main: Cache saved: .cache/2026-10/content.json
+2026-10-01 14:20:51,078 [INFO] audio: Total turns: 143 — splitting into 2 parts
+2026-10-01 14:20:51,079 [INFO] audio: Part 1: 71 turns → docs/audio/podcast_2026-10.mp3
+2026-10-01 14:20:51,183 [INFO] audio:   Part1 Turn 1/71 [ANA] chunk 1/1: 155 chars
+2026-10-01 14:21:14,097 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:21:14,950 [INFO] audio:   Part1 Turn 2/71 [CARLOS] chunk 1/1: 89 chars
+2026-10-01 14:21:36,670 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:21:36,837 [INFO] audio:   Part1 Turn 3/71 [ANA] chunk 1/1: 245 chars
+2026-10-01 14:21:59,079 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:21:59,576 [INFO] audio:   Part1 Turn 4/71 [CARLOS] chunk 1/1: 102 chars
+2026-10-01 14:22:20,954 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:22:21,192 [INFO] audio:   Part1 Turn 5/71 [ANA] chunk 1/1: 206 chars
+2026-10-01 14:22:43,073 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:22:43,859 [INFO] audio:   Part1 Turn 6/71 [CARLOS] chunk 1/1: 142 chars
+2026-10-01 14:23:06,228 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:23:06,743 [INFO] audio:   Part1 Turn 7/71 [ANA] chunk 1/1: 108 chars
+2026-10-01 14:23:30,528 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:23:31,009 [INFO] audio:   Part1 Turn 8/71 [CARLOS] chunk 1/1: 135 chars
+2026-10-01 14:23:51,805 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:23:52,226 [INFO] audio:   Part1 Turn 9/71 [ANA] chunk 1/1: 157 chars
+2026-10-01 14:24:13,910 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:24:14,629 [INFO] audio:   Part1 Turn 10/71 [CARLOS] chunk 1/1: 104 chars
+2026-10-01 14:24:35,470 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:24:35,807 [INFO] audio:   Part1 Turn 11/71 [ANA] chunk 1/1: 16 chars
+2026-10-01 14:24:57,639 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:24:57,753 [INFO] audio:   Part1 Turn 12/71 [ANA] chunk 1/1: 176 chars
+2026-10-01 14:25:19,439 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:25:19,984 [INFO] audio:   Part1 Turn 13/71 [CARLOS] chunk 1/1: 63 chars
+2026-10-01 14:25:42,023 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:25:42,555 [INFO] audio:   Part1 Turn 14/71 [ANA] chunk 1/1: 227 chars
+2026-10-01 14:26:04,462 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:26:05,520 [INFO] audio:   Part1 Turn 15/71 [CARLOS] chunk 1/1: 19 chars
+2026-10-01 14:26:27,764 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:26:28,063 [INFO] audio:   Part1 Turn 16/71 [ANA] chunk 1/1: 244 chars
+2026-10-01 14:26:49,419 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:26:50,069 [INFO] audio:   Part1 Turn 17/71 [CARLOS] chunk 1/1: 111 chars
+2026-10-01 14:27:12,099 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:27:12,838 [INFO] audio:   Part1 Turn 18/71 [ANA] chunk 1/1: 143 chars
+2026-10-01 14:27:35,067 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:27:35,754 [INFO] audio:   Part1 Turn 19/71 [CARLOS] chunk 1/1: 52 chars
+2026-10-01 14:27:56,903 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:27:57,084 [INFO] audio:   Part1 Turn 20/71 [ANA] chunk 1/1: 186 chars
+2026-10-01 14:28:18,847 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:28:19,537 [INFO] audio:   Part1 Turn 21/71 [CARLOS] chunk 1/1: 42 chars
+2026-10-01 14:28:41,014 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:28:41,210 [INFO] audio:   Part1 Turn 22/71 [ANA] chunk 1/1: 217 chars
+2026-10-01 14:29:02,452 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:29:03,079 [INFO] audio:   Part1 Turn 23/71 [CARLOS] chunk 1/1: 96 chars
+2026-10-01 14:29:24,779 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:29:25,323 [INFO] audio:   Part1 Turn 24/71 [ANA] chunk 1/1: 222 chars
+2026-10-01 14:29:47,813 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:29:49,074 [INFO] audio:   Part1 Turn 25/71 [CARLOS] chunk 1/1: 32 chars
+2026-10-01 14:30:09,878 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:30:10,100 [INFO] audio:   Part1 Turn 26/71 [ANA] chunk 1/1: 276 chars
+2026-10-01 14:30:32,209 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:30:33,434 [INFO] audio:   Part1 Turn 27/71 [CARLOS] chunk 1/1: 27 chars
+2026-10-01 14:30:54,342 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:30:54,487 [INFO] audio:   Part1 Turn 28/71 [CARLOS] chunk 1/1: 105 chars
+2026-10-01 14:31:15,621 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:31:16,664 [INFO] audio:   Part1 Turn 29/71 [ANA] chunk 1/1: 194 chars
+2026-10-01 14:31:38,207 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:31:38,714 [INFO] audio:   Part1 Turn 30/71 [CARLOS] chunk 1/1: 62 chars
+2026-10-01 14:32:00,311 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:32:00,755 [INFO] audio:   Part1 Turn 31/71 [ANA] chunk 1/1: 169 chars
+2026-10-01 14:32:21,844 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:32:22,393 [INFO] audio:   Part1 Turn 32/71 [CARLOS] chunk 1/1: 20 chars
+2026-10-01 14:32:43,859 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:32:44,143 [INFO] audio:   Part1 Turn 33/71 [ANA] chunk 1/1: 268 chars
+2026-10-01 14:33:06,748 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:33:07,744 [INFO] audio:   Part1 Turn 34/71 [CARLOS] chunk 1/1: 139 chars
+2026-10-01 14:33:30,096 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:33:30,916 [INFO] audio:   Part1 Turn 35/71 [ANA] chunk 1/1: 216 chars
+2026-10-01 14:33:52,648 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:33:53,131 [INFO] audio:   Part1 Turn 36/71 [CARLOS] chunk 1/1: 46 chars
+2026-10-01 14:34:14,924 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:34:15,098 [INFO] audio:   Part1 Turn 37/71 [ANA] chunk 1/1: 206 chars
+2026-10-01 14:34:36,561 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:34:36,996 [INFO] audio:   Part1 Turn 38/71 [CARLOS] chunk 1/1: 26 chars
+2026-10-01 14:34:58,363 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:34:58,483 [INFO] audio:   Part1 Turn 39/71 [ANA] chunk 1/1: 198 chars
+2026-10-01 14:35:20,532 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:35:21,302 [INFO] audio:   Part1 Turn 40/71 [CARLOS] chunk 1/1: 70 chars
+2026-10-01 14:35:42,441 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:35:42,883 [INFO] audio:   Part1 Turn 41/71 [ANA] chunk 1/1: 196 chars
+2026-10-01 14:36:03,908 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:36:04,481 [INFO] audio:   Part1 Turn 42/71 [CARLOS] chunk 1/1: 48 chars
+2026-10-01 14:36:26,175 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:36:26,495 [INFO] audio:   Part1 Turn 43/71 [ANA] chunk 1/1: 165 chars
+2026-10-01 14:36:48,214 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:36:49,041 [INFO] audio:   Part1 Turn 44/71 [CARLOS] chunk 1/1: 160 chars
+2026-10-01 14:37:10,086 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:37:10,343 [INFO] audio:   Part1 Turn 45/71 [ANA] chunk 1/1: 182 chars
+2026-10-01 14:37:31,479 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:37:31,881 [INFO] audio:   Part1 Turn 46/71 [CARLOS] chunk 1/1: 22 chars
+2026-10-01 14:37:53,895 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:37:54,221 [INFO] audio:   Part1 Turn 47/71 [ANA] chunk 1/1: 164 chars
+2026-10-01 14:38:16,860 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:38:17,925 [INFO] audio:   Part1 Turn 48/71 [CARLOS] chunk 1/1: 82 chars
+2026-10-01 14:38:39,160 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:38:39,633 [INFO] audio:   Part1 Turn 49/71 [ANA] chunk 1/1: 101 chars
+2026-10-01 14:39:00,958 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:39:01,259 [INFO] audio:   Part1 Turn 50/71 [CARLOS] chunk 1/1: 67 chars
+2026-10-01 14:39:22,974 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:39:23,441 [INFO] audio:   Part1 Turn 51/71 [ANA] chunk 1/1: 318 chars
+2026-10-01 14:39:45,580 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:39:46,407 [INFO] audio:   Part1 Turn 52/71 [CARLOS] chunk 1/1: 47 chars
+2026-10-01 14:40:07,371 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:40:07,548 [INFO] audio:   Part1 Turn 53/71 [ANA] chunk 1/1: 196 chars
+2026-10-01 14:40:29,050 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:40:29,619 [INFO] audio:   Part1 Turn 54/71 [CARLOS] chunk 1/1: 70 chars
+2026-10-01 14:40:50,840 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:40:50,965 [INFO] audio:   Part1 Turn 55/71 [ANA] chunk 1/1: 137 chars
+2026-10-01 14:41:12,017 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:41:12,323 [INFO] audio:   Part1 Turn 56/71 [CARLOS] chunk 1/1: 84 chars
+2026-10-01 14:41:33,381 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:41:33,788 [INFO] audio:   Part1 Turn 57/71 [ANA] chunk 1/1: 200 chars
+2026-10-01 14:41:55,044 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:41:55,729 [INFO] audio:   Part1 Turn 58/71 [CARLOS] chunk 1/1: 38 chars
+2026-10-01 14:42:17,210 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:42:17,633 [INFO] audio:   Part1 Turn 59/71 [ANA] chunk 1/1: 160 chars
+2026-10-01 14:42:39,856 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:42:40,437 [INFO] audio:   Part1 Turn 60/71 [CARLOS] chunk 1/1: 29 chars
+2026-10-01 14:43:02,199 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:43:02,522 [INFO] audio:   Part1 Turn 61/71 [ANA] chunk 1/1: 170 chars
+2026-10-01 14:43:24,045 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:43:24,667 [INFO] audio:   Part1 Turn 62/71 [CARLOS] chunk 1/1: 33 chars
+2026-10-01 14:43:45,841 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:43:46,197 [INFO] audio:   Part1 Turn 63/71 [ANA] chunk 1/1: 170 chars
+2026-10-01 14:44:08,496 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:44:09,192 [INFO] audio:   Part1 Turn 64/71 [CARLOS] chunk 1/1: 31 chars
+2026-10-01 14:44:29,963 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:44:30,122 [INFO] audio:   Part1 Turn 65/71 [ANA] chunk 1/1: 161 chars
+2026-10-01 14:44:51,786 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:44:52,420 [INFO] audio:   Part1 Turn 66/71 [CARLOS] chunk 1/1: 118 chars
+2026-10-01 14:45:13,723 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:45:14,361 [INFO] audio:   Part1 Turn 67/71 [ANA] chunk 1/1: 110 chars
+2026-10-01 14:45:37,228 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:45:37,978 [INFO] audio:   Part1 Turn 68/71 [CARLOS] chunk 1/1: 28 chars
+2026-10-01 14:45:58,944 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:45:59,061 [INFO] audio:   Part1 Turn 69/71 [ANA] chunk 1/1: 51 chars
+2026-10-01 14:46:20,270 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:46:20,502 [INFO] audio:   Part1 Turn 70/71 [CARLOS] chunk 1/1: 41 chars
+2026-10-01 14:46:42,090 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:46:42,429 [INFO] audio:   Part1 Turn 71/71 [ANA] chunk 1/1: 202 chars
+2026-10-01 14:47:04,856 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:47:07,969 [INFO] audio: Part1 exported: docs/audio/podcast_2026-10.mp3 (9.8 min, 71/71 turns)
+2026-10-01 14:47:07,969 [INFO] audio: Part 2: 72 turns → docs/audio/podcast_2026-10_part2.mp3
+2026-10-01 14:47:07,969 [INFO] audio:   Part2 Turn 1/72 [CARLOS] chunk 1/1: 45 chars
+2026-10-01 14:47:30,028 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:47:30,446 [INFO] audio:   Part2 Turn 2/72 [ANA] chunk 1/1: 180 chars
+2026-10-01 14:47:52,415 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:47:53,020 [INFO] audio:   Part2 Turn 3/72 [CARLOS] chunk 1/1: 15 chars
+2026-10-01 14:48:14,507 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:48:14,729 [INFO] audio:   Part2 Turn 4/72 [ANA] chunk 1/1: 164 chars
+2026-10-01 14:48:36,162 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:48:36,789 [INFO] audio:   Part2 Turn 5/72 [CARLOS] chunk 1/1: 70 chars
+2026-10-01 14:48:58,060 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:48:58,406 [INFO] audio:   Part2 Turn 6/72 [ANA] chunk 1/1: 127 chars
+2026-10-01 14:49:20,194 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:49:20,865 [INFO] audio:   Part2 Turn 7/72 [CARLOS] chunk 1/1: 15 chars
+2026-10-01 14:49:42,398 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:49:42,588 [INFO] audio:   Part2 Turn 8/72 [ANA] chunk 1/1: 133 chars
+2026-10-01 14:50:03,566 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:50:03,928 [INFO] audio:   Part2 Turn 9/72 [CARLOS] chunk 1/1: 19 chars
+2026-10-01 14:50:24,841 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:50:24,952 [INFO] audio:   Part2 Turn 10/72 [ANA] chunk 1/1: 70 chars
+2026-10-01 14:50:46,056 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:50:46,396 [INFO] audio:   Part2 Turn 11/72 [CARLOS] chunk 1/1: 18 chars
+2026-10-01 14:51:07,903 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:51:08,016 [INFO] audio:   Part2 Turn 12/72 [ANA] chunk 1/1: 230 chars
+2026-10-01 14:51:30,099 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:51:31,163 [INFO] audio:   Part2 Turn 13/72 [CARLOS] chunk 1/1: 36 chars
+2026-10-01 14:51:51,987 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:51:52,119 [INFO] audio:   Part2 Turn 14/72 [ANA] chunk 1/1: 217 chars
+2026-10-01 14:52:13,332 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:52:13,772 [INFO] audio:   Part2 Turn 15/72 [CARLOS] chunk 1/1: 54 chars
+2026-10-01 14:52:35,315 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:52:35,795 [INFO] audio:   Part2 Turn 16/72 [ANA] chunk 1/1: 10 chars
+2026-10-01 14:52:57,918 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:52:58,126 [INFO] audio:   Part2 Turn 17/72 [CARLOS] chunk 1/1: 139 chars
+2026-10-01 14:53:19,961 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:53:20,548 [INFO] audio:   Part2 Turn 18/72 [ANA] chunk 1/1: 28 chars
+2026-10-01 14:53:41,654 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:53:41,869 [INFO] audio:   Part2 Turn 19/72 [CARLOS] chunk 1/1: 136 chars
+2026-10-01 14:54:02,827 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:54:03,389 [INFO] audio:   Part2 Turn 20/72 [ANA] chunk 1/1: 56 chars
+2026-10-01 14:54:24,773 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:54:25,643 [INFO] audio:   Part2 Turn 21/72 [CARLOS] chunk 1/1: 96 chars
+2026-10-01 14:54:46,702 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:54:46,895 [INFO] audio:   Part2 Turn 22/72 [ANA] chunk 1/1: 21 chars
+2026-10-01 14:55:08,232 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:55:08,470 [INFO] audio:   Part2 Turn 23/72 [CARLOS] chunk 1/1: 123 chars
+2026-10-01 14:55:29,518 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:55:29,826 [INFO] audio:   Part2 Turn 24/72 [ANA] chunk 1/1: 18 chars
+2026-10-01 14:55:51,089 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:55:51,295 [INFO] audio:   Part2 Turn 25/72 [CARLOS] chunk 1/1: 214 chars
+2026-10-01 14:56:12,395 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:56:13,680 [INFO] audio:   Part2 Turn 26/72 [ANA] chunk 1/1: 80 chars
+2026-10-01 14:56:35,395 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:56:36,204 [INFO] audio:   Part2 Turn 27/72 [CARLOS] chunk 1/1: 150 chars
+2026-10-01 14:56:57,118 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:56:57,479 [INFO] audio:   Part2 Turn 28/72 [ANA] chunk 1/1: 54 chars
+2026-10-01 14:57:19,572 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:57:19,921 [INFO] audio:   Part2 Turn 29/72 [CARLOS] chunk 1/1: 101 chars
+2026-10-01 14:57:41,622 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:57:42,198 [INFO] audio:   Part2 Turn 30/72 [ANA] chunk 1/1: 17 chars
+2026-10-01 14:58:05,042 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:58:05,312 [INFO] audio:   Part2 Turn 31/72 [CARLOS] chunk 1/1: 155 chars
+2026-10-01 14:58:27,086 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:58:27,599 [INFO] audio:   Part2 Turn 32/72 [ANA] chunk 1/1: 40 chars
+2026-10-01 14:58:48,846 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:58:49,134 [INFO] audio:   Part2 Turn 33/72 [CARLOS] chunk 1/1: 183 chars
+2026-10-01 14:59:10,767 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:59:11,491 [INFO] audio:   Part2 Turn 34/72 [ANA] chunk 1/1: 6 chars
+2026-10-01 14:59:32,964 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:59:33,123 [INFO] audio:   Part2 Turn 35/72 [CARLOS] chunk 1/1: 197 chars
+2026-10-01 14:59:54,353 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 14:59:54,715 [INFO] audio:   Part2 Turn 36/72 [ANA] chunk 1/1: 53 chars
+2026-10-01 15:00:16,533 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:00:16,962 [INFO] audio:   Part2 Turn 37/72 [CARLOS] chunk 1/1: 138 chars
+2026-10-01 15:00:39,004 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:00:39,794 [INFO] audio:   Part2 Turn 38/72 [ANA] chunk 1/1: 22 chars
+2026-10-01 15:01:01,548 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:01:01,751 [INFO] audio:   Part2 Turn 39/72 [CARLOS] chunk 1/1: 237 chars
+2026-10-01 15:01:23,004 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:01:23,563 [INFO] audio:   Part2 Turn 40/72 [ANA] chunk 1/1: 66 chars
+2026-10-01 15:01:44,822 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:01:45,390 [INFO] audio:   Part2 Turn 41/72 [CARLOS] chunk 1/1: 179 chars
+2026-10-01 15:02:07,317 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:02:08,117 [INFO] audio:   Part2 Turn 42/72 [ANA] chunk 1/1: 23 chars
+2026-10-01 15:02:29,421 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:02:29,600 [INFO] audio:   Part2 Turn 43/72 [CARLOS] chunk 1/1: 156 chars
+2026-10-01 15:02:51,515 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:02:51,981 [INFO] audio:   Part2 Turn 44/72 [ANA] chunk 1/1: 83 chars
+2026-10-01 15:03:13,835 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:03:14,307 [INFO] audio:   Part2 Turn 45/72 [CARLOS] chunk 1/1: 147 chars
+2026-10-01 15:03:35,545 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:03:36,140 [INFO] audio:   Part2 Turn 46/72 [ANA] chunk 1/1: 73 chars
+2026-10-01 15:03:58,110 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:03:58,811 [INFO] audio:   Part2 Turn 47/72 [CARLOS] chunk 1/1: 9 chars
+2026-10-01 15:04:20,363 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:04:20,463 [INFO] audio:   Part2 Turn 48/72 [ANA] chunk 1/1: 255 chars
+2026-10-01 15:04:42,988 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:04:44,090 [INFO] audio:   Part2 Turn 49/72 [CARLOS] chunk 1/1: 24 chars
+2026-10-01 15:05:05,985 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:05:06,237 [INFO] audio:   Part2 Turn 50/72 [ANA] chunk 1/1: 124 chars
+2026-10-01 15:05:28,314 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:05:28,966 [INFO] audio:   Part2 Turn 51/72 [CARLOS] chunk 1/1: 18 chars
+2026-10-01 15:05:50,049 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:05:50,225 [INFO] audio:   Part2 Turn 52/72 [ANA] chunk 1/1: 258 chars
+2026-10-01 15:06:11,955 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:06:12,804 [INFO] audio:   Part2 Turn 53/72 [CARLOS] chunk 1/1: 37 chars
+2026-10-01 15:06:33,590 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:06:33,861 [INFO] audio:   Part2 Turn 54/72 [ANA] chunk 1/1: 156 chars
+2026-10-01 15:06:55,848 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:06:56,490 [INFO] audio:   Part2 Turn 55/72 [CARLOS] chunk 1/1: 67 chars
+2026-10-01 15:07:17,636 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:07:17,976 [INFO] audio:   Part2 Turn 56/72 [ANA] chunk 1/1: 236 chars
+2026-10-01 15:07:40,291 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:07:41,017 [INFO] audio:   Part2 Turn 57/72 [CARLOS] chunk 1/1: 104 chars
+2026-10-01 15:08:01,962 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:08:02,363 [INFO] audio:   Part2 Turn 58/72 [ANA] chunk 1/1: 38 chars
+2026-10-01 15:08:23,488 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:08:23,793 [INFO] audio:   Part2 Turn 59/72 [CARLOS] chunk 1/1: 113 chars
+2026-10-01 15:08:45,110 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:08:45,483 [INFO] audio:   Part2 Turn 60/72 [ANA] chunk 1/1: 190 chars
+2026-10-01 15:09:06,635 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:09:07,548 [INFO] audio:   Part2 Turn 61/72 [CARLOS] chunk 1/1: 36 chars
+2026-10-01 15:09:29,387 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:09:29,845 [INFO] audio:   Part2 Turn 62/72 [ANA] chunk 1/1: 165 chars
+2026-10-01 15:09:51,765 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:09:52,404 [INFO] audio:   Part2 Turn 63/72 [CARLOS] chunk 1/1: 136 chars
+2026-10-01 15:10:14,102 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:10:14,742 [INFO] audio:   Part2 Turn 64/72 [ANA] chunk 1/1: 12 chars
+2026-10-01 15:10:37,708 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:10:37,802 [INFO] audio:   Part2 Turn 65/72 [CARLOS] chunk 1/1: 65 chars
+2026-10-01 15:10:59,291 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:10:59,980 [INFO] audio:   Part2 Turn 66/72 [ANA] chunk 1/1: 13 chars
+2026-10-01 15:11:22,463 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:11:22,575 [INFO] audio:   Part2 Turn 67/72 [CARLOS] chunk 1/1: 82 chars
+2026-10-01 15:11:43,737 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:11:44,125 [INFO] audio:   Part2 Turn 68/72 [ANA] chunk 1/1: 185 chars
+2026-10-01 15:12:05,150 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:12:05,503 [INFO] audio:   Part2 Turn 69/72 [CARLOS] chunk 1/1: 103 chars
+2026-10-01 15:12:27,013 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:12:27,555 [INFO] audio:   Part2 Turn 70/72 [ANA] chunk 1/1: 73 chars
+2026-10-01 15:12:48,691 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:12:48,894 [INFO] audio:   Part2 Turn 71/72 [CARLOS] chunk 1/1: 15 chars
+2026-10-01 15:13:10,412 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:13:10,623 [INFO] audio:   Part2 Turn 72/72 [ANA] chunk 1/1: 38 chars
+2026-10-01 15:13:32,308 [INFO] httpx2: HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2026-10-01 15:13:34,441 [INFO] audio: Part2 exported: docs/audio/podcast_2026-10_part2.mp3 (7.7 min, 72/72 turns)
+2026-10-01 15:13:34,442 [INFO] main: Podcast audio: audio/podcast_2026-10.mp3
+2026-10-01 15:13:34,442 [INFO] main: Podcast part 2: audio/podcast_2026-10_part2.mp3
+2026-10-01 15:13:34,493 [INFO] dashboard: Dashboard written to docs/index.html
+2026-10-01 15:13:34,494 [INFO] dashboard: Podcast script written to docs/podcast_script.txt
+2026-10-01 15:13:34,494 [INFO] main: === Pipeline complete in 4101s ===
+2026-10-01 15:13:34,494 [INFO] main: Articles analyzed: 257
+2026-10-01 15:13:34,494 [INFO] main: Dashboard: docs/index.html
